@@ -1,0 +1,11 @@
+developer.logtofile=false
+developer.logonlyerrorstofile=false
+developer.nodecount=false
+developer.redrawcounter=true
+developer.mousecoordinates=false
+view.background=default
+view.additionalhelp=true
+developer.targetcoordinates=false
+developer.logredraw=false
+developer.logmore=true
+developer.advancedtesting=true
