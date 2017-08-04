@@ -20,6 +20,7 @@ Arbeitstitel: *Entwicklung einer Entwicklungsumgebung für ein alternatives graf
     - Umfang
     - Implementierungsdetails einzelne Module
     - Verwendete Bibliotheken
+  - Verwendete und erstellte Grafiken
   - Hilfstool *Templategenerator*
 
 4. Überlegungen und technische Eigenschaften der Entwikelten 
