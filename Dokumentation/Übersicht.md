@@ -27,6 +27,14 @@ Arbeitstitel: *Entwicklung einer Entwicklungsumgebung für ein alternatives graf
   - Mögliche Anwendungen
 
 5. Ausblick
-  - Veröffentlichung bestimmter Teilmodule als Librarys
   - Optimierung
     - Thread-Pool
+  - Erweitung des Frameworks
+  - Veröffentlichung bestimmter Teilmodule als Librarys
+
+
+
+
+
+
+
