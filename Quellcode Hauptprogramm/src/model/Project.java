@@ -62,11 +62,18 @@ public class Project {
      */
     public Project(Node[] nodes, String projectPath) {
         this.nodes = new ArrayList<>(Arrays.asList(nodes));
-        this.projectSettings = new ProjectSettings(projectPath);
         this.breakPoint = new HashSet<>();
         this.smartIdentifierContext = new SmartIdentifierContextImplementation();
         if (projectPath != null) {
             this.setProjectLocation(new File(projectPath));
+            if (fileForProjectSettings != null) {
+                this.projectSettings = new ProjectSettings(fileForProjectSettings.getAbsolutePath());
+            } else {
+                this.projectSettings = new ProjectSettings(null);
+                System.err.println("fileForProjectSettings ist null");
+            }
+        } else {
+            this.projectSettings = new ProjectSettings(null);
         }
         this.somethingChanged = false;
     }
@@ -210,7 +217,7 @@ public class Project {
             this.fileForNodedefinitionsInfoTextFile = new File(newProjectPath + FOLDER_NAME_FOR_PROJECT_NODES_CLASSES + File.separator + FILE_NAME_FOR_NODE_DEFINITIONS_INFO_TEXT_FILE);
             this.projectNodeDefinitionsLibrary = new NodeDefinitionsLibrary(folderForNodedefinitions.getAbsolutePath(), "");
             this.projectFolder = new File(newProjectPath);
-            this.projectSettings.setPath(fileForProjectSettings.getPath());
+            this.projectSettings.setPathAndLoadIn(fileForProjectSettings.getPath());
         }
     }
 
@@ -301,7 +308,8 @@ public class Project {
             String json = ProjectStructureBuilder.buildJsonProjectStructure(this);
 
             // Werte in projectSettings anpassen...
-            projectSettings.set(ProjectSettings.PROJECT_VERSION_KEY, projectSettings.getInt(ProjectSettings.PROJECT_VERSION_KEY, 0) + 1);
+            int projectVersion = getProjectVersion();
+            projectSettings.set(ProjectSettings.PROJECT_VERSION_KEY, projectVersion + 1);
             projectSettings.set(ProjectSettings.CREATION_PROGRAM_VERSION_NAME_KEY, projectSettings.getString(ProjectSettings.CREATION_PROGRAM_VERSION_NAME_KEY, ProjectSettings.PROGRAM_VERSION_NAME_INITIAL_VALUE));
             projectSettings.set(ProjectSettings.SAVE_PROGRAM_VERSION_NAMEE_KEY, ProjectSettings.PROGRAM_VERSION_NAME_INITIAL_VALUE);
             projectSettings.set(ProjectSettings.SAVE_DATE_KEY, ProjectSettings.DATE_FORMAT.format(new Date()));

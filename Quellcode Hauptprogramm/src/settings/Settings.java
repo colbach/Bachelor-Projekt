@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.HashMap;
+import utils.ArrayHelper;
 
 public class Settings {
 
@@ -51,6 +52,12 @@ public class Settings {
 
     public synchronized int getInt(String key, int defaultInteger) {
         String value = this.values.get(key);
+//            System.out.println("****** ------------------------------");
+//            System.out.println("****** GGG " + this);
+//            System.out.println("****** GGG& " + this.getClass());
+//            System.out.println("****** GGG! " + ArrayHelper.arrayToString(values.keySet().toArray()));
+//            System.out.println("****** GGG? " + value);
+//            System.out.println("****** =============================");
         if (value == null) {
             return defaultInteger;
         } else {

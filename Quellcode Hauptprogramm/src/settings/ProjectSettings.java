@@ -8,6 +8,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
+import java.util.Map;
 import main.MainClass;
 
 public class ProjectSettings extends Settings {
@@ -27,7 +28,6 @@ public class ProjectSettings extends Settings {
     
     // ===
 
-    private static ProjectSettings instance = null;
     public String path;
 
     public ProjectSettings(String path) {
@@ -37,6 +37,16 @@ public class ProjectSettings extends Settings {
     
     public synchronized void setPath(String path) {
         this.path = path;
+    }
+    
+    public synchronized void setPathAndLoadIn(String path) {
+        setPath(path);
+        HashMap<String, String> rodeSettings = tryToReadSettingsFromSettingsFile(path);
+        for (Map.Entry<String, String> entry : rodeSettings.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            set(key, value);
+        }
     }
     
 }
