@@ -1,12 +1,18 @@
 # Übersicht
 1. Einleitung
-  * Problemstellung
-  * Zielsetzung
-  * Konzept
+  - Problemstellung
+  - Zielsetzung
+  - Konzept
 2. Umsetzung
+  - Implementierungsdetails
+  - Hilfstool *Templategenerator*
+
+
+
+  
 
 
 3. Ausblick
-  * Veröffentlichung bestimmter Teilmodule als Librarys
-  * Optimierung
-    * Thread-Pool
+  - Veröffentlichung bestimmter Teilmodule als Librarys
+  - Optimierung
+    - Thread-Pool
