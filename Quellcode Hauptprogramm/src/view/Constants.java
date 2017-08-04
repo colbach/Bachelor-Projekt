@@ -76,8 +76,8 @@ public class Constants {
     public static final Color DEBUGGER_NODE_PREPARING_BACKGROUND_COLOR = new Color(231, 232, 200);
     public static final Color DEBUGGER_NODE_COLLECTING_BACKGROUND_COLOR = new Color(203, 204, 140);
     public static final Color DEBUGGER_NODE_RUNNING_BACKGROUND_COLOR = new Color(201, 200, 232);
-    public static final Color DEBUGGER_NODE_DELIEVERING_BACKGROUND_COLOR = new Color(188, 234, 212);
-    public static final Color DEBUGGER_NODE_FINISHED_BACKGROUND_COLOR = new Color(188, 234, 188);
+    public static final Color DEBUGGER_NODE_DELIEVERING_BACKGROUND_COLOR = new Color(188, 234, 252);
+    public static final Color DEBUGGER_NODE_FINISHED_BACKGROUND_COLOR = new Color(188, 244, 188);
     public static final Color DEBUGGER_NODE_FAILED_BACKGROUND_COLOR = new Color(255, 100, 100);
     public static final Color DEBUGGER_NODE_UNKNOWN_BACKGROUND_COLOR = Color.WHITE;
     
