@@ -6,8 +6,12 @@ import componenthub.ComponentHub;
 import view.main.MainWindow;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import logging.AdditionalLogger;
 import logging.AdditionalOut;
@@ -43,7 +47,7 @@ public class MainClass {
      * Pfad zu Bild-Assets.
      */
     public static final String PATH_FOR_ASSETS = "./assets";
-    
+
     /**
      * Pfad fuer .
      */
@@ -60,7 +64,7 @@ public class MainClass {
     public static final Date START_TIME = new Date();
 
     public static boolean guiEnabled, promptEnabled;
-
+    
     public static void main(String[] args) {
 
         // Initialisiere Logger...
@@ -129,6 +133,114 @@ public class MainClass {
                             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                         } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
                             e.printStackTrace();
+                        }
+                    }
+                }
+            },
+            new StartupTask(10, "Kontrolle ob benoetigte Resourcen zur Verfuegung stehen", guiEnabled) { // Allgemeine Instanzen laden...
+                @Override
+                public void run() {
+                    File assetFolder = new File(PATH_FOR_ASSETS);
+                    if (!assetFolder.exists()) {
+                        String defaultAssetPath = new File(PATH_FOR_ASSETS).getAbsolutePath();
+                        String in = defaultAssetPath;
+                        String alternativeAssetDirectoryPath = GeneralSettings.getInstance().getString(GeneralSettings.ALTERNATIV_ASSET_DIRECTORY_KEY);
+                        String messageAppend = "";
+                        while (alternativeAssetDirectoryPath == null || !new File(alternativeAssetDirectoryPath).exists()) {
+                            
+                            in = (String) JOptionPane.showInputDialog(
+                                    null,
+                                    "Verzeichniss für Assets nicht am vorhergesehenen Standort gefunden\n"
+                                    + "(" + defaultAssetPath + ").\n"
+                                    + "Bitte geben sie den korrekten Pfad zum Verzeichniss manuell an." + messageAppend,
+                                    "Verzeichniss für Assets fehlt",
+                                    JOptionPane.WARNING_MESSAGE,
+                                    null,
+                                    null,
+                                    in
+                            );
+                            
+                            if(in == null) {
+                                break;
+                            } else {
+                                if(!new File(in).exists()) {
+                                    messageAppend = "\n\nAngegebenes Verzeichniss existiert nicht.";
+                                } else if(!new File(in).getName().equals("assets")) {
+                                    messageAppend = "\n\nAngegebenes Verzeichniss muss den Namen \"asstes\" tragen.";
+                                } else {
+                                    if (in.endsWith(File.separator)) {
+                                        in = in.substring(0, in.length() - 1);
+                                    }
+                                    alternativeAssetDirectoryPath = in;
+                                }
+                            }
+                            
+//                            if (in == null) {
+//                                Object[] options = {"Ja, ohne korrekten Pfad fortfahren", "Nein, Eingabe wiederholen"};
+//                                int n = JOptionPane.showOptionDialog(
+//                                        null,
+//                                        "Ohne korrekten Pfad zum Assets wird das Programm voraussichtlich nicht funktionieren.\n"
+//                                        + "Möchten sie es dennoch versuchen?",
+//                                        "Auswahl abgebrochen.",
+//                                        JOptionPane.YES_NO_OPTION,
+//                                        JOptionPane.QUESTION_MESSAGE,
+//                                        null,
+//                                        options,
+//                                        options[2]
+//                                );
+//                                if (n == 0) {
+//                                    break;
+//                                } else {
+//                                    continue;
+//                                }
+//                            } else {
+//                                File newDirectory = new File(in);
+//                                if (newDirectory.exists()) {
+//                                    if (in.endsWith(File.separator)) {
+//                                        in = in.substring(0, in.length() - 1);
+//                                    }
+//                                    if (!newDirectory.getName().equals("assets")) {
+//                                        Object[] options = {"Ja", "Nein, Eingabe wiederholen"};
+//                                        int n = JOptionPane.showOptionDialog(null,
+//                                                "Verzeichniss trägt nicht den namen \"assets\". Trotzdem forfahren?",
+//                                                "Pfad fehlerhaft.",
+//                                                JOptionPane.YES_NO_OPTION,
+//                                                JOptionPane.QUESTION_MESSAGE,
+//                                                null,
+//                                                options,
+//                                                options[2]);
+//                                        if (n == 0) {
+//                                            alternativeAssetDirectoryPath = in;
+//                                            break;
+//                                        } else {
+//                                            continue;
+//                                        }
+//                                    } else {
+//                                        alternativeAssetDirectoryPath = in;
+//                                    }
+//                                } else {
+//                                    Object[] options = {"Ja, ohne korrekten Pfad fortfahren", "Nein, Eingabe wiederholen"};
+//                                    int n = JOptionPane.showOptionDialog(null,
+//                                            "Pfad existiert nicht. Möchten sie trotzdem fortfahren?",
+//                                            "Pfad fehlerhaft.",
+//                                            JOptionPane.YES_NO_OPTION,
+//                                            JOptionPane.QUESTION_MESSAGE,
+//                                            null,
+//                                            options,
+//                                            options[2]);
+//                                    if (n == 0) {
+//                                        break;
+//                                    } else {
+//                                        continue;
+//                                    }
+//                                }
+//                            }
+                        }
+                        if (alternativeAssetDirectoryPath != null) {
+                            GeneralSettings.getInstance().set(GeneralSettings.ALTERNATIV_ASSET_DIRECTORY_KEY, alternativeAssetDirectoryPath);
+                            try {
+                                GeneralSettings.getInstance().writeSettingsToSettingsFile();
+                            } catch (IOException ex) {}
                         }
                     }
                 }

@@ -55,6 +55,8 @@ public class GeneralSettings extends Settings {
     public static String COMPOSED_NODE_DEFINITIONS_KEY = "composednodedefinitions";
     public static boolean COMPOSED_NODE_DEFINITIONS_VALUE = true;
     
+    public static String ALTERNATIV_ASSET_DIRECTORY_KEY = "alternativeassetdirectory";
+    
     // ===
     private static GeneralSettings instance = null;
     public static String SETTINGS_PATH = "./settings.txt";

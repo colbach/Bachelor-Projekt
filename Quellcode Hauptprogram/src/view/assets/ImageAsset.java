@@ -6,12 +6,16 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import static main.MainClass.PATH_FOR_ASSETS;
+import settings.GeneralSettings;
 import startuptasks.ProgressIndicator;
 import utils.files.FileGrabber;
 import utils.files.FileRule;
@@ -27,9 +31,9 @@ public class ImageAsset {
     private final BufferedImage image;
     private BufferedImage invertedImageOrNull;
 
-    public static final String SWAP_SIDES_TO_WHITE = "ui/Swap_Sides_To_White_24px.png";
-    public static final String SWAP_SIDES_BACK_WHITE = "ui/Swap_Sides_Back_White_24px.png";
-    public static final String CLEAR = "ui/Clear.png";
+    public static final String SWAP_SIDES_TO_WHITE = "ui" + File.separator + "Swap_Sides_To_White_24px.png";
+    public static final String SWAP_SIDES_BACK_WHITE = "ui" + File.separator + "Swap_Sides_Back_White_24px.png";
+    public static final String CLEAR = "ui" + File.separator + "Clear.png";
     public static final String START_ICON = "Start_30px.png";
     public static final String REPORT = "Receipt_30px.png";
     public static final String DEBUG_ICON = "Debug_30px.png";
@@ -51,7 +55,7 @@ public class ImageAsset {
     public static final String PAPER_ICON = "Paper_30px.png";
     public static final String PREFERENCES_ICON = "Preferences_30px.png";
     public static final String TWO_DISK_ICON = "2_Disks_30px.png";
-    
+
     public static final HashSet<String> notExistent = new HashSet<>();
 
     /**
@@ -62,29 +66,55 @@ public class ImageAsset {
      * @throws IOException
      */
     private ImageAsset(String assetName) throws IOException {
+        
+        assetName = assetName.replaceAll("/", File.separator);
 
         this.assetName = assetName;
 
-        File file = new File(PATH_FOR_ASSETS + "/" + assetName);
+        File file = new File(PATH_FOR_ASSETS + File.separator + assetName);
 
         // Test ob Bild existiert...
         if (!file.exists()) { // Bild existiert nicht
 
             // Dateiendungen testen...
-            File pngFile = new File(PATH_FOR_ASSETS + "/" + assetName + ".png");
-            File jpegFile = new File(PATH_FOR_ASSETS + "/" + assetName + ".jpeg");
-            File jpgFile = new File(PATH_FOR_ASSETS + "/" + assetName + ".jpg");
-            if (pngFile.exists()) {
-                file = pngFile;
-            } else if (jpegFile.exists()) {
-                file = jpegFile;
-            } else if (jpegFile.exists()) {
-                file = jpegFile;
+            {
+                File pngFile = new File(PATH_FOR_ASSETS + File.separator + assetName + ".png");
+                File jpegFile = new File(PATH_FOR_ASSETS + File.separator + assetName + ".jpeg");
+                File jpgFile = new File(PATH_FOR_ASSETS + File.separator + assetName + ".jpg");
+                if (pngFile.exists()) {
+                    file = pngFile;
+                } else if (jpegFile.exists()) {
+                    file = jpegFile;
+                } else if (jpegFile.exists()) {
+                    file = jpegFile;
+                }
+            }
+
+            // Alternative Asset-Directory testen...
+            String alternativeAssetsDirectory = GeneralSettings.getInstance().getString(GeneralSettings.ALTERNATIV_ASSET_DIRECTORY_KEY);
+            if (alternativeAssetsDirectory != null) {
+                if (!alternativeAssetsDirectory.endsWith(File.separator)) {
+                    alternativeAssetsDirectory += File.separator;
+                }
+                file = new File(alternativeAssetsDirectory + assetName);
+                if (!file.exists()) { // Bild existiert nicht
+                    // Dateiendungen testen...
+                    File pngFile = new File(alternativeAssetsDirectory + assetName + ".png");
+                    File jpegFile = new File(alternativeAssetsDirectory + assetName + ".jpeg");
+                    File jpgFile = new File(alternativeAssetsDirectory + assetName + ".jpg");
+                    if (pngFile.exists()) {
+                        file = pngFile;
+                    } else if (jpegFile.exists()) {
+                        file = jpegFile;
+                    } else if (jpegFile.exists()) {
+                        file = jpegFile;
+                    }
+                }
             }
         }
 
         if (!file.exists() && !notExistent.contains(assetName)) { // Warnung ausgeben
-            System.err.println(file.getAbsolutePath() + " existiert nicht!");
+            System.err.println(file.getAbsolutePath() + " existiert nicht und wurde auch in keinem alternativem Verzeichniss gefunden!");
             notExistent.add(assetName);
         }
 
@@ -161,17 +191,26 @@ public class ImageAsset {
             }
         };
         if (progressIndicator != null) {
-            progressIndicator.addProgress(0.00, PATH_FOR_ASSETS + " durchsuchen.");
+            progressIndicator.addProgress(0.00, "Asset-Verzeichnisse durchsuchen.");
         }
-        String[] listOfFilenamesInAssetPath = FileGrabber.getListOfFilenamesInDirectory(PATH_FOR_ASSETS, imageRule);
+        List<String> listOfFilenamesInAssetPath = Arrays.asList(FileGrabber.getListOfFilenamesInDirectory(PATH_FOR_ASSETS, imageRule));
+        String alternativeAssetsDirectory = GeneralSettings.getInstance().getString(GeneralSettings.ALTERNATIV_ASSET_DIRECTORY_KEY);
+        if (alternativeAssetsDirectory != null && alternativeAssetsDirectory.length() > 0) {
+            if (new File(alternativeAssetsDirectory).exists()) {
+                listOfFilenamesInAssetPath.addAll(Arrays.asList(FileGrabber.getListOfFilenamesInDirectory(alternativeAssetsDirectory, imageRule)));
+            } else {
+                System.err.println("alternativeAssetsDirectory ist gesetzt, wird in Dateisystem aber nicht gefunden.");
+            }
+        }
+
         if (progressIndicator != null) {
-            progressIndicator.addProgress(0.10, PATH_FOR_ASSETS + " durchsuchen.");
+            progressIndicator.addProgress(0.10, "Asset-Verzeichnisse durchsuchen.");
         }
-        String[] listOfFilenamesInAssetPathForUI = FileGrabber.getListOfFilenamesInDirectory(PATH_FOR_ASSETS + "/ui", imageRule);
+        String[] listOfFilenamesInAssetPathForUI = FileGrabber.getListOfFilenamesInDirectory(PATH_FOR_ASSETS + File.separator + "ui", imageRule);
         if (progressIndicator != null) {
             progressIndicator.addProgress(0.10, "Grafiken laden.");
         }
-        int total = listOfFilenamesInAssetPath.length + listOfFilenamesInAssetPathForUI.length;
+        int total = listOfFilenamesInAssetPath.size() + listOfFilenamesInAssetPathForUI.length;
         double steps = 0.80 / total;
 
         int i = 0;
