@@ -24,7 +24,7 @@ public class InputManager {
             for (int i = 0; i < listeners.size(); i++) { // fuer alle Listener
 
                 MouseAndKeyboardListener listener = listeners.get(i);
-                if (listener.isStillListening()) { // pruefen ob Listener noch interessiert ist
+                if (listener != null && listener.isStillListening()) { // pruefen ob Listener noch interessiert ist
                     if (listener.getClip().isInside(x, y)) {
                         if (listener.mouseClicked(x, y)) {
                             break;
@@ -48,7 +48,7 @@ public class InputManager {
             for (int i = 0; i < listeners.size(); i++) { // fuer alle Listener
 
                 MouseAndKeyboardListener listener = listeners.get(i);
-                if (listener!= null && listener.isStillListening()) { // pruefen ob Listener noch interessiert ist
+                if (listener != null && listener.isStillListening()) { // pruefen ob Listener noch interessiert ist
                     if (listener.getClip().isInside(x, y)) {
                         if (left) {
                             if (listener.mousePressed(x, y)) {
@@ -73,7 +73,7 @@ public class InputManager {
             for (int i = 0; i < listeners.size(); i++) { // fuer alle Listener
 
                 MouseAndKeyboardListener listener = listeners.get(i);
-                if (listener.isStillListening()) { // pruefen ob Listener noch interessiert ist
+                if (listener != null && listener.isStillListening()) { // pruefen ob Listener noch interessiert ist
                     if (listener.getClip().isInside(x, y)) {
                         if (listener.mouseMoved(lastMouseX, lastMouseY, x, y)) {
                             break;
@@ -114,7 +114,7 @@ public class InputManager {
         synchronized (listeners) {
             for (int i = 0; i < listeners.size(); i++) { // fuer alle Listener                
                 MouseAndKeyboardListener listener = listeners.get(i);
-                if (listener.isStillListening()) { // pruefen ob Listener noch interessiert ist
+                if (listener != null && listener.isStillListening()) { // pruefen ob Listener noch interessiert ist
                     if (listener.getClip().isInside(x, y) || listener.getClip().isInside(mousePressedX, mousePressedY)) {
                         if (listener.mouseDragged(lastMouseX, lastMouseY, x, y, mousePressedX, mousePressedY)) {
                             break;
@@ -135,7 +135,7 @@ public class InputManager {
             for (int i = 0; i < listeners.size(); i++) { // fuer alle Listener
 
                 MouseAndKeyboardListener listener = listeners.get(i);
-                if (listener.isStillListening()) { // pruefen ob Listener noch interessiert ist
+                if (listener != null && listener.isStillListening()) { // pruefen ob Listener noch interessiert ist
                     if (listener.mouseMouseWheelMoved(scrollAmount)) {
                         break;
                     }
@@ -181,9 +181,12 @@ public class InputManager {
             SpecialKey specialKey = keyCodeToSpecialKey(code);
             if (specialKey != null) {
                 for (int i = 0; i < listeners.size(); i++) { // fuer alle Listener
-                    boolean result = listeners.get(i).specialKeyPressed(specialKey);
-                    if (result) {
-                        break;
+                    MouseAndKeyboardListener get = listeners.get(i);
+                    if (get != null) {
+                        boolean result = get.specialKeyPressed(specialKey);
+                        if (result) {
+                            break;
+                        }
                     }
                 }
             }
@@ -211,9 +214,12 @@ public class InputManager {
             SpecialKey specialKey = keyCodeToSpecialKey(code);
             if (specialKey != null) {
                 for (int i = 0; i < listeners.size(); i++) { // fuer alle Listener
-                    boolean result = listeners.get(i).specialKeyReleased(specialKey);
-                    if (result) {
-                        break;
+                    MouseAndKeyboardListener get = listeners.get(i);
+                    if (get != null) {
+                        boolean result = get.specialKeyReleased(specialKey);
+                        if (result) {
+                            break;
+                        }
                     }
                 }
             }

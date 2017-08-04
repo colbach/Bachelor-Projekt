@@ -1,6 +1,7 @@
 package view.main.additionalhelp;
 
 import java.awt.Graphics2D;
+import utils.Drawing;
 import static view.Constants.*;
 
 public class AdditionalHelpDrafter {
@@ -8,6 +9,7 @@ public class AdditionalHelpDrafter {
     public static void drawAdditionalHelp(Graphics2D g, int xRight, int yBottom, AdditionalHelpDescription description) {
 
         if (!description.isEmpty()) {
+            Drawing.enableAntialiasing(g);
             // Abmasse berechnen...
             int maxDescriptionWidth = 20;
             for (int i = 0; i < description.getCount(); i++) {
