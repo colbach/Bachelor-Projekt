@@ -1,5 +1,5 @@
 # Übersicht
-
+Arbeitstitel: *Entwicklung einer Entwicklungsumgebung für ein alternatives grafisches Programmierkonzept*
 
 1. Einleitung
   - Problemstellung
@@ -16,6 +16,8 @@
 3. Technische Umsetzung
   - Implementierung
     - Aufbau
+    - Entwickelte Module
+    - Umfang
     - Implementierungsdetails einzelne Module
     - Verwendete Bibliotheken
   - Hilfstool *Templategenerator*
