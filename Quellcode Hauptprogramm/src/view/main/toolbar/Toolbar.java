@@ -168,7 +168,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
 //                return debuggingTools || isProjectRunning() || !isProjectFinished() || breakpointRules;
 //            }
 //        });
-        addToolbarItem(new ToolbarItem(true, "Bericht", ImageAsset.getImageAssetForName(REPORT)) {
+        addToolbarItem(new ToolbarItem(true, "Bericht", ImageAsset.getImageAssetForName(REPORT_ICON)) {
             @Override
             public void clicked() {
                 java.awt.EventQueue.invokeLater(new Runnable() {

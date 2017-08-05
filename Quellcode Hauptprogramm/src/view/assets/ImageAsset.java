@@ -34,8 +34,9 @@ public class ImageAsset {
     public static final String SWAP_SIDES_TO_WHITE = "ui" + File.separator + "Swap_Sides_To_White_24px.png";
     public static final String SWAP_SIDES_BACK_WHITE = "ui" + File.separator + "Swap_Sides_Back_White_24px.png";
     public static final String CLEAR = "ui" + File.separator + "Clear.png";
+    
     public static final String START_ICON = "Start_30px.png";
-    public static final String REPORT = "Receipt_30px.png";
+    public static final String REPORT_ICON = "Receipt_30px.png";
     public static final String DEBUG_ICON = "Debug_30px.png";
     public static final String STOP_ICON = "Stop_30px.png";
     public static final String CONTINUE_STEP_ICON = "Continue_Step_30px.png";
@@ -54,7 +55,7 @@ public class ImageAsset {
     public static final String FOLDER_ICON = "Folder_30px.png";
     public static final String PAPER_ICON = "Paper_30px.png";
     public static final String PREFERENCES_ICON = "Preferences_30px.png";
-    public static final String TWO_DISK_ICON = "2_Disks_30px.png";
+    public static final String TWO_DISK_ICON = "2-Disks_30px.png";
 
     public static final HashSet<String> notExistent = new HashSet<>();
 
