@@ -80,8 +80,9 @@
                               <Component id="additionalChecksCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="nodeCollectionAutoDisposeOnDoubleClickCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="autoRedrawEverySecondCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="131" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="58" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -94,11 +95,13 @@
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="startGUICheckBox" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="nodeCollectionAutoDisposeOnDoubleClickCheckBox" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="useNimbusLAFCheckBox" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="autoRedrawEverySecondCheckBox" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="13" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="advancedTestingCheckBox" min="-2" max="-2" attributes="0"/>
@@ -263,7 +266,15 @@
         </Component>
         <Component class="javax.swing.JCheckBox" name="startGUICheckBox">
           <Properties>
-            <Property name="text" type="java.lang.String" value="GUI automatisch starten (Achtung: Diese Einstellung f&#xfc;hrt dazu dass kein Fenster mehr sichtbar ist)"/>
+            <Property name="text" type="java.lang.String" value="GUI automatisch starten (Achtung: Diese Einstellung kann dazu f&#xfc;hren dazu dass kein Fenster mehr sichtbar ist)"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startGUICheckBoxActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="autoRedrawEverySecondCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Auto Redraw Every Second"/>
           </Properties>
         </Component>
       </SubComponents>

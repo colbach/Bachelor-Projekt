@@ -30,6 +30,7 @@ import model.runproject.callbacks.OnDestroyCallback;
 import model.runproject.debugger.*;
 import model.runproject.executioncontrol.TerminationReason;
 import model.runproject.report.*;
+import static settings.GeneralSettings.*;
 import settings.LastProjectMemory;
 import startuptasks.StartupTaskBatchRunner;
 import utils.format.TimeFormat;
@@ -149,6 +150,15 @@ public class MainWindow extends javax.swing.JFrame implements ProjectExecutionRe
         );
         pack();
 
+        if(GeneralSettings.getInstance().getBoolean(DEVELOPER_AUTO_REDRAW_EVERY_SECOND_KEY, DEVELOPER_AUTO_REDRAW_EVERY_SECOND_VALUE)) {
+            new Timer(1000, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    repaint();
+                }
+            }).start();
+        }
+        
         // Initialisiere Komponenten...
         //loadFully();
     }

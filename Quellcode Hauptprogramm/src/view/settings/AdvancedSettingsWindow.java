@@ -45,6 +45,7 @@ public class AdvancedSettingsWindow extends javax.swing.JFrame {
         this.additionalChecksCheckBox.setSelected(this.settings.getBoolean(DEVELOPER_ADDITIONAL_CHECKS_KEY, DEVELOPER_ADDITIONAL_CHECKS_DEFAULT));
         this.executionRingStackSizeTextField.setText(String.valueOf(this.settings.getInt(DEVELOPER_RING_STACK_SIZE_FOR_EXECUTION_LOGGER, 2000)));
         this.generalRingStackSizeTextField.setText(String.valueOf(this.settings.getInt(DEVELOPER_RING_STACK_SIZE_FOR_GENERAL_LOGGER, 200)));
+        this.autoRedrawEverySecondCheckBox.setText(String.valueOf(this.settings.getBoolean(DEVELOPER_AUTO_REDRAW_EVERY_SECOND_KEY, DEVELOPER_AUTO_REDRAW_EVERY_SECOND_VALUE)));
         this.main = main;
 
         // Fenster mittig plazieren...
@@ -84,6 +85,7 @@ public class AdvancedSettingsWindow extends javax.swing.JFrame {
         useNimbusLAFCheckBox = new javax.swing.JCheckBox();
         additionalChecksCheckBox = new javax.swing.JCheckBox();
         startGUICheckBox = new javax.swing.JCheckBox();
+        autoRedrawEverySecondCheckBox = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Erweitert");
@@ -169,7 +171,14 @@ public class AdvancedSettingsWindow extends javax.swing.JFrame {
             }
         });
 
-        startGUICheckBox.setText("GUI automatisch starten (Achtung: Diese Einstellung führt dazu dass kein Fenster mehr sichtbar ist)");
+        startGUICheckBox.setText("GUI automatisch starten (Achtung: Diese Einstellung kann dazu führen dazu dass kein Fenster mehr sichtbar ist)");
+        startGUICheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startGUICheckBoxActionPerformed(evt);
+            }
+        });
+
+        autoRedrawEverySecondCheckBox.setText("Auto Redraw Every Second");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -207,8 +216,9 @@ public class AdvancedSettingsWindow extends javax.swing.JFrame {
                             .addComponent(logRedrawCheckBox)
                             .addComponent(additionalChecksCheckBox)
                             .addComponent(jLabel1)
-                            .addComponent(nodeCollectionAutoDisposeOnDoubleClickCheckBox))
-                        .addGap(0, 131, Short.MAX_VALUE))))
+                            .addComponent(nodeCollectionAutoDisposeOnDoubleClickCheckBox)
+                            .addComponent(autoRedrawEverySecondCheckBox))
+                        .addGap(0, 58, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,11 +227,13 @@ public class AdvancedSettingsWindow extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(startGUICheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nodeCollectionAutoDisposeOnDoubleClickCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(useNimbusLAFCheckBox)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(autoRedrawEverySecondCheckBox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(advancedTestingCheckBox)
@@ -286,6 +298,7 @@ public class AdvancedSettingsWindow extends javax.swing.JFrame {
             settings.set(DEVELOPER_LOG_ONLY_ERRORS_TO_FILE_KEY, logOnlyErrorsToFileCheckBox.isSelected());
             settings.set(DEVELOPER_LOG_MORE_KEY, logMoreCheckBox.isSelected());
             settings.set(DEVELOPER_NODE_COUNT_KEY, nodeCountCheckBox.isSelected());
+            settings.set(DEVELOPER_AUTO_REDRAW_EVERY_SECOND_KEY, autoRedrawEverySecondCheckBox.isSelected());
             try {
                 settings.set(DEVELOPER_RING_STACK_SIZE_FOR_EXECUTION_LOGGER, Integer.valueOf(executionRingStackSizeTextField.getText()));
             } catch (NumberFormatException numberFormatException) {
@@ -337,9 +350,14 @@ public class AdvancedSettingsWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_additionalChecksCheckBoxActionPerformed
 
+    private void startGUICheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startGUICheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_startGUICheckBoxActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox additionalChecksCheckBox;
     private javax.swing.JCheckBox advancedTestingCheckBox;
+    private javax.swing.JCheckBox autoRedrawEverySecondCheckBox;
     private javax.swing.JTextField executionRingStackSizeTextField;
     private javax.swing.JTextField generalRingStackSizeTextField;
     private javax.swing.JButton jButton1;

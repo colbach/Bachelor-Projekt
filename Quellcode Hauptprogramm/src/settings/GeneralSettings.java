@@ -38,6 +38,8 @@ public class GeneralSettings extends Settings {
     public static String DEVELOPER_ADVANCED_TESTING_KEY = "developer.advancedtesting";
     public static String DEVELOPER_RING_STACK_SIZE_FOR_GENERAL_LOGGER = "developer.ringstacksizeforgeneralLogger";
     public static String DEVELOPER_RING_STACK_SIZE_FOR_EXECUTION_LOGGER = "developer.ringstacksizeforexecutionLogger";
+    public static String DEVELOPER_AUTO_REDRAW_EVERY_SECOND_KEY = "developer.autoredraweverysecond";
+    public static boolean DEVELOPER_AUTO_REDRAW_EVERY_SECOND_VALUE = true;
     
     public static String LAST_PROJECT_PATH_KEY = "lastprojectpath";
     
@@ -56,6 +58,7 @@ public class GeneralSettings extends Settings {
     public static boolean COMPOSED_NODE_DEFINITIONS_VALUE = true;
     
     public static String ALTERNATIV_ASSET_DIRECTORY_KEY = "alternativeassetdirectory";
+    
     
     // ===
     private static GeneralSettings instance = null;
