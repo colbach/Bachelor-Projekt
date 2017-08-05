@@ -69,7 +69,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
     private boolean breakpointRules = false;
     
     private boolean isDebuggingOn() {
-        return mainWindow.getDebuggerRemote() != null;
+        return mainWindow.getDebuggerRemote() != null && mainWindow.getDebuggerRemote().isDebugging();
     }
     
     private void startProject(boolean debug) {

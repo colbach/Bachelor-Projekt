@@ -200,8 +200,11 @@ public class MainPanelDrafter {
                 if (debuggerRemote == null) {
                     System.err.println("debuggerRemote ist null! DebugContextTable nicht zeichnen.");
                 } else {
+                    DebuggerRemote dr = window.getDebuggerRemote();
+                if (dr != null && dr.isDebugging()) {
                     DebugContextTableDrafter.drawDebugContextTable(g, width - DEBUG_CONTEXT_TABLE_X_RIGHT_SPACE, DEBUG_CONTEXT_TABLE_Y, debuggerRemote, mainPanel.getContextIdentifierForDebugger());
                     DebugBlockedReasonDrafter.drawDebugBlockedReason(g, -1, TOOLBAR_HEIGHT, debuggerRemote);
+                }
                 }
             }
 
