@@ -1,4 +1,4 @@
-package view.main.rightclickmenue;
+package view.main.contextmenu;
 
 public abstract class RightClickMenueItem {
     

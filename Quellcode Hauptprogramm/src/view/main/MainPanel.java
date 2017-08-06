@@ -1,5 +1,6 @@
 package view.main;
 
+import view.main.contextmenu.ContextMenu;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -17,7 +18,6 @@ import settings.GeneralSettings;
 import startuptasks.StartupTaskBatchRunner;
 import view.main.*;
 import view.main.debug.*;
-import view.main.rightclickmenue.*;
 import view.main.showstate.*;
 import view.main.toolbar.*;
 import view.main.connectoverlay.*;
@@ -266,7 +266,7 @@ public final class MainPanel extends JPanel {
         return window;
     }
 
-    public RightClickMenue getRightClickMenue() {
+    public ContextMenu getRightClickMenue() {
         ShowState actualShowState = this.showState;
         if (actualShowState instanceof RightClickableViewState) {
             RightClickableViewState rightClickableViewState = (RightClickableViewState) actualShowState;
@@ -276,7 +276,7 @@ public final class MainPanel extends JPanel {
         }
     }
 
-    public boolean setRightClickMenue(RightClickMenue rightClickMenue) {
+    public boolean setRightClickMenue(ContextMenu rightClickMenue) {
         ShowState actualShowState = this.showState;
         if (actualShowState instanceof RightClickableViewState) {
             RightClickableViewState rightClickableViewState = (RightClickableViewState) actualShowState;

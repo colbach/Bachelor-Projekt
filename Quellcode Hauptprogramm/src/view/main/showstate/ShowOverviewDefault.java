@@ -1,13 +1,13 @@
 package view.main.showstate;
 
 import view.main.additionalhelp.AdditionalHelpDescription;
-import view.main.rightclickmenue.RightClickMenue;
+import view.main.contextmenu.ContextMenu;
 
 public class ShowOverviewDefault implements ShowState, RightClickableViewState, ShowOverview {
 
     private String message = null;
     private boolean error = false;
-    private RightClickMenue rightClickMenue = null;
+    private ContextMenu rightClickMenue = null;
 
     private static final AdditionalHelpDescription HELP = new AdditionalHelpDescription(
             new String[]{
@@ -67,12 +67,12 @@ public class ShowOverviewDefault implements ShowState, RightClickableViewState, 
     }
 
     @Override
-    public RightClickMenue getRightClickMenue() {
+    public ContextMenu getRightClickMenue() {
         return rightClickMenue;
     }
 
     @Override
-    public void setRightClickMenue(RightClickMenue rightClickMenue) {
+    public void setRightClickMenue(ContextMenu rightClickMenue) {
         this.rightClickMenue = rightClickMenue;
     }
 

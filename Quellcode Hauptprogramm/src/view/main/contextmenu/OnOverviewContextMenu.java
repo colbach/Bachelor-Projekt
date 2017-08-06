@@ -1,4 +1,4 @@
-package view.main.rightclickmenue;
+package view.main.contextmenu;
 
 import model.type.WrongTypException;
 import java.awt.Point;
@@ -25,9 +25,9 @@ import view.main.MainWindow;
 import view.main.runreport.RunReportWindow;
 import view.nodecollection.NodeCollectionWindow;
 
-public class OnOverviewRightClickMenue extends RightClickMenue {
+public class OnOverviewContextMenu extends ContextMenu {
     
-    public OnOverviewRightClickMenue(int x, int y, int targetX, int targetY, Project project, MainWindow mainWindow) {
+    public OnOverviewContextMenu(int x, int y, int targetX, int targetY, Project project, MainWindow mainWindow) {
         super(null, x, y, mainWindow.getWidth(), mainWindow.getHeight(), mainWindow);
 
         ArrayList<RightClickMenueItem> is = new ArrayList<>();

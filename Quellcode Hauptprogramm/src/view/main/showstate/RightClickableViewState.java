@@ -1,12 +1,12 @@
 package view.main.showstate;
 
-import view.main.rightclickmenue.RightClickMenue;
+import view.main.contextmenu.ContextMenu;
 
 public interface RightClickableViewState extends ShowState {
     
-    public RightClickMenue getRightClickMenue();
+    public ContextMenu getRightClickMenue();
     
-    public void setRightClickMenue(RightClickMenue rightClickMenue);
+    public void setRightClickMenue(ContextMenu rightClickMenue);
     
     public void disposeRightClickMenue();
     

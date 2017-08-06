@@ -1,9 +1,9 @@
-package view.main.rightclickmenue;
+package view.main.contextmenu;
 
 import view.listener.MouseAndKeyboardListener;
 import view.main.MainWindow;
 
-public class RightClickMenue {
+public class ContextMenu {
     
     protected RightClickMenueItem[] items;
     private final int x, y;
@@ -12,7 +12,7 @@ public class RightClickMenue {
     protected Boolean[] cicles = null;
     protected Boolean[] stroked = null;
     
-    public RightClickMenue(RightClickMenueItem[] items, int x, int y, int viewWidth, int viewHeight, MainWindow mainWindow) {
+    public ContextMenu(RightClickMenueItem[] items, int x, int y, int viewWidth, int viewHeight, MainWindow mainWindow) {
         this.items = items;
         this.x = x;
         this.y = y;
@@ -53,7 +53,7 @@ public class RightClickMenue {
     }
 
     public boolean mousePressed(int x, int y) {
-        RightClickMenueItem matched = RightClickMenueDrafter.calcNodesForMousePosition(null, this, x, y);
+        RightClickMenueItem matched = ContextMenuDrafter.calcNodesForMousePosition(null, this, x, y);
         if(matched != null) {
             if(matched.isClickable()) {
                 matched.setPressed(true);
@@ -64,7 +64,7 @@ public class RightClickMenue {
     }
 
     public boolean mouseClicked(int x, int y) {
-        RightClickMenueItem matched = RightClickMenueDrafter.calcNodesForMousePosition(null, this, x, y);
+        RightClickMenueItem matched = ContextMenuDrafter.calcNodesForMousePosition(null, this, x, y);
         if(matched != null) {
             if(matched.isClickable()) {
                 matched.clicked();

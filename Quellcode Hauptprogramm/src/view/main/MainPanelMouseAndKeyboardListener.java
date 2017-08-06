@@ -22,9 +22,9 @@ import static view.Constants.*;
 import view.dialogs.DirectInputDialogs;
 import view.dialogs.ErrorDialog;
 import view.main.debug.DebugContextTableDrafter;
-import view.main.rightclickmenue.OnNodeRightClickMenue;
-import view.main.rightclickmenue.OnOverviewRightClickMenue;
-import view.main.rightclickmenue.RightClickMenue;
+import view.main.contextmenu.OnNodeContextMenu;
+import view.main.contextmenu.OnOverviewContextMenu;
+import view.main.contextmenu.ContextMenu;
 import view.main.showstate.RunningViewState;
 import view.main.showstate.ShowConnectionOverlay;
 import view.main.showstate.ShowConnectionOverlayAndDragConnectionBetweenLets;
@@ -74,8 +74,8 @@ public class MainPanelMouseAndKeyboardListener extends MouseAndKeyboardListener 
             }
         }
 
-        // mousePressed an RightClickMenue weiter geben...
-        RightClickMenue rightClickMenue = mainPanel.getRightClickMenue();
+        // mousePressed an ContextMenu weiter geben...
+        ContextMenu rightClickMenue = mainPanel.getRightClickMenue();
         if (rightClickMenue != null) {
             boolean r = rightClickMenue.mousePressed(x, y);
             if (r) {
@@ -230,8 +230,8 @@ public class MainPanelMouseAndKeyboardListener extends MouseAndKeyboardListener 
             showConnectionOverlay.setOverlaySwapButtonPressed(false);
         }
 
-        // mouseReleased an RightClickMenue weiter geben...
-        RightClickMenue rightClickMenue = mainPanel.getRightClickMenue();
+        // mouseReleased an ContextMenu weiter geben...
+        ContextMenu rightClickMenue = mainPanel.getRightClickMenue();
         if (rightClickMenue != null) {
             rightClickMenue.mouseReleased();
             return true;
@@ -356,11 +356,11 @@ public class MainPanelMouseAndKeyboardListener extends MouseAndKeyboardListener 
             Project project = mainPanel.getWindow().getProject();
             Node matchedNode = NodeDrafter.calcNodesForMousePosition((Graphics2D) mainPanel.savedGraphics, mainPanel.getOffX(), mainPanel.getOffY(), project.getNodes(), x, y);
             if (matchedNode != null) {
-                mainPanel.setRightClickMenue(new OnNodeRightClickMenue(x, y, matchedNode, project, mainPanel.getWindow()));
+                mainPanel.setRightClickMenue(new OnNodeContextMenu(x, y, matchedNode, project, mainPanel.getWindow()));
             } else {
                 mainPanel.setTargetX(x - mainPanel.getOffX());
                 mainPanel.setTargetY(y - mainPanel.getOffY());
-                mainPanel.setRightClickMenue(new OnOverviewRightClickMenue(x, y, mainPanel.getTargetX(), mainPanel.getTargetY(), project, mainPanel.getWindow()));
+                mainPanel.setRightClickMenue(new OnOverviewContextMenu(x, y, mainPanel.getTargetX(), mainPanel.getTargetY(), project, mainPanel.getWindow()));
             }
 
             return false;
@@ -412,8 +412,8 @@ public class MainPanelMouseAndKeyboardListener extends MouseAndKeyboardListener 
     @Override
     public boolean mouseClicked(int x, int y) {
 
-        // mouseClicked an RightClickMenue weiter geben...
-        RightClickMenue rightClickMenue = mainPanel.getRightClickMenue();
+        // mouseClicked an ContextMenu weiter geben...
+        ContextMenu rightClickMenue = mainPanel.getRightClickMenue();
         if (rightClickMenue != null) {
             boolean r = rightClickMenue.mouseClicked(x, y);
             if (r) {

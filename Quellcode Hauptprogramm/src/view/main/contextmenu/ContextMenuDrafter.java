@@ -1,4 +1,4 @@
-package view.main.rightclickmenue;
+package view.main.contextmenu;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -9,13 +9,13 @@ import static view.Constants.*;
 import static utils.Drawing.*;
 import utils.measurements.Area;
 
-public class RightClickMenueDrafter {
+public class ContextMenuDrafter {
 
-    public static Area calcLeftClickMenueArea(Graphics2D g, RightClickMenue lcm) {
+    public static Area calcLeftClickMenueArea(Graphics2D g, ContextMenu lcm) {
         return calcLeftClickMenueArea(g.getFontMetrics(RIGHT_CLICK_MENUE_FONT), lcm);
     }
     
-    public static Area calcLeftClickMenueArea(FontMetrics fm, RightClickMenue lcm) {
+    public static Area calcLeftClickMenueArea(FontMetrics fm, ContextMenu lcm) {
         // Hoehe...
         int height = RIGHT_CLICK_MENUE_ITEM_HEIGHT * lcm.getItemCount();
         
@@ -51,8 +51,8 @@ public class RightClickMenueDrafter {
         return new Area(x, y, width, height);
     }
 
-    public static void drawLeftClickMenue(Graphics2D g, RightClickMenue lcm) {
-        Area area = calcLeftClickMenueArea(g, lcm);
+    public static void drawLeftClickMenue(Graphics2D g, ContextMenu lcm) {
+        Area area = ContextMenuDrafter.calcLeftClickMenueArea(g, lcm);
 
         g.setColor(RIGHT_CLICK_MENUE_BACKGROUND_COLOR);
         g.fillRect(area.getX(), area.getY(), area.getWidth(), area.getHeight());
@@ -91,12 +91,12 @@ public class RightClickMenueDrafter {
      * kein Graphics2D vorhanden kann null eingesetzt werden. Dies erzeugt ein
      * (Headless) Canvas welches das benoetigte Graphics2D bereit stellt.
      */
-    public static RightClickMenueItem calcNodesForMousePosition(Graphics2D g, RightClickMenue lcm, int mouseX, int mouseY) {
+    public static RightClickMenueItem calcNodesForMousePosition(Graphics2D g, ContextMenu lcm, int mouseX, int mouseY) {
         Area area;
         if (g == null) {
             area = calcLeftClickMenueArea(new Canvas().getFontMetrics(RIGHT_CLICK_MENUE_FONT), lcm); 
         } else {
-            area = calcLeftClickMenueArea(g, lcm);
+            area = ContextMenuDrafter.calcLeftClickMenueArea(g, lcm);
         }
         if (area.isInside(mouseX, mouseY)) {
             for (int i = 0; i < lcm.getItemCount(); i++) {

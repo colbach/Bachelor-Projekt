@@ -1,4 +1,4 @@
-package view.main.rightclickmenue;
+package view.main.contextmenu;
 
 import generalexceptions.IllegalUserDialogInputException;
 import java.io.IOException;
@@ -22,9 +22,9 @@ import view.assets.ImageAsset;
 import view.dialogs.DirectInputDialogs;
 import view.dialogs.ErrorDialog;
 
-public class OnNodeRightClickMenue extends RightClickMenue {
+public class OnNodeContextMenu extends ContextMenu {
 
-    public OnNodeRightClickMenue(int x, int y, Node node, Project project, MainWindow mainWindow) {
+    public OnNodeContextMenu(int x, int y, Node node, Project project, MainWindow mainWindow) {
         super(null, x, y, mainWindow.getWidth(), mainWindow.getHeight(), mainWindow);
 
         ArrayList<RightClickMenueItem> is = new ArrayList<>();
