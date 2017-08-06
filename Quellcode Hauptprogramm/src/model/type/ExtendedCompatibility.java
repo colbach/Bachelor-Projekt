@@ -78,7 +78,7 @@ public class ExtendedCompatibility {
     }
 
     public static Object[] convertObjectToType(Object[] o, Type from, Type to) {
-                
+                        
         Object[] r = new Object[o.length];
 
         Class fromTypeClass = from.getTypeClass();
@@ -355,8 +355,7 @@ public class ExtendedCompatibility {
             return r;
 
         } else if (Number.class.isAssignableFrom(from.getTypeClass()) && MathObject.class.isAssignableFrom(to.getTypeClass())) { // Number nach MathObject
-            
-            for (int i = 0; i < r.length; i++) {
+             for (int i = 0; i < r.length; i++) {
                 r[i] = new NumberMathObject((Number) o[i]);
             }
 

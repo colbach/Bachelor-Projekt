@@ -48,7 +48,7 @@ public class PlusNodeDefinition implements NodeDefinition {
 
     @Override
     public Class getClassForOutlet(int outletIndex) {
-        return Number.class;
+        return MathObject.class;
     }
 
     @Override
@@ -171,27 +171,27 @@ public class PlusNodeDefinition implements NodeDefinition {
             if (oA instanceof Double && oB instanceof Double) {
                 Double dA = (Double) oA;
                 Double dB = (Double) oB;
-                io.out(0, new Double(dA + dB));
+                io.out(0, new NumberMathObject(new Double(dA + dB)));
             } else if (oA instanceof Float && oB instanceof Float) {
                 Float fA = (Float) oA;
                 Float fB = (Float) oB;
-                io.out(0, new Float(fA + fB));
+                io.out(0, new NumberMathObject(new Float(fA + fB)));
             } else if (oA instanceof Long && oB instanceof Long) {
                 Long lA = (Long) oA;
                 Long lB = (Long) oB;
-                io.out(0, new Long(lA + lB));
+                io.out(0, new NumberMathObject(new Long(lA + lB)));
             } else if (oA instanceof Integer && oB instanceof Integer) {
                 Integer iA = (Integer) oA;
                 Integer iB = (Integer) oB;
-                io.out(0, new Integer(iA + iB));
+                io.out(0, new NumberMathObject(new Integer(iA + iB)));
             } else if (oA instanceof Short && oB instanceof Short) {
                 Short sA = (Short) oA;
                 Short sB = (Short) oB;
-                io.out(0, new Integer(sA + sB));
+                io.out(0, new NumberMathObject(new Integer(sA + sB)));
             } else if (oA instanceof Byte && oB instanceof Byte) {
                 Byte bA = (Byte) oA;
                 Byte bB = (Byte) oB;
-                io.out(0, new Integer(bA + bB));
+                io.out(0, new NumberMathObject(new Integer(bA + bB)));
             } else {
                 System.err.println("Datentypen konnten nicht richtig gecastet werden. Fallback auf Double");
                 Double dA = ((Number) oA).doubleValue();

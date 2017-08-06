@@ -1,21 +1,20 @@
-package reflection.nodedefinitions.show;
+package reflection.nodedefinitions.text;
 
-import javax.swing.JOptionPane;
+import java.nio.charset.Charset;
 import reflection.*;
+import reflection.customdatatypes.rawdata.RawData;
 
-public class TextInputDialogNodeDefinition implements NodeDefinition {
+public class TextToNumberNodeDefinition implements NodeDefinition {
 
     @Override
     public int getInletCount() {
-        return 2;
+        return 1;
     }
 
     @Override
     public Class getClassForInlet(int index) {
         switch (index) {
             case 0:
-                return String.class;
-            case 1:
                 return String.class;
             default:
                 return null;
@@ -26,9 +25,7 @@ public class TextInputDialogNodeDefinition implements NodeDefinition {
     public String getNameForInlet(int index) {
         switch (index) {
             case 0:
-                return "Titel";
-            case 1:
-                return "Mitteilung";
+                return "Text";
             default:
                 return null;
         }
@@ -48,8 +45,8 @@ public class TextInputDialogNodeDefinition implements NodeDefinition {
 
     @Override
     public boolean isInletEngaged(int index) {
-        if (index == 1) {
-            return false;
+        if (index == 0) {
+            return true;
         } else {
             return false;
         }
@@ -64,7 +61,7 @@ public class TextInputDialogNodeDefinition implements NodeDefinition {
     public Class getClassForOutlet(int index) {
         switch (index) {
             case 0:
-                return String.class;
+                return Number.class;
             default:
                 return null;
         }
@@ -74,7 +71,7 @@ public class TextInputDialogNodeDefinition implements NodeDefinition {
     public String getNameForOutlet(int index) {
         switch (index) {
             case 0:
-                return "Benutzereingabe";
+                return "Zahl";
             default:
                 return null;
         }
@@ -83,6 +80,8 @@ public class TextInputDialogNodeDefinition implements NodeDefinition {
     @Override
     public boolean isOutletForArray(int index) {
         switch (index) {
+            case 0:
+                return false;
             default:
                 return false;
         }
@@ -90,22 +89,22 @@ public class TextInputDialogNodeDefinition implements NodeDefinition {
 
     @Override
     public String getName() {
-        return "Eingabe Dialog";
+        return "Text zu Zahl";
     }
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "" + TAG_PREAMBLE + " [Text] Text zu Number Zahl Wert";
     }
 
     @Override
     public String getUniqueName() {
-        return "buildin.TextInputDialog";
+        return "buildin.TextToZahl";
     }
 
     @Override
     public String getIconName() {
-        return "Input-Dialog_30px.png";
+        return "Text-To-Number_30px.png";
     }
 
     @Override
@@ -116,13 +115,9 @@ public class TextInputDialogNodeDefinition implements NodeDefinition {
     @Override
     public void run(InOut io, API api) {
 
-        String titel = (String) io.in0(0, "Meldung");
-        String mitteilung = (String) io.in0(1, "Text eingeben");
+        String text = (String) io.in0(0, "0");
 
-        String input = JOptionPane.showInputDialog(null, mitteilung, titel, JOptionPane.PLAIN_MESSAGE);
-        
-        io.out(0, input);
-
+        io.out(0, new Double(text));
     }
 
 }
