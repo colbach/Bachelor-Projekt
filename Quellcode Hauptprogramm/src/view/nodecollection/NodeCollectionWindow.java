@@ -33,6 +33,7 @@ public class NodeCollectionWindow extends javax.swing.JFrame {
      */
     public NodeCollectionWindow(MainWindow associatedMainWindow) {
         initComponents();
+        setTitle("Elemente");
         nodeCollectionOverviewPanel.setWindow(this);
         setBackground(Color.WHITE);
         this.associatedMainWindow = associatedMainWindow;

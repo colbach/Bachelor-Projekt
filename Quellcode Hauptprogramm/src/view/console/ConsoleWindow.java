@@ -1,4 +1,4 @@
-package view.generallog;
+package view.console;
 
 import commandline.CommandLinePrompt;
 import commandline.CommandLineThread;
@@ -11,7 +11,7 @@ import javax.swing.*;
 import logging.*;
 import view.listener.*;
 
-public class LogWindow extends JFrame implements ActionListener {
+public class ConsoleWindow extends JFrame implements ActionListener {
 
     private final Timer timer;
     private final InputManager inputManager;
@@ -52,8 +52,9 @@ public class LogWindow extends JFrame implements ActionListener {
     /**
      * Creates new form LogWindow
      */
-    public LogWindow() {
+    public ConsoleWindow() {
         initComponents();
+        setTitle(CommandLineThread.getCommandLinePrompt() == null ? "Log" : "Konsole");
         this.timer = new Timer(200, this);
         this.timer.start();
         this.inputManager = new InputManager();
@@ -96,10 +97,9 @@ public class LogWindow extends JFrame implements ActionListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        logPanel = new view.sharedcomponents.LogPanel();
+        logPanel = new view.sharedcomponents.ConsolePanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Log-Ausgabe");
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 formComponentResized(evt);
@@ -129,11 +129,11 @@ public class LogWindow extends JFrame implements ActionListener {
         logPanel.setLayout(logPanelLayout);
         logPanelLayout.setHorizontalGroup(
             logPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 687, Short.MAX_VALUE)
+            .addGap(0, 749, Short.MAX_VALUE)
         );
         logPanelLayout.setVerticalGroup(
             logPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 535, Short.MAX_VALUE)
+            .addGap(0, 591, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -166,7 +166,7 @@ public class LogWindow extends JFrame implements ActionListener {
     }//GEN-LAST:event_logPanelMouseDragged
 
     private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
-        //AdditionalLogger.out.println("Scrollbar-Area von LogPanel wird aktualisiert");
+        //AdditionalLogger.out.println("Scrollbar-Area von ConsolePanel wird aktualisiert");
         logPanel.scrollbarNeedsAreaUpdate();
     }//GEN-LAST:event_formComponentResized
 
@@ -176,7 +176,7 @@ public class LogWindow extends JFrame implements ActionListener {
     }//GEN-LAST:event_logPanelMouseWheelMoved
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private view.sharedcomponents.LogPanel logPanel;
+    private view.sharedcomponents.ConsolePanel logPanel;
     // End of variables declaration//GEN-END:variables
 
 }

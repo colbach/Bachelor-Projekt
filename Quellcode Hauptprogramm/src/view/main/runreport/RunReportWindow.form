@@ -99,7 +99,7 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Container class="view.sharedcomponents.LogPanel" name="logPanel">
+    <Container class="view.sharedcomponents.ConsolePanel" name="logPanel">
       <Events>
         <EventHandler event="mouseDragged" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="logPanelMouseDragged"/>
         <EventHandler event="mouseWheelMoved" listener="java.awt.event.MouseWheelListener" parameters="java.awt.event.MouseWheelEvent" handler="logPanelMouseWheelMoved"/>

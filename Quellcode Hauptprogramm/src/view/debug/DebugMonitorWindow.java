@@ -95,7 +95,7 @@ public class DebugMonitorWindow extends JFrame implements ActionListener {
             //} else {
             //    debuggerWasNull = true;
             //}
-        logPanel = new view.sharedcomponents.LogPanel(/*logger*/null);
+        logPanel = new view.sharedcomponents.ConsolePanel(/*logger*/null);
         liveContextCounterPanel = new view.debug.LiveContextCounterPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -271,6 +271,6 @@ public class DebugMonitorWindow extends JFrame implements ActionListener {
     private view.debug.LiveContextCounterPanel liveContextCounterPanel;
     private view.debug.LiveThreadDescriptionPanel liveThreadDescriptionPanel;
     private view.debug.LiveThreadPanel liveThreadPanel;
-    private view.sharedcomponents.LogPanel logPanel;
+    private view.sharedcomponents.ConsolePanel logPanel;
     // End of variables declaration//GEN-END:variables
 }

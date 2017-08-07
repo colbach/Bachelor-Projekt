@@ -1,5 +1,6 @@
 package view.main.toolbar;
 
+import commandline.CommandLineThread;
 import componenthub.ComponentHub;
 import generalexceptions.IllegalUserActionException;
 import java.awt.Point;
@@ -25,7 +26,7 @@ import static view.Constants.*;
 import static view.assets.ImageAsset.*;
 import view.dialogs.ErrorDialog;
 import view.listener.*;
-import view.generallog.LogWindow;
+import view.console.ConsoleWindow;
 import view.main.MainPanel;
 import view.main.runreport.RunReportWindow;
 import view.main.saveandloadproject.ProjectLoader;
@@ -494,12 +495,12 @@ public final class Toolbar extends MouseAndKeyboardListener {
                 return debuggingTools || isProjectRunning() || isProjectFinished() || breakpointRules;
             }
         });
-        addToolbarItem(new ToolbarItem(true, "Log", ImageAsset.getImageAssetForName(MONITOR_ICON)) {
+        addToolbarItem(new ToolbarItem(true, CommandLineThread.getCommandLinePrompt() == null ? "Log" : "Konsole", ImageAsset.getImageAssetForName(MONITOR_ICON)) {
             @Override
             public void clicked() {
                 java.awt.EventQueue.invokeLater(new Runnable() {
                     public void run() {
-                        new LogWindow().setVisible(true);
+                        new ConsoleWindow().setVisible(true);
                     }
                 });
             }

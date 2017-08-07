@@ -39,7 +39,7 @@ public class RunReportWindow extends javax.swing.JFrame {
 
         generalRuntimePanel = new view.main.runreport.GeneralRuntimePanel();
         runtimeChartPanel = new view.main.runreport.RuntimeChartPanel();
-        logPanel = new view.sharedcomponents.LogPanel();
+        logPanel = new view.sharedcomponents.ConsolePanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -170,7 +170,7 @@ public class RunReportWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private view.main.runreport.GeneralRuntimePanel generalRuntimePanel;
     private javax.swing.JLabel jLabel1;
-    private view.sharedcomponents.LogPanel logPanel;
+    private view.sharedcomponents.ConsolePanel logPanel;
     private view.main.runreport.RuntimeChartPanel runtimeChartPanel;
     // End of variables declaration//GEN-END:variables
 }

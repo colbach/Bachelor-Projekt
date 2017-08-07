@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import settings.GeneralSettings;
-import view.generallog.LogWindow;
+import view.console.ConsoleWindow;
 
 public class AdvancedLogger implements LogTextSource {
 

@@ -15,7 +15,7 @@ import static view.Constants.*;
 import view.sharedcomponents.scrollbar.*;
 import logging.LogTextSource;
 
-public class LogPanel extends JPanel {
+public class ConsolePanel extends JPanel {
 
     private String input = "";
 
@@ -42,7 +42,7 @@ public class LogPanel extends JPanel {
         this.scrollbarNeedsAreaUpdate = true;
     }
 
-    public LogPanel() {
+    public ConsolePanel() {
         this.source = AdvancedLogger.getGeneralInstance();
         this.scrollbar = new Scrollbar((this.source.getAvailableCount() + 1) * 15, 1, Direction.VERTICAL, NonArea.getInstance());
     }
@@ -51,7 +51,7 @@ public class LogPanel extends JPanel {
         black = !w;
     }
 
-    public LogPanel(LogTextSource logger) {
+    public ConsolePanel(LogTextSource logger) {
         if (logger == null) {
             AdditionalLogger.err.println("Logger ist null. Erzeuge LogPanel ohne Logger");
         } else {

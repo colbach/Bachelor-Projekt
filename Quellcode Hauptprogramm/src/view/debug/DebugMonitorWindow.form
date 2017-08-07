@@ -83,7 +83,7 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Container class="view.sharedcomponents.LogPanel" name="logPanel">
+    <Container class="view.sharedcomponents.ConsolePanel" name="logPanel">
       <Events>
         <EventHandler event="mouseDragged" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="logPanelMouseDragged"/>
         <EventHandler event="mouseWheelMoved" listener="java.awt.event.MouseWheelListener" parameters="java.awt.event.MouseWheelEvent" handler="logPanelMouseWheelMoved"/>
@@ -92,7 +92,7 @@
         <EventHandler event="componentResized" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="logPanelComponentResized"/>
       </Events>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.sharedcomponents.LogPanel(/*logger*/null)"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new view.sharedcomponents.ConsolePanel(/*logger*/null)"/>
         <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="//model.runproject.old.OLD_Debugger debugger = mainWindow.getDebugger();&#xa;//Logging logger = null;&#xa;//if(debugger != null) {&#xa;//    logger = debugger.getDebuggerStateLogger();&#xa;//    debuggerWasNull = false;&#xa;//} else {&#xa;//    debuggerWasNull = true;&#xa;//}"/>
       </AuxValues>
 
