@@ -25,12 +25,6 @@ public class LiveContextCounterPanel extends JPanel {
     public LiveContextCounterPanel() {
         this.scrollbar = new Scrollbar(0, 0, Direction.VERTICAL, NonArea.getInstance());
         this.lines = new String[0];
-        
-        /*this.lines = new String[10];
-        for(int i=0; i<10; i++) {
-            lines[i] = "hhhhhhhhh " + i;
-        }
-        scrollbar.setRepresentedSize(lines.length * OFF_PER_LINE);*/
     }
 
     public void capture(DebuggerRemote debugger) {

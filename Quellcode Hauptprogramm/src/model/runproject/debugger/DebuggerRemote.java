@@ -82,7 +82,7 @@ public class DebuggerRemote {
     }
 
     public AdvancedLogger getExecutionLogger() {
-        return debugger.getExecutionLogger();
+        return debugger.getLogger();
     }
 
     public long ajustContextIdentifier(long contextIdentifier) {

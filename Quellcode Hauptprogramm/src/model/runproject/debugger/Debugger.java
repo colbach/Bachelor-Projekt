@@ -38,7 +38,7 @@ public class Debugger {
     
     
     private final AdvancedLogger debuggerExecutionLogger;
-    private final int DEBUGGER_STATE_LOGGER_SIZE = 300;
+    public static final int DEBUGGER_STATE_LOGGER_SIZE = 300;
     
     private final ExecutionLogger executionLogger;
 
@@ -59,7 +59,7 @@ public class Debugger {
         this.changeCounter = new AtomicLong();
         this.debuggerRemote = new DebuggerRemote(this);
         this.failedExecutors = new HashSet<>();
-        this.debuggerExecutionLogger = new AdvancedLogger(DEBUGGER_STATE_LOGGER_SIZE);
+        this.debuggerExecutionLogger = executionLogger.getDebuggerExecutionLogger();
         this.executionLogger = executionLogger;
     }
 
@@ -263,7 +263,7 @@ public class Debugger {
         return debuggerRemote;
     }
 
-    public AdvancedLogger getExecutionLogger() {
+    public AdvancedLogger getLogger() {
         return debuggerExecutionLogger;
     }
 

@@ -144,6 +144,7 @@ public class ConsolePanel extends JPanel {
                     line += input;
                 }
                 g.drawString(line, 5, getHeight() - 10 - offMinusY + scrollBarOffY);
+                
                 i++;
                 offMinusY += 15;
             }
