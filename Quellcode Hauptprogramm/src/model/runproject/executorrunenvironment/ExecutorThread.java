@@ -2,6 +2,7 @@ package model.runproject.executorrunenvironment;
 
 import model.runproject.callbacks.OnFinishCallback;
 import model.runproject.executor.Executor;
+import model.runproject.executioncontrol.StopException;
 
 public class ExecutorThread extends Thread {
     
@@ -15,7 +16,10 @@ public class ExecutorThread extends Thread {
 
     @Override
     public void run() {
-        executor.run();
+        try {
+            executor.run();
+        } catch (StopException e) {
+        }
         onFinishCallback.onFinish(this);
     }
 

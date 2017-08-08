@@ -52,12 +52,14 @@ public class StartLoopNodeDefinition implements NodeDefinition, ContextCreator {
 
     @Override
     public int getOutletCount() {
-        return 0;
+        return 1;
     }
 
     @Override
     public Class getClassForOutlet(int index) {
         switch (index) {
+            case 0:
+                return Long.class;
             default:
                 return null;
         }
@@ -66,6 +68,8 @@ public class StartLoopNodeDefinition implements NodeDefinition, ContextCreator {
     @Override
     public String getNameForOutlet(int index) {
         switch (index) {
+            case 0:
+                return "i";
             default:
                 return null;
         }
@@ -111,9 +115,11 @@ public class StartLoopNodeDefinition implements NodeDefinition, ContextCreator {
         long wiederh = (Long) io.in0(0, Long.MAX_VALUE);
         long interval = (Long) io.in0(1, 200L);
 
+        long i=0;
         while (wiederh > 0) {
 
             io.terminatedTest();
+            io.out(0, i++);
             io.startNewContext();
             api.additionalPrintOut("Neuer Kontext erzeugen (" + api.getTimeStamp() + ")");
             wiederh--;

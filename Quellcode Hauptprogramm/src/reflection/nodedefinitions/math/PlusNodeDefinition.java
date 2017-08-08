@@ -96,7 +96,7 @@ public class PlusNodeDefinition implements NodeDefinition {
         }
 
         if (oB instanceof NumberMathObject) {
-            oB = ((NumberMathObject) oA).getWrappedNumber();
+            oB = ((NumberMathObject) oB).getWrappedNumber();
         }
 
         if (oA instanceof Number && oB instanceof Number) {

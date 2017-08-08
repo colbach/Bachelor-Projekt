@@ -108,7 +108,6 @@ public class ArrayToCSVFileNodeDefinition implements NodeDefinition {
     public void run(InOut io, API api) throws Exception {
 
         Object[] values = io.in(0, new String[0]);
-        File file = (File) io.in0(1, new File[0]);
         String seperator = (String) io.in0(1, ";");
         String escape = (String) io.in0(2, "\"");
         io.terminatedTest();
