@@ -41,7 +41,7 @@ public class LiveContextCounterPanel extends JPanel {
             if (finished == null) {
                 finished = 0;
             }
-            lines[i] = key + " (" + created + " erzeugt, davon " + finished + " bereits beendet)";
+            lines[i++] = key + " (" + created + " erzeugt, davon " + finished + " bereits beendet)";
         }
         scrollbar.setRepresentedSize(lines.length * OFF_PER_LINE);
     }
@@ -60,7 +60,11 @@ public class LiveContextCounterPanel extends JPanel {
         g.setColor(DEFAULT_FONT_COLOR);
         int startY = -scrollbar.getOffsetForContent();
         for (int i = 0; i < lines.length; i++) {
-            g.drawString(lines[i], 4, startY + i * OFF_PER_LINE + 14);
+            String line = lines[i];
+            if(line == null) {
+                line = "null";
+            }
+            g.drawString(line, 4, startY + i * OFF_PER_LINE + 14);
         }
 
         ScrollbarDrafter.drawScrollbar(g, scrollbar);

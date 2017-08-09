@@ -77,7 +77,7 @@ public class LiveThreadDescriptionPanel extends JPanel {
         
         g.drawString("Arbeitende Threads (" + threadsRunning + ")", 15 + 10, 20 - 6);
         g.drawString("Sammelnde Threads (" + threadsCollecting + ")", 15 + 10, 20 - 6 + a);
-        g.drawString("Andere Threads (" + (threadsOther - threadsRunning - threadsCollecting) + ")", 15 + 10, 20 - 6 + a + a);
+        g.drawString("Andere Threads (" + threadsOther + ")", 15 + 10, 20 - 6 + a + a);
         
         g.drawString("Gestartete Threads: " + threadsStarted, 208, 20 - 6 + a/2);
         g.drawString("Bereits beendete Threads: " + threadsFinished, 208, 20 - 6 + a + a/2);

@@ -65,6 +65,9 @@ public class DebugMonitorWindow extends JFrame implements ActionListener {
     public DebugMonitorWindow(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
         initComponents();
+        if (mainWindow.getDebuggerRemote() != null) {
+            logPanel.setSource(mainWindow.getDebuggerRemote().getExecutionLogger());
+        }
         this.timer = new Timer(1000, this);
         this.timer.start();
         this.inputManagerForLog = new InputManager();
@@ -72,8 +75,7 @@ public class DebugMonitorWindow extends JFrame implements ActionListener {
         liveContextCounterPanel.updateScrollbarArea();
         this.inputManagerForContext = new InputManager();
         this.inputManagerForContext.addListener(liveContextCounterPanel.getScrollbar());
-        
-        
+
     }
 
     /**

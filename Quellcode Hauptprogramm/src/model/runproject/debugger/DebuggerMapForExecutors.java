@@ -82,7 +82,7 @@ public class DebuggerMapForExecutors {
         if (executorState != null) {
             return executorState;
         } else {
-            executionLogger.err.println("executorIdentifier " + contextIdentifier + " nicht gefunden");
+            //executionLogger.err.println("executorIdentifier " + contextIdentifier + " nicht gefunden");
             return ExecutorState.UNKNOWN;
         }
     }
