@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import reflection.Function;
+import reflection.customdatatypes.Function;
 import reflection.FunctionNotAdoptableException;
 import reflection.customdatatypes.SmartIdentifier;
 import reflection.TerminatedTestable;

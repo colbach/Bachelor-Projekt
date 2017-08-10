@@ -1,4 +1,4 @@
-package reflection.nodedefinitionsupport.camera;
+package reflection.customdatatypes.camera;
 
 import java.awt.image.BufferedImage;
 

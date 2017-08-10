@@ -5,8 +5,8 @@ import logging.AdditionalLogger;
 import org.bytedeco.javacv.OpenCVFrameGrabber;
 import reflection.additionalnodedefinitioninterfaces.CompatibilityTestable;
 import reflection.*;
-import reflection.nodedefinitionsupport.camera.Camera;
-import reflection.nodedefinitionsupport.camera.Webcam;
+import reflection.customdatatypes.camera.Camera;
+import reflection.customdatatypes.camera.Webcam;
 
 public class WebcamNodeDefinition implements NodeDefinition, CompatibilityTestable {
 

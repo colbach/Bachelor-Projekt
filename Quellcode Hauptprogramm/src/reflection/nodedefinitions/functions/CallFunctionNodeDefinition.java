@@ -1,5 +1,6 @@
 package reflection.nodedefinitions.functions;
 
+import reflection.customdatatypes.Function;
 import reflection.*;
 import reflection.nodedefinitionsupport.functions.CustomFunction;
 

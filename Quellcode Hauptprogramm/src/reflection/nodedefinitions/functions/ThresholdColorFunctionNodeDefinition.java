@@ -1,5 +1,6 @@
 package reflection.nodedefinitions.functions;
 
+import reflection.customdatatypes.Function;
 import java.awt.Color;
 import reflection.*;
 import utils.images.BrightnessCalculator;

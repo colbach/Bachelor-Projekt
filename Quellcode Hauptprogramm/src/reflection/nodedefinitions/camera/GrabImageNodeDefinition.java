@@ -4,8 +4,8 @@ import java.awt.image.BufferedImage;
 import logging.AdditionalLogger;
 import reflection.*;
 import reflection.additionalnodedefinitioninterfaces.CompatibilityTestable;
-import reflection.nodedefinitionsupport.camera.Camera;
-import reflection.nodedefinitionsupport.camera.Webcam;
+import reflection.customdatatypes.camera.Camera;
+import reflection.customdatatypes.camera.Webcam;
 
 public class GrabImageNodeDefinition implements NodeDefinition, CompatibilityTestable {
 

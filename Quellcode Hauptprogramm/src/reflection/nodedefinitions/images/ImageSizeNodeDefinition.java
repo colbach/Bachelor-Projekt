@@ -3,8 +3,8 @@ package reflection.nodedefinitions.images;
 import java.awt.image.BufferedImage;
 import reflection.nodedefinitions.camera.*;
 import reflection.*;
-import reflection.nodedefinitionsupport.camera.Camera;
-import reflection.nodedefinitionsupport.camera.Webcam;
+import reflection.customdatatypes.camera.Camera;
+import reflection.customdatatypes.camera.Webcam;
 
 public class ImageSizeNodeDefinition implements NodeDefinition {
 

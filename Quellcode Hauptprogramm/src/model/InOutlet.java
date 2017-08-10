@@ -85,9 +85,9 @@ public abstract class InOutlet {
         String toString = getName();
         if (this instanceof Inlet && ((Inlet) this).isOptional()) {
             if (node.getDefinition() instanceof VariableVisibleInletCount && this instanceof Inlet) {
-                toString += " [Var.]";
-            } else {
                 toString += " [Dyn.]";
+            } else {
+                toString += " [Opt.]";
             }
         }
         if (!(getType() instanceof VoidType)) {

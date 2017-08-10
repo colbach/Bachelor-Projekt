@@ -76,7 +76,7 @@ public class RoundNumberNodeDefinition implements NodeDefinition {
 
     @Override
     public String getName() {
-        return "Pi";
+        return "Runden";
     }
 
     @Override

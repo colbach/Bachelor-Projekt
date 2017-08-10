@@ -1,6 +1,7 @@
-package reflection;
+package reflection.customdatatypes;
 
 import java.awt.Color;
+import reflection.FunctionNotAdoptableException;
 
 public abstract class Function {
 

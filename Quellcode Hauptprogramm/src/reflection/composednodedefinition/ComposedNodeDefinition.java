@@ -6,6 +6,8 @@ import reflection.API;
 import reflection.InOut;
 import reflection.NodeDefinition;
 import reflection.TerminatedException;
+import reflection.customdatatypes.math.MathObject;
+import reflection.customdatatypes.math.NumberMathObject;
 import utils.structures.tuples.Pair;
 
 public abstract class ComposedNodeDefinition implements NodeDefinition {
@@ -323,6 +325,38 @@ public abstract class ComposedNodeDefinition implements NodeDefinition {
                 @Override
                 public void terminatedTest() throws TerminatedException {
                     io.terminatedTest();
+                }
+
+                @Override
+                public Number inN(int i, Number def) throws TerminatedException {
+                    
+                    Object in0 = in0(i);
+                    if(in0 == null)
+                        return def;
+                    if(in0 instanceof NumberMathObject) {
+                        in0 = ((NumberMathObject) in0).getWrappedNumber();
+                    }
+                    return (Number) in0;
+                }
+
+                @Override
+                public MathObject inM(int i, MathObject def) throws TerminatedException {
+                    
+                    Object in0 = in0(i);
+                    if(in0 == null)
+                        return def;
+                    if(in0 instanceof Number) {
+                        in0 = new NumberMathObject((Number) in0);
+                    }
+                    return (NumberMathObject) in0;
+                }
+
+                @Override
+                public Boolean inB(int i, Boolean def) throws TerminatedException {
+                    Object in0 = in0(i);
+                    if(in0 == null)
+                        return def;
+                    return (Boolean) in0;
                 }
             }, api);
         }

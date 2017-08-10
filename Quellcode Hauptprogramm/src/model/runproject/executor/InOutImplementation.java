@@ -14,12 +14,14 @@ import model.runproject.inputdata.InletInputData;
 import model.runproject.outputdata.OutletOutputData;
 import reflection.*;
 import reflection.NodeDefinition.*;
+import reflection.customdatatypes.math.MathObject;
+import reflection.customdatatypes.math.NumberMathObject;
 import utils.images.ImageLoading;
 import utils.images.ImageSaving;
 import view.onrun.*;
 
 public class InOutImplementation implements InOut {
-    
+
     private final InletInputData inletInputData;
     private final OutletOutputData outletOutputData;
     private final Node node;
@@ -132,6 +134,41 @@ public class InOutImplementation implements InOut {
             throw new TerminatedException();
         }
 
+    }
+
+    @Override
+    public Number inN(int i, Number def) throws TerminatedException {
+
+        Object in0 = in0(i);
+        if (in0 == null) {
+            return def;
+        }
+        if (in0 instanceof NumberMathObject) {
+            in0 = ((NumberMathObject) in0).getWrappedNumber();
+        }
+        return (Number) in0;
+    }
+
+    @Override
+    public MathObject inM(int i, MathObject def) throws TerminatedException {
+
+        Object in0 = in0(i);
+        if (in0 == null) {
+            return def;
+        }
+        if (in0 instanceof Number) {
+            in0 = new NumberMathObject((Number) in0);
+        }
+        return (NumberMathObject) in0;
+    }
+
+    @Override
+    public Boolean inB(int i, Boolean def) throws TerminatedException {
+        Object in0 = in0(i);
+        if (in0 == null) {
+            return def;
+        }
+        return (Boolean) in0;
     }
 
     public OutletOutputData getOutletOutputData() {

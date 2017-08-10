@@ -1,5 +1,6 @@
 package reflection.nodedefinitions.images;
 
+import reflection.customdatatypes.Function;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

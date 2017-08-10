@@ -1,29 +1,22 @@
-package reflection.nodedefinitions.images;
+package reflection.nodedefinitions.basic;
 
-import java.awt.Color;
-import java.awt.image.BufferedImage;
-import reflection.nodedefinitions.camera.*;
+import java.util.Objects;
 import reflection.*;
-import reflection.customdatatypes.camera.Camera;
-import reflection.customdatatypes.camera.Webcam;
-import utils.images.RGBHelper;
 
-public class PickColorFromImageNodeDefinition implements NodeDefinition {
+public class EqualsNodeDefinition implements NodeDefinition {
 
     @Override
     public int getInletCount() {
-        return 3;
+        return 2;
     }
 
     @Override
     public Class getClassForInlet(int index) {
         switch (index) {
             case 0:
-                return BufferedImage.class;
+                return Object.class;
             case 1:
-                return Number.class;
-            case 2:
-                return Number.class;
+                return Object.class;
             default:
                 return null;
         }
@@ -33,11 +26,9 @@ public class PickColorFromImageNodeDefinition implements NodeDefinition {
     public String getNameForInlet(int index) {
         switch (index) {
             case 0:
-                return "Bild";
+                return "A";
             case 1:
-                return "x";
-            case 2:
-                return "y";
+                return "B";
             default:
                 return null;
         }
@@ -48,6 +39,8 @@ public class PickColorFromImageNodeDefinition implements NodeDefinition {
         switch (index) {
             case 0:
                 return false;
+            case 1:
+                return false;
             default:
                 return false;
         }
@@ -55,9 +48,6 @@ public class PickColorFromImageNodeDefinition implements NodeDefinition {
 
     @Override
     public boolean isInletEngaged(int index) {
-        if (index == 0) {
-            return true;
-        }
         return false;
     }
 
@@ -70,7 +60,7 @@ public class PickColorFromImageNodeDefinition implements NodeDefinition {
     public Class getClassForOutlet(int index) {
         switch (index) {
             case 0:
-                return Color.class;
+                return Boolean.class;
             default:
                 return null;
         }
@@ -80,7 +70,7 @@ public class PickColorFromImageNodeDefinition implements NodeDefinition {
     public String getNameForOutlet(int index) {
         switch (index) {
             case 0:
-                return "Farbe";
+                return "A ist gleich B";
             default:
                 return null;
         }
@@ -88,27 +78,32 @@ public class PickColorFromImageNodeDefinition implements NodeDefinition {
 
     @Override
     public boolean isOutletForArray(int index) {
-        return false;
+        switch (index) {
+            case 0:
+                return false;
+            default:
+                return false;
+        }
     }
 
     @Override
     public String getName() {
-        return "Farbwert extrahieren";
+        return "Ist gleich";
     }
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Grafik] Farbe auswählen pick picker";
+        return "" + TAG_PREAMBLE + "";
     }
 
     @Override
     public String getUniqueName() {
-        return "buildin.ColorPickFromImage";
+        return "buildin.Equals";
     }
 
     @Override
     public String getIconName() {
-        return "Color-Pick-From-Image_30px.png";
+        return "Equals_30px.png";
     }
 
     @Override
@@ -119,13 +114,12 @@ public class PickColorFromImageNodeDefinition implements NodeDefinition {
     @Override
     public void run(InOut io, API api) {
 
-        BufferedImage img = (BufferedImage) io.in0(0, new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB));
-        int x = ((Number) io.in0(1, 0)).intValue();
-        int y = ((Number) io.in0(2, 0)).intValue();
+        Object a = (Object) io.in0(0, null);
+        Object b = (Object) io.in0(1, null);
 
-        Color color = new Color(img.getRGB(x, y));
+        Boolean aistgleichb = Objects.equals(a, b);
 
-        io.out(0, color);
+        io.out(0, aistgleichb);
     }
 
 }
