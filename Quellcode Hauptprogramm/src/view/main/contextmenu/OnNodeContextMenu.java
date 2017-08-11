@@ -16,6 +16,7 @@ import model.directinput.DirectInputSupport;
 import model.resourceloading.NodeDefinitionDescription;
 import model.resourceloading.nodedefinitionslibrary.BuildInNodeDefinitionsLibrary;
 import model.runproject.debugger.Breakpoints;
+import reflection.additionalnodedefinitioninterfaces.VariableVisibleInletCount;
 import reflection.nodedefinitions.specialnodes.firstvalues.AValueNodeDefinition;
 import utils.text.TextHandler;
 import view.assets.ImageAsset;
@@ -174,12 +175,18 @@ public class OnNodeContextMenu extends ContextMenu {
                 // In-Moeglichkeiten in Zeilen gliedern...
                 final String IN_TITLE = "Eingänge:";
                 String inString = IN_TITLE;
-                {
+                if (node.getDefinition() instanceof VariableVisibleInletCount) {
+                    Type type = new Type(node.getClassForInlet(0), node.isInletForArray(0));
+                    inString += " Dynamische Liste von Elementen des Types " + type.toString();
+                } else {
                     boolean first = true;
                     int inletCount = node.getDefinitionInletCount();
                     for (int i = 0; i < inletCount; i++) {
                         Type type = new Type(node.getClassForInlet(i), node.isInletForArray(i));
                         String inletDescription = node.getDefinition().getNameForInlet(i) + " (" + type.toString() + ")";
+                        if (!node.getDefinition().isInletEngaged(i)) {
+                            inletDescription += " [Opt.]";
+                        }
                         if (first) {
                             inString += " " + inletDescription;
                         } else {

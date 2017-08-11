@@ -3,11 +3,13 @@ package documentationgenerator;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import model.Inlet;
 import model.resourceloading.NodeDefinitionDescription;
 import model.resourceloading.nodedefinitionslibrary.BuildInNodeDefinitionsLibrary;
 import model.type.Type;
 import reflection.ContextCreator;
 import reflection.NodeDefinition;
+import reflection.additionalnodedefinitioninterfaces.VariableVisibleInletCount;
 import reflection.nodedefinitions.specialnodes.SpecialNodeDefinition;
 import utils.text.TextHandler;
 
@@ -73,15 +75,23 @@ public class DocumentationGenerator {
 
             NodeDefinition node = nodes.get(key);
             String beschreibung = NodeDefinitionDescription.getDescriptionWithoutTags(node);
+            
+            beschreibung += "\n";
 
-            final String IN_TITLE = "Eingänge:";
+            final String IN_TITLE = "**Eingänge:**";
             String inString = IN_TITLE;
-            {
+            if (node instanceof VariableVisibleInletCount) {
+                Type type = new Type(node.getClassForInlet(0), node.isInletForArray(0));
+                inString += " Dynamische Liste von Elementen des Types " + type.toString();
+            } else {
                 boolean first = true;
                 int inletCount = node.getInletCount();
                 for (int i = 0; i < inletCount; i++) {
                     Type type = new Type(node.getClassForInlet(i), node.isInletForArray(i));
                     String inletDescription = node.getNameForInlet(i) + " (" + type.toString() + ")";
+                    if(!node.isInletEngaged(i)) {
+                        inletDescription += " [Opt.]";
+                    }
                     if (first) {
                         inString += " " + inletDescription;
                     } else {
@@ -95,7 +105,7 @@ public class DocumentationGenerator {
             }
             beschreibung += "\n" + inString;
 
-            final String OUT_TITLE = "Ausgänge:";
+            final String OUT_TITLE = "**Ausgänge:**";
             String outString = OUT_TITLE;
             {
                 boolean first = true;
@@ -116,7 +126,7 @@ public class DocumentationGenerator {
             }
             beschreibung += "\n" + outString;
 
-            s = "![](../Quellcode Hauptprogramm/assets/" + node.getIconName() + ") | " + node.getName() + " | " + beschreibung.replaceAll("\n", "&nbsp;");
+            s = "![](../Quellcode Hauptprogramm/assets/" + node.getIconName() + ") | " + node.getName() + " | " + beschreibung.replaceAll("\n", "<br />");
 
             System.out.println(s);
         }
