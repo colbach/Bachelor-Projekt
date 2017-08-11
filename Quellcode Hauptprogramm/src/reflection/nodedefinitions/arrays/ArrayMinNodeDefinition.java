@@ -83,7 +83,7 @@ public class ArrayMinNodeDefinition implements NodeDefinition {
 
     @Override
     public String getName() {
-        return "Maximum";
+        return "Minimum";
     }
 
     @Override

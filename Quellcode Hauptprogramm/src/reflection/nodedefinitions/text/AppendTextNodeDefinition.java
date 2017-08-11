@@ -54,7 +54,7 @@ public class AppendTextNodeDefinition implements NodeDefinition, VariableVisible
 
     @Override
     public String getName() {
-        return "Texte kombinieren";
+        return "Text anhängen";
     }
 
     @Override

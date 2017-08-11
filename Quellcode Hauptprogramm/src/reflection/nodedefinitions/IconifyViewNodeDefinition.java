@@ -78,7 +78,7 @@ public class IconifyViewNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Setzt Zustand von Hauptfenster. Diese Element kann beispielsweise verwendet werden um das Hauptfenster automatisch zu verbergen und wieder aanzuzeigen." + TAG_PREAMBLE + "[UI] minimieren Zustand";
     }
 
     @Override

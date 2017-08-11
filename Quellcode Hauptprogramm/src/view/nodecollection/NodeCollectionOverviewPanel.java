@@ -5,6 +5,7 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import javax.swing.JPanel;
 import jdk.nashorn.internal.objects.Global;
@@ -30,7 +31,7 @@ public class NodeCollectionOverviewPanel extends JPanel {
 
     private final Scrollbar scrollbar;
     private NodeDefinition[] allDefinitions;
-    private HashSet<NodeDefinition> actualShownDefinitions;
+    private TreeMap<String, NodeDefinition> actualShownDefinitions;
     private String searchString = "";
     private TreeSet<String> categorys;
     private NodeDefinition highlightedDefinition = null;
@@ -70,7 +71,11 @@ public class NodeCollectionOverviewPanel extends JPanel {
             }
 
             categorys = buildInNodeDefinitionsLibrary.getCategorys();
-            actualShownDefinitions = new HashSet<NodeDefinition>(Arrays.asList(allDefinitions));
+            actualShownDefinitions = new TreeMap<>();
+            for (NodeDefinition definition : allDefinitions) {
+                actualShownDefinitions.put(definition.getName(), definition);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -83,7 +88,10 @@ public class NodeCollectionOverviewPanel extends JPanel {
         System.arraycopy(allDefinitions, 0, allDefinitionsNewArray, definitionsToAdd.length, allDefinitions.length);
         allDefinitions = allDefinitionsNewArray;
         categorys.addAll(ndl.getCategorys());
-        actualShownDefinitions = new HashSet<NodeDefinition>(Arrays.asList(allDefinitions));
+        actualShownDefinitions = new TreeMap<>();
+        for (NodeDefinition definition : allDefinitions) {
+            actualShownDefinitions.put(definition.getName(), definition);
+        }
     }
 
     public void setWindow(NodeCollectionWindow nodeCollectionWindow) {
@@ -93,14 +101,14 @@ public class NodeCollectionOverviewPanel extends JPanel {
     public void searchDefinitions(String searchString) {
         AdditionalLogger.out.println("Suche nach: " + searchString + " (" + searchString.length() + " Symbole)");
         this.searchString = searchString;
-        actualShownDefinitions = new HashSet<>();
+        actualShownDefinitions = new TreeMap<>();
 
         // Genaue Suche (Genau den Suchstring)...
         for (NodeDefinition definition : allDefinitions) {
             String totalStringWithAllInformation = NodeDefinitionDescription.getTotalStringWithAllInformation(definition).toLowerCase();
             if (totalStringWithAllInformation.indexOf(category.toLowerCase()) != -1) { // Falls Kategorie richtig
                 if (definition.getName() != null && totalStringWithAllInformation.contains(searchString.toLowerCase())) {
-                    actualShownDefinitions.add(definition);
+                    actualShownDefinitions.put(definition.getName(), definition);
                 }
             }
         }
@@ -114,7 +122,7 @@ public class NodeCollectionOverviewPanel extends JPanel {
                 ForEveryWord:
                 for (String word : words) {
                     if (definition.getName() != null && totalStringWithAllInformation.contains(word)) {
-                        actualShownDefinitions.add(definition);
+                        actualShownDefinitions.put(definition.getName(), definition);
                         break ForEveryWord;
                     }
                 }
@@ -153,7 +161,7 @@ public class NodeCollectionOverviewPanel extends JPanel {
             int width = getWidth() - SCROLLBAR_WIDTH;
 
             // Benoetigte Hoehe berechnen...
-            NodeDefinition[] actualShownDefinitionsArray = actualShownDefinitions.toArray(new NodeDefinition[0]);
+            NodeDefinition[] actualShownDefinitionsArray = actualShownDefinitions.values().toArray(new NodeDefinition[0]);
             int neededHeight = NodeCollectionDrafter.calcNeededHeightForNodesPreview(g, width, actualShownDefinitionsArray);
             scrollbar.setRepresentedHeightOrWidth(neededHeight);
 
@@ -202,7 +210,7 @@ public class NodeCollectionOverviewPanel extends JPanel {
         } else { // Fall: Click auf Nodes
             if (savedGraphics != null) {
 
-                NodeDefinition matchedDefinition = NodeCollectionDrafter.calcNodesForMousePosition((Graphics2D) savedGraphics, 0, 0 - scrollbar.getOffsetForContent(), getWidth() - SCROLLBAR_WIDTH, actualShownDefinitions.toArray(new NodeDefinition[0]), x, y);
+                NodeDefinition matchedDefinition = NodeCollectionDrafter.calcNodesForMousePosition((Graphics2D) savedGraphics, 0, 0 - scrollbar.getOffsetForContent(), getWidth() - SCROLLBAR_WIDTH, actualShownDefinitions.values().toArray(new NodeDefinition[0]), x, y);
 
                 if (matchedDefinition != null && matchedDefinition == highlightedDefinition && System.currentTimeMillis() - clickTime < 500) {
                     AdditionalLogger.out.println("Node anlegen: " + highlightedDefinition.getName());

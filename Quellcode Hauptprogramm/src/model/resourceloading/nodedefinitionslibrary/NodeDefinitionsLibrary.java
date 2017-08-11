@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import logging.*;
 import model.Node;
@@ -54,7 +55,7 @@ public class NodeDefinitionsLibrary {
      */
     private final TreeSet<String> categorys = new TreeSet<>();
 
-    private final HashMap<String, NodeDefinition> map = new HashMap<>();
+    private final TreeMap<String, NodeDefinition> map = new TreeMap<>();
 
     /**
      * NodeDefinitionen welche ueber Resource zur Verfuegung gestellt werden.

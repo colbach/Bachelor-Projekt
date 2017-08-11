@@ -1,6 +1,8 @@
 package utils;
 
 import java.lang.reflect.Array;
+import java.util.List;
+import java.util.Set;
 
 public class ArrayHelper {
 
@@ -92,24 +94,60 @@ public class ArrayHelper {
         sb.append("]");
         return sb.toString();
     }
+    
+    public static void print(Set objects) {
+        ArrayHelper.print("", objects.toArray());
+    }
+    
+    public static void print(List objects) {
+        ArrayHelper.print("", objects.toArray());
+    }
 
-    public static void printArray(String prefix, Object[] objects) {
+    public static void print(Object[] objects) {
+        ArrayHelper.print("", objects);
+    }
+    
+    public static void print(String prefix, Set objects) {
+        ArrayHelper.print(prefix, objects.toArray());
+    }
+    
+    public static void print(String prefix, List objects) {
+        ArrayHelper.print(prefix, objects.toArray());
+    }
+    
+    public static void print(String prefix, Object[] objects) {
         System.out.println(prefix + arrayToString(objects));
     }
 
-    public static void printArray(String prefix, int[] is) {
+    public static void print(int[] is) {
+        ArrayHelper.print("", is);
+    }
+
+    public static void print(String prefix, int[] is) {
         System.out.println(prefix + arrayToString(is));
     }
 
-    public static void printArray(String prefix, long[] ls) {
+    public static void print(long[] ls) {
+        ArrayHelper.print("", ls);
+    }
+
+    public static void print(String prefix, long[] ls) {
         System.out.println(prefix + arrayToString(ls));
     }
 
-    public static void printArray(String prefix, double[] ds) {
+    public static void print(double[] ds) {
+        ArrayHelper.print("", ds);
+    }
+
+    public static void print(String prefix, double[] ds) {
         System.out.println(prefix + arrayToString(ds));
     }
 
-    public static void printArray(String prefix, float[] fs) {
+    public static void print(float[] fs) {
+        ArrayHelper.print("", fs);
+    }
+
+    public static void print(String prefix, float[] fs) {
         System.out.println(prefix + arrayToString(fs));
     }
 

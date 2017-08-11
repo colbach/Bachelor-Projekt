@@ -67,7 +67,7 @@ public class CreateDiagonalMatrixNodeDefinition implements NodeDefinition {
     public String getNameForOutlet(int index) {
         switch (index) {
             case 0:
-                return "Einheitsmatrix";
+                return "Diagonalmatrix";
             default:
                 return null;
         }
@@ -85,7 +85,7 @@ public class CreateDiagonalMatrixNodeDefinition implements NodeDefinition {
 
     @Override
     public String getName() {
-        return "Einheitsmatrix erzeugen";
+        return "Diagonalmatrix erzeugen";
     }
 
     @Override
