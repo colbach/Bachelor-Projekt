@@ -69,7 +69,7 @@ public class ForEachNodeDefinition implements ForNodeDefinition {
 
     @Override
     public String getIconName() {
-        return ImageAsset.CLEAR;
+        return "ui/For-Each_30px.png";
     }
 
     @Override

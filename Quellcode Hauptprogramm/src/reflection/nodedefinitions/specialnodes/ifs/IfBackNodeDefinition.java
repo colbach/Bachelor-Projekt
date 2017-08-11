@@ -99,7 +99,7 @@ public class IfBackNodeDefinition implements IfNodeDefinition {
 
     @Override
     public String getIconName() {
-        return ImageAsset.CLEAR;
+        return "ui/If-Back_30px.png";
     }
 
     @Override

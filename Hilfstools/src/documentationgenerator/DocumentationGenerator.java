@@ -5,9 +5,11 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import model.resourceloading.NodeDefinitionDescription;
 import model.resourceloading.nodedefinitionslibrary.BuildInNodeDefinitionsLibrary;
+import model.type.Type;
 import reflection.ContextCreator;
 import reflection.NodeDefinition;
 import reflection.nodedefinitions.specialnodes.SpecialNodeDefinition;
+import utils.text.TextHandler;
 
 public class DocumentationGenerator {
 
@@ -42,24 +44,83 @@ public class DocumentationGenerator {
 
         }
 
-        System.out.println("Einfache Elemente:");
+        System.out.println("# Anhang *Vollständige Liste der Implementierten Elemente*");
+        System.out.println("");
+
+        System.out.println("## Einfache Elemente");
+        System.out.println("");
         generate(normalNodes);
+        System.out.println("");
 
-        System.out.println("Spezielle Elemente:");
+        System.out.println("## Spezielle Elemente");
+        System.out.println("");
         generate(specialNodes);
+        System.out.println("");
 
-        System.out.println("Kontext Erzeugende Elemente:");
+        System.out.println("## Kontext Erzeugende Elemente");
+        System.out.println("");
         generate(contextCreatorNodes);
+        System.out.println("");
 
     }
-    
+
     public static void generate(Map<String, NodeDefinition> nodes) {
+        System.out.println("");
+        System.out.println("Icon | Name | Beschreibung");
+        System.out.println(":--- | :---: | :---");
         for (String key : nodes.keySet()) {
-            System.out.println("   " + key);
+            String s = "";
+
             NodeDefinition node = nodes.get(key);
             String beschreibung = NodeDefinitionDescription.getDescriptionWithoutTags(node);
-            System.out.println("      " + beschreibung);
+
+            final String IN_TITLE = "Eingänge:";
+            String inString = IN_TITLE;
+            {
+                boolean first = true;
+                int inletCount = node.getInletCount();
+                for (int i = 0; i < inletCount; i++) {
+                    Type type = new Type(node.getClassForInlet(i), node.isInletForArray(i));
+                    String inletDescription = node.getNameForInlet(i) + " (" + type.toString() + ")";
+                    if (first) {
+                        inString += " " + inletDescription;
+                    } else {
+                        inString += ", " + inletDescription;
+                    }
+                    first = false;
+                }
+                if (inletCount == 0) {
+                    inString += " /";
+                }
+            }
+            beschreibung += "\n" + inString;
+
+            final String OUT_TITLE = "Ausgänge:";
+            String outString = OUT_TITLE;
+            {
+                boolean first = true;
+                int outletCount = node.getOutletCount();
+                for (int i = 0; i < outletCount; i++) {
+                    Type type = new Type(node.getClassForOutlet(i), node.isOutletForArray(i));
+                    String inletDescription = node.getNameForOutlet(i) + " (" + type.toString() + ")";
+                    if (first) {
+                        outString += " " + inletDescription;
+                    } else {
+                        outString += ", " + inletDescription;
+                    }
+                    first = false;
+                }
+                if (outletCount == 0) {
+                    outString += " /";
+                }
+            }
+            beschreibung += "\n" + outString;
+
+            s = "![](../Quellcode Hauptprogramm/assets/" + node.getIconName() + ") | " + node.getName() + " | " + beschreibung.replaceAll("\n", "&nbsp;");
+
+            System.out.println(s);
         }
+        System.out.println("");
     }
 
 }

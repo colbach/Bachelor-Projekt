@@ -70,7 +70,7 @@ public class ReduceNodeDefinition implements ForNodeDefinition, NoTriggerInlet {
 
     @Override
     public String getIconName() {
-        return ImageAsset.CLEAR;
+        return "ui/Reduce_30px.png";
     }
 
     @Override

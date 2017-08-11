@@ -6,6 +6,11 @@ import reflection.InOut;
 public class AValueNodeDefinition extends FirstValueNodeDefinition {
 
     @Override
+    public String getIconName() {
+        return "ui/A-Value_30px.png";
+    }
+    
+    @Override
     public String getName() {
         return "Ein Wert";
     }

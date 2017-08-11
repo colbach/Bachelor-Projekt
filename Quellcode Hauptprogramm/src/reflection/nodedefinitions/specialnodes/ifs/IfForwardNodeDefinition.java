@@ -96,7 +96,7 @@ public class IfForwardNodeDefinition implements IfNodeDefinition {
 
     @Override
     public String getIconName() {
-        return ImageAsset.CLEAR;
+        return "ui/If-Forward_30px.png";
     }
 
     @Override

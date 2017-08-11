@@ -6,6 +6,11 @@ import reflection.InOut;
 public class FastestValueNodeDefinition extends FirstValueNodeDefinition {
 
     @Override
+    public String getIconName() {
+        return "ui/Fastest-Value_30px.png";
+    }
+    
+    @Override
     public String getName() {
         return "Schnellster Wert";
     }
