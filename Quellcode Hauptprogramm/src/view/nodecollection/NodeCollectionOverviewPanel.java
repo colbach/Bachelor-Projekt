@@ -99,6 +99,13 @@ public class NodeCollectionOverviewPanel extends JPanel {
     }
 
     public void searchDefinitions(String searchString) {
+        boolean exact = false;
+        if (searchString.startsWith("!")) {
+            exact = true;
+            searchString = searchString.substring(1);
+            searchString = searchString.trim();
+        }
+
         AdditionalLogger.out.println("Suche nach: " + searchString + " (" + searchString.length() + " Symbole)");
         this.searchString = searchString;
         actualShownDefinitions = new TreeMap<>();
@@ -115,15 +122,17 @@ public class NodeCollectionOverviewPanel extends JPanel {
         AdditionalLogger.out.println(actualShownDefinitions.size() + " genaue Definitionen gefunden.");
 
         // Ungenaue Suche (Vorkommen von Worten)...
-        String[] words = searchString.toLowerCase().split(" ");
-        for (NodeDefinition definition : allDefinitions) {
-            String totalStringWithAllInformation = NodeDefinitionDescription.getTotalStringWithAllInformation(definition).toLowerCase();
-            if (totalStringWithAllInformation.indexOf(category.toLowerCase()) != -1) { // Falls Kategorie richtig
-                ForEveryWord:
-                for (String word : words) {
-                    if (definition.getName() != null && totalStringWithAllInformation.contains(word)) {
-                        actualShownDefinitions.put(definition.getName(), definition);
-                        break ForEveryWord;
+        if (!exact) {
+            String[] words = searchString.toLowerCase().split(" ");
+            for (NodeDefinition definition : allDefinitions) {
+                String totalStringWithAllInformation = NodeDefinitionDescription.getTotalStringWithAllInformation(definition).toLowerCase();
+                if (totalStringWithAllInformation.indexOf(category.toLowerCase()) != -1) { // Falls Kategorie richtig
+                    ForEveryWord:
+                    for (String word : words) {
+                        if (definition.getName() != null && totalStringWithAllInformation.contains(word)) {
+                            actualShownDefinitions.put(definition.getName(), definition);
+                            break ForEveryWord;
+                        }
                     }
                 }
             }

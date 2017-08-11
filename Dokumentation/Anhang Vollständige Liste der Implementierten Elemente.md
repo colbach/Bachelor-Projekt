@@ -1,4 +1,3 @@
-run:
 # Anhang *Vollständige Liste der Implementierten Elemente*
 
 ## Einfache Elemente
@@ -171,6 +170,3 @@ Icon | Name | Beschreibung
 ![](../Quellcode Hauptprogramm/assets/Function-Start_30px.png) | Funktions-Start | <br /><br />**Eingänge:** ID (SmartIdentifier)<br />**Ausgänge:** Parameter (Objekt...), Token (FunctionCallToken)
 ![](../Quellcode Hauptprogramm/assets/Start-Timer_30px.png) | Timer | <br /><br />**Eingänge:** Zeit in ms (64 Bit Ganzzahl) [Opt.], Zeit in s (32 Bit Ganzzahl) [Opt.], Wiederholen (Wahrheitswert) [Opt.], Maximum Wiederh. (64 Bit Ganzzahl) [Opt.]<br />**Ausgänge:** /
 ![](../Quellcode Hauptprogramm/assets/Start-Loop_30px.png) | Wiederholen | <br /><br />**Eingänge:** Maximum Wiederh. (64 Bit Ganzzahl) [Opt.], Check I. in ms. (64 Bit Ganzzahl) [Opt.]<br />**Ausgänge:** i (64 Bit Ganzzahl)
-
-
-BUILD SUCCESSFUL (total time: 0 seconds)
