@@ -12,7 +12,7 @@ public class FastestValueNodeDefinition extends FirstValueNodeDefinition {
     
     @Override
     public String getName() {
-        return "Schnellster Wert";
+        return "Schnellster-Wert";
     }
 
     @Override

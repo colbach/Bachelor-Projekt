@@ -12,7 +12,7 @@ public class AValueNodeDefinition extends FirstValueNodeDefinition {
     
     @Override
     public String getName() {
-        return "Ein Wert";
+        return "Ein-Wert";
     }
 
     @Override
