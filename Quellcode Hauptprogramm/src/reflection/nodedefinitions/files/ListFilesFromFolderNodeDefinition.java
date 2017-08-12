@@ -98,7 +98,7 @@ public class ListFilesFromFolderNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Listet alle Dateien welche sich in Pfad befinden." + TAG_PREAMBLE + " [Dateien] list Ordner Verzeichniss Folder all files";
     }
 
     @Override

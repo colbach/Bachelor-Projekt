@@ -101,7 +101,7 @@ public class ReadRawDataNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Liesst Rohdaten aus Datei" + TAG_PREAMBLE + " [Dateien] raw file Datei read laden load lesen festplatte disk";
+        return "Liesst Rohdaten aus Datei." + TAG_PREAMBLE + " [Dateien] raw file Datei read laden load lesen festplatte disk";
     }
 
     @Override

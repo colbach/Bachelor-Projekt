@@ -93,7 +93,7 @@ public class NewFileInFolderNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Erzeugt neues Datei-Objekt ohne diese Datei auf der Festplatte anzulegen." + TAG_PREAMBLE + " [Dateien] Make Create File";
     }
 
     @Override

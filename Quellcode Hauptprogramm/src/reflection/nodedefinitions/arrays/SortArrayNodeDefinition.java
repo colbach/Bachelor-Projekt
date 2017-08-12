@@ -102,7 +102,7 @@ public class SortArrayNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Sortiert Werte-Array aufsteigend oder absteigend." + TAG_PREAMBLE + " [Arrays]  ";
+        return "Sortiert Werte-Array aufsteigend oder absteigend und gibt Array weiter." + TAG_PREAMBLE + " [Arrays] ";
     }
 
     @Override

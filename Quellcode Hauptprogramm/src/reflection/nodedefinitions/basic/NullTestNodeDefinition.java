@@ -89,7 +89,7 @@ public class NullTestNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Gibt an Ausgang weiter ob Wert NULL ist. Data ist NULL wenn seine Länge 0 ist oder alle Werte null (leer) sind." + TAG_PREAMBLE + "";
+        return "Gibt an Ausgang weiter ob Wert NULL ist. Data ist NULL wenn seine Länge 0 ist oder alle Werte null (leer) sind." + TAG_PREAMBLE + " [Basics] === equals is null";
     }
 
     @Override

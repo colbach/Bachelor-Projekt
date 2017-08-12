@@ -124,7 +124,7 @@ public class SystemInfoNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Gibt Systeminformationen weiter" + TAG_PREAMBLE + " [Basics] system informationen Betriebsystem Benutzername Arbeits-Pfad Arbeitspfad Freier Speicher Speicher insgesamt Freier Speicher Freier Festplattenspeicher Festplattenspeicher insgesamt Anzahl Prozessoren";
     }
 
     @Override

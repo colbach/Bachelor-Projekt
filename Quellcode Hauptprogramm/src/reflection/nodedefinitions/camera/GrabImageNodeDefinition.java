@@ -91,7 +91,7 @@ public class GrabImageNodeDefinition implements NodeDefinition, CompatibilityTes
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Kamera] aufnehmen capture grab take machen foto photo";
+        return "Nimmt Bild über Kamera auf." + TAG_PREAMBLE + " [Kamera] aufnehmen capture grab take machen foto photo";
     }
 
     @Override

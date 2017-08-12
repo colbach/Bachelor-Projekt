@@ -118,7 +118,7 @@ public class ChooseFileNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Dateien] Dialog File Datei auswählen speichern öffnen";
+        return "Öffnet Dateiauswahl-Dialog." + TAG_PREAMBLE + " [Dateien] Dialog File Datei auswählen speichern öffnen";
     }
 
     @Override

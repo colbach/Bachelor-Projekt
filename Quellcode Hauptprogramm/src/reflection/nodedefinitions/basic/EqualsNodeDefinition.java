@@ -93,7 +93,7 @@ public class EqualsNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Gibt an Ausgang weiter ob A und B gleich ist." + TAG_PREAMBLE + " [Basics] === equals";
     }
 
     @Override

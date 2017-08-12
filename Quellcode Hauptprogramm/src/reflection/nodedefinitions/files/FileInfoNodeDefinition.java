@@ -114,7 +114,7 @@ public class FileInfoNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Dateien] Datei File Info Grösse in Byte Dateiname Endung Verzeichniss Existiert";
+        return "Gibt Datei-Informationen weiter." + TAG_PREAMBLE + " [Dateien] Datei File Info Grösse in Byte Dateiname Endung Verzeichniss Existiert";
     }
 
     @Override

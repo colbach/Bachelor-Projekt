@@ -94,7 +94,7 @@ public class MakeFolderNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Falls Name nicht angegeben ist wird nur der Elternpfad erstellt falls dieser nicht existiert." + TAG_PREAMBLE + "";
+        return "Falls Name nicht angegeben ist wird nur der Elternpfad erstellt falls dieser nicht existiert." + TAG_PREAMBLE + " [Dateien] Make Create Folder";
     }
 
     @Override

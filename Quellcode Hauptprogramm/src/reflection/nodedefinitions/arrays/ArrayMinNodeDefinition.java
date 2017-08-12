@@ -88,7 +88,7 @@ public class ArrayMinNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Arrays] ";
+        return "Gibt Minimum aus Array weiter." + TAG_PREAMBLE + " [Arrays] min";
     }
 
     @Override

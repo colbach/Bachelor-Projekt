@@ -94,7 +94,7 @@ public class ArrayContainsNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Arrays] Arrays Test ? Enthalten";
+        return "Gibt weiter ob bestimmtes Element in Array enthalten ist." + TAG_PREAMBLE + " [Arrays] Arrays Test ? Enthalten";
     }
 
     @Override

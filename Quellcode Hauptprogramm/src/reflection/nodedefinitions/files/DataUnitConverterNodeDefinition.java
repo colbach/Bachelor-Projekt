@@ -195,7 +195,7 @@ public class DataUnitConverterNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "umwandeln convert";
+        return "Wandelt zwischen Dateneinheiten um." + TAG_PREAMBLE + " [Dateien] umwandeln convert";
     }
 
     @Override

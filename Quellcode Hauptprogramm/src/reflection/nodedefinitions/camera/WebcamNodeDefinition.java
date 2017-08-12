@@ -20,10 +20,6 @@ public class WebcamNodeDefinition implements NodeDefinition, CompatibilityTestab
         switch (index) {
             case 0:
                 return Integer.class;
-//            case 1:
-//                return Integer.class;
-//            case 2:
-//                return Integer.class;
             default:
                 return null;
         }
@@ -34,10 +30,6 @@ public class WebcamNodeDefinition implements NodeDefinition, CompatibilityTestab
         switch (index) {
             case 0:
                 return "Geräte Nummer";
-//            case 1:
-//                return "Breite"; // Bug
-//            case 2:
-//                return "Höhe"; // Bug
             default:
                 return null;
         }
@@ -96,7 +88,7 @@ public class WebcamNodeDefinition implements NodeDefinition, CompatibilityTestab
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Kamera] webcam foto photo";
+        return "Erstellt Kamera-Objekt unter Angabe der Gerätenummer." + TAG_PREAMBLE + " [Kamera] webcam foto photo";
     }
 
     @Override

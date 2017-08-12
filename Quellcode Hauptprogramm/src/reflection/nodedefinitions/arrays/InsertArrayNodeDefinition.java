@@ -1,6 +1,8 @@
 package reflection.nodedefinitions.arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import reflection.API;
 import reflection.InOut;
 import reflection.NodeDefinition;
@@ -116,7 +118,7 @@ public class InsertArrayNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Arrays] Array einfügen i Position Listen Feld";
+        return "Fügt Elemente zu Array hinzu und gibt Array weiter." + TAG_PREAMBLE + " [Arrays] Array einfügen anfügen i Position Listen Feld";
     }
 
     @Override
@@ -143,27 +145,16 @@ public class InsertArrayNodeDefinition implements NodeDefinition {
         Object[] anpositioni = io.in(3, new Object[0]);
         Integer position = (Integer) io.in0(4, 0);
 
-        ArrayList<Object> resultat = new ArrayList<>();
-        for (Object o : davor) {
-            resultat.add(o);
+        List<Object> resultat = Arrays.asList(array);
+        
+        if(davor.length > 0) {
+            resultat.addAll(0, Arrays.asList(davor));
         }
-        int i = 0;
-        if (i == position) {
-            for (Object o : anpositioni) {
-                resultat.add(o);
-            }
+        if(anpositioni.length > 0) {
+            resultat.addAll(position, Arrays.asList(anpositioni));
         }
-        for (Object o1 : array) {
-            resultat.add(o1);
-            i++;
-            if (i == position) {
-                for (Object o2 : anpositioni) {
-                    resultat.add(o2);
-                }
-            }
-        }
-        for (Object o : dahinter) {
-            resultat.add(o);
+        if(dahinter.length > 0) {
+            resultat.addAll(Arrays.asList(dahinter));
         }
 
         io.out(0, resultat.toArray());

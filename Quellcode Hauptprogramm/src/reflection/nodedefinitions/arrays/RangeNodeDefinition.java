@@ -105,7 +105,7 @@ public class RangeNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Gibt eine Reihe von Zahlen weiter" + TAG_PREAMBLE + " [Arrays] ";
+        return "Gibt eine Reihe von Zahlen weiter." + TAG_PREAMBLE + " [Arrays] Range";
     }
 
     @Override

@@ -98,7 +98,7 @@ public class TextToJavaCodeNodeDefinition implements NodeDefinition, Compatibili
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Wandelt Text in Quellcode um und Kompiliert den bei Bedarf." + TAG_PREAMBLE + " [Umwandeln]";
     }
 
     @Override

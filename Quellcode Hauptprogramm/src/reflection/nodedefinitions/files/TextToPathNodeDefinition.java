@@ -87,7 +87,7 @@ public class TextToPathNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Wandelt Text in Pfad um." + TAG_PREAMBLE + " [Dateien] [Umwandeln]";
     }
 
     @Override

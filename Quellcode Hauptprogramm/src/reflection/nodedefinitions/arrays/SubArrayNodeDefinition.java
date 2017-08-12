@@ -104,7 +104,7 @@ public class SubArrayNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Gibt Elemete aus Array weiter ohne dieses zu verändern. Wenn keine Länge angegeben wird, wird nur 1 Element weiter gegeben." + TAG_PREAMBLE + " [Arrays] ";
+        return "Gibt Teil aus Array weiter. Wenn keine Länge angegeben wird, wird nur 1 Element weiter gegeben." + TAG_PREAMBLE + " [Arrays] ";
     }
 
     @Override

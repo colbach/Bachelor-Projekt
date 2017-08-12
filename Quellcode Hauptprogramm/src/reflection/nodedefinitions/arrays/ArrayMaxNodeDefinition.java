@@ -88,7 +88,7 @@ public class ArrayMaxNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Arrays] ";
+        return "Gibt Maximum aus Array weiter." + TAG_PREAMBLE + " [Arrays] max";
     }
 
     @Override
