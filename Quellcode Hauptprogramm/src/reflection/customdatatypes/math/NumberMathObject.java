@@ -1,10 +1,13 @@
 package reflection.customdatatypes.math;
 
-public class NumberMathObject implements MathObject {
-    
+public class NumberMathObject extends Number implements MathObject {
+
     private final Number wrappedNumber;
 
     public NumberMathObject(Number wrappedNumber) {
+        if (wrappedNumber == null) {
+            throw new IllegalArgumentException("wrappedNumber darf nicht null sein!");
+        }
         this.wrappedNumber = wrappedNumber;
     }
 
@@ -16,5 +19,35 @@ public class NumberMathObject implements MathObject {
     public String toString() {
         return wrappedNumber.toString();
     }
-    
+
+    @Override
+    public int intValue() {
+        return wrappedNumber.intValue();
+    }
+
+    @Override
+    public long longValue() {
+        return wrappedNumber.longValue();
+    }
+
+    @Override
+    public float floatValue() {
+        return wrappedNumber.floatValue();
+    }
+
+    @Override
+    public double doubleValue() {
+        return wrappedNumber.doubleValue();
+    }
+
+    @Override
+    public byte byteValue() {
+        return wrappedNumber.byteValue();
+    }
+
+    @Override
+    public short shortValue() {
+        return wrappedNumber.shortValue();
+    }
+
 }

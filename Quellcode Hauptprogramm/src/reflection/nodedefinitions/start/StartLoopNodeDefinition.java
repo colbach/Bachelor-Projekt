@@ -10,7 +10,7 @@ public class StartLoopNodeDefinition implements NodeDefinition, ContextCreator {
 
     @Override
     public int getInletCount() {
-        return 2;
+        return 3;
     }
 
     @Override
@@ -19,6 +19,8 @@ public class StartLoopNodeDefinition implements NodeDefinition, ContextCreator {
             case 0:
                 return Long.class;
             case 1:
+                return Long.class;
+            case 2:
                 return Long.class;
             default:
                 return null;
@@ -29,8 +31,10 @@ public class StartLoopNodeDefinition implements NodeDefinition, ContextCreator {
     public String getNameForInlet(int index) {
         switch (index) {
             case 0:
-                return "Maximum Wiederh.";
+                return "Start i";
             case 1:
+                return "Solange i<";
+            case 2:
                 return "Check I. in ms.";
             default:
                 return null;
@@ -90,7 +94,7 @@ public class StartLoopNodeDefinition implements NodeDefinition, ContextCreator {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Events] [Basics] repeat Loop immer while(true) Kontext Context Start Run Execute";
+        return "Startet wiederhollt Kontexte bis i eine bestimmte Grösse erreicht hat. der Jeweils nächste Kontext wird erst gestartet wenn der jeweils vorhergehende terminiert ist." + TAG_PREAMBLE + " [Events] [Basics] repeat Loop immer while(true) Kontext Context Start Run Execute";
     }
 
     @Override
@@ -112,17 +116,17 @@ public class StartLoopNodeDefinition implements NodeDefinition, ContextCreator {
     public void run(InOut uio, API api) throws Exception {
         ContextCreatorInOut io = (ContextCreatorInOut) uio;
 
-        long wiederh = (Long) io.in0(0, Long.MAX_VALUE);
-        long interval = (Long) io.in0(1, 200L);
+        long i = (Long) io.in0(0, 0);
+        long maxi = (Long) io.in0(1, Long.MAX_VALUE);
+        long interval = (Long) io.in0(2, 100L);
 
-        long i=0;
-        while (wiederh > 0) {
+        while (maxi > i) {
 
             io.terminatedTest();
-            io.out(0, i++);
+            io.out(0, i);
             io.startNewContext();
             api.additionalPrintOut("Neuer Kontext erzeugen (" + api.getTimeStamp() + ")");
-            wiederh--;
+            i++;
 
             while (io.getRunningContextCount() > 0) {
                 io.terminatedTest();                                                        // Code optimieren ohne aktives warten
