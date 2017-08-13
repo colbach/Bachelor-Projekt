@@ -150,7 +150,7 @@ public class StartMotionDetectorNodeDefinition implements NodeDefinition, Contex
     public synchronized void run(InOut uio, API api) throws Exception {
         ContextCreatorInOut io = (ContextCreatorInOut) uio;
         double sensitivity = (Double) io.in0(0, 0.0001);
-        boolean monitor = (Boolean) io.in0(1, true);
+        boolean monitor = (Boolean) io.in0(1, false);
 
         double threshold = 1 - sensitivity;
 
