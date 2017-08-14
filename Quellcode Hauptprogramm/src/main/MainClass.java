@@ -8,6 +8,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -39,7 +41,7 @@ public class MainClass {
     /**
      * Pfad zu eingebauten Nodes.
      */
-    public static final String PATH_FOR_BUILDIN_NODE_CLASSES = "./build/classes/";
+    public static String PATH_FOR_BUILDIN_NODE_CLASSES = null;//"./build/classes/";
     public static final String BUILDIN_NODE_CLASSES_CLASSNAME_PREFIX = "reflection.nodedefinitions.";
     //public static final String PATH_FOR_BUILDIN_NODE_CLASSES = "./ReflexiveExecutableNodes/build/classes";
 
@@ -56,7 +58,7 @@ public class MainClass {
     /**
      * Programm-Version.
      */
-    public static final String VERSION_NAME = "Pre 1.0";
+    public static final String VERSION_NAME = "1.0+";
 
     /**
      * Startzeit.
@@ -64,7 +66,7 @@ public class MainClass {
     public static final Date START_TIME = new Date();
 
     public static boolean guiEnabled, promptEnabled;
-    
+
     public static void main(String[] args) {
 
         // Initialisiere Logger...
@@ -137,6 +139,21 @@ public class MainClass {
                     }
                 }
             },
+            new StartupTask(5, "Klassenpfad ermitteln", true) {
+                @Override
+                public void run() {
+                    for (String classpath : System.getProperty("java.class.path").split(File.pathSeparator)) {
+                        if (new File(classpath).exists()) {
+                            if(!classpath.endsWith(File.separator)) {
+                                classpath += File.separator;
+                            }
+                            if (new File(classpath + "main" + File.separator + "MainClass.class").exists()) {
+                                PATH_FOR_BUILDIN_NODE_CLASSES = classpath;
+                            }
+                        }
+                    }
+                }
+            },
             new StartupTask(10, "Kontrolle ob benoetigte Resourcen zur Verfuegung stehen", guiEnabled) { // Allgemeine Instanzen laden...
                 @Override
                 public void run() {
@@ -147,7 +164,7 @@ public class MainClass {
                         String alternativeAssetDirectoryPath = GeneralSettings.getInstance().getString(GeneralSettings.ALTERNATIV_ASSET_DIRECTORY_KEY);
                         String messageAppend = "";
                         while (alternativeAssetDirectoryPath == null || !new File(alternativeAssetDirectoryPath).exists()) {
-                            
+
                             in = (String) JOptionPane.showInputDialog(
                                     null,
                                     "Verzeichniss für Assets nicht am vorhergesehenen Standort gefunden\n"
@@ -159,13 +176,13 @@ public class MainClass {
                                     null,
                                     in
                             );
-                            
-                            if(in == null) {
+
+                            if (in == null) {
                                 break;
                             } else {
-                                if(!new File(in).exists()) {
+                                if (!new File(in).exists()) {
                                     messageAppend = "\n\nAngegebenes Verzeichniss existiert nicht.";
-                                } else if(!new File(in).getName().equals("assets")) {
+                                } else if (!new File(in).getName().equals("assets")) {
                                     messageAppend = "\n\nAngegebenes Verzeichniss muss den Namen \"asstes\" tragen.";
                                 } else {
                                     if (in.endsWith(File.separator)) {
@@ -174,7 +191,7 @@ public class MainClass {
                                     alternativeAssetDirectoryPath = in;
                                 }
                             }
-                            
+
 //                            if (in == null) {
 //                                Object[] options = {"Ja, ohne korrekten Pfad fortfahren", "Nein, Eingabe wiederholen"};
 //                                int n = JOptionPane.showOptionDialog(
@@ -240,7 +257,8 @@ public class MainClass {
                             GeneralSettings.getInstance().set(GeneralSettings.ALTERNATIV_ASSET_DIRECTORY_KEY, alternativeAssetDirectoryPath);
                             try {
                                 GeneralSettings.getInstance().writeSettingsToSettingsFile();
-                            } catch (IOException ex) {}
+                            } catch (IOException ex) {
+                            }
                         }
                     }
                 }
