@@ -144,7 +144,7 @@ public class MainClass {
                 public void run() {
                     for (String classpath : System.getProperty("java.class.path").split(File.pathSeparator)) {
                         if (new File(classpath).exists()) {
-                            if(!classpath.endsWith(File.separator)) {
+                            if (!classpath.endsWith(File.separator)) {
                                 classpath += File.separator;
                             }
                             if (new File(classpath + "main" + File.separator + "MainClass.class").exists()) {
@@ -191,7 +191,6 @@ public class MainClass {
                                     alternativeAssetDirectoryPath = in;
                                 }
                             }
-
 //                            if (in == null) {
 //                                Object[] options = {"Ja, ohne korrekten Pfad fortfahren", "Nein, Eingabe wiederholen"};
 //                                int n = JOptionPane.showOptionDialog(
@@ -306,13 +305,11 @@ public class MainClass {
                 @Override
                 public void run() {
                     addProgress(0.00, "Kommandozeile initialisieren.");
-                    CommandLineThread commandLineThread = CommandLineThread.launchInstance();
+                    ComponentHub.getInstance().launchCommandLine();
+                    
                     addProgress(0.50, "Kommandozeile ausführen.");
-                    if (finalArgs.length != 0 && commandLineThread != null) {
-                        CommandLinePrompt commandLinePrompt = commandLineThread.getCommandLinePrompt();
-                        if (commandLinePrompt != null) {
-                            commandLinePrompt.execute(finalArgs);
-                        }
+                    if (finalArgs.length != 0 && ComponentHub.getInstance().getCommandLinePrompt() != null) {
+                        ComponentHub.getInstance().getCommandLinePrompt().execute(finalArgs);
                     }
                 }
             },

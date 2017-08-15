@@ -6,6 +6,7 @@
 package view.settings;
 
 import commandline.CommandLineThread;
+import componenthub.ComponentHub;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import settings.GeneralSettings;
@@ -28,7 +29,7 @@ public class SettingsWindow extends javax.swing.JFrame {
      */
     public SettingsWindow(MainWindow main) {
         initComponents();
-        if (CommandLineThread.getCommandLinePrompt() != null) {
+        if (ComponentHub.getInstance().getCommandLinePrompt() != null) {
             startPromptButton.setEnabled(false);
         }
         this.main = main;
@@ -316,7 +317,7 @@ public class SettingsWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_checkProjectsBeforRunCheckBoxActionPerformed
 
     private void startPromptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startPromptButtonActionPerformed
-        CommandLineThread.launchInstance();
+        ComponentHub.getInstance().launchCommandLine();
         startPromptButton.setEnabled(false);
     }//GEN-LAST:event_startPromptButtonActionPerformed
 

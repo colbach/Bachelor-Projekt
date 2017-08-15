@@ -2,6 +2,7 @@ package view.console;
 
 import commandline.CommandLinePrompt;
 import commandline.CommandLineThread;
+import componenthub.ComponentHub;
 import java.awt.event.*;
 import java.io.*;
 import java.util.logging.Level;
@@ -22,7 +23,7 @@ public class ConsoleWindow extends JFrame implements ActionListener {
     private String input = "";
 
     public void enterCommandLine() {
-        CommandLinePrompt commandLinePrompt = CommandLineThread.getCommandLinePrompt();
+        CommandLinePrompt commandLinePrompt = ComponentHub.getInstance().getCommandLinePrompt();
         if (commandLinePrompt != null) {
 
             // Input in RingStack loggen...
@@ -54,7 +55,9 @@ public class ConsoleWindow extends JFrame implements ActionListener {
      */
     public ConsoleWindow() {
         initComponents();
-        setTitle(CommandLineThread.getCommandLinePrompt() == null ? "Log" : "Konsole");
+        CommandLinePrompt commandLinePrompt = ComponentHub.getInstance().getCommandLinePrompt();
+        
+        setTitle(commandLinePrompt == null ? "Log" : "Konsole");
         this.timer = new Timer(200, this);
         this.timer.start();
         this.inputManager = new InputManager();
@@ -63,7 +66,7 @@ public class ConsoleWindow extends JFrame implements ActionListener {
         this.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent evt) {
-                if (CommandLineThread.getCommandLinePrompt() != null) {
+                if (commandLinePrompt != null) {
                     if (evt.getKeyCode() == 8) {
                         if (input.length() > 0) {
                             input = input.substring(0, input.length() - 1);

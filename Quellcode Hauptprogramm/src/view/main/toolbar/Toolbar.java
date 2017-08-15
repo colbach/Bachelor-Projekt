@@ -1,5 +1,6 @@
 package view.main.toolbar;
 
+import commandline.CommandLinePrompt;
 import commandline.CommandLineThread;
 import componenthub.ComponentHub;
 import generalexceptions.IllegalUserActionException;
@@ -495,7 +496,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                 return debuggingTools || isProjectRunning() || isProjectFinished() || breakpointRules;
             }
         });
-        addToolbarItem(new ToolbarItem(true, CommandLineThread.getCommandLinePrompt() == null ? "Log" : "Konsole", ImageAsset.getImageAssetForName(MONITOR_ICON)) {
+        addToolbarItem(new ToolbarItem(true, ComponentHub.getInstance().getCommandLinePrompt() == null ? "Log" : "Konsole", ImageAsset.getImageAssetForName(MONITOR_ICON)) {
             @Override
             public void clicked() {
                 java.awt.EventQueue.invokeLater(new Runnable() {
@@ -504,7 +505,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                     }
                 });
             }
-            
+
             @Override
             public boolean isHidden() {
                 return breakpointRules;

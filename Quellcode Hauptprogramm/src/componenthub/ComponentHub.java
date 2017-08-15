@@ -1,5 +1,7 @@
 package componenthub;
 
+import commandline.CommandLinePrompt;
+import commandline.CommandLineThread;
 import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,6 +19,9 @@ public class ComponentHub {
     private MainWindow gui;
     private final Object guiLock;
 
+    private CommandLinePrompt commandLine;
+    private final Object commandLineLock;
+
     public static synchronized ComponentHub getInstance() {
         if (instance == null) {
             instance = new ComponentHub();
@@ -27,6 +32,7 @@ public class ComponentHub {
     private ComponentHub() {
         projectLock = new Object();
         guiLock = new Object();
+        commandLineLock = new Object();
     }
 
     public Project getProjectBlocking() {
@@ -76,6 +82,39 @@ public class ComponentHub {
         synchronized (guiLock) {
             this.gui = mainWindow;
             guiLock.notifyAll();
+        }
+    }
+
+    public synchronized CommandLinePrompt getCommandLinePromptBlocking() {
+        synchronized (commandLineLock) {
+            while (commandLine == null) {
+                try {
+                    commandLineLock.wait();
+                } catch (InterruptedException ex) {
+                }
+            }
+            return commandLine;
+        }
+    }
+
+    public synchronized CommandLinePrompt getCommandLinePrompt() {
+        synchronized (commandLineLock) {
+            return commandLine;
+        }
+    }
+
+    public void launchCommandLine() {
+        synchronized (commandLineLock) {
+            if (commandLine == null) {
+                setCommandLine(CommandLineThread.launchThread());
+            }
+        }
+    }
+
+    public void setCommandLine(CommandLinePrompt commandLine) {
+        synchronized (commandLineLock) {
+            this.commandLine = commandLine;
+            commandLineLock.notifyAll();
         }
     }
 }
