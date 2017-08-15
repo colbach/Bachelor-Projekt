@@ -11,7 +11,7 @@ import model.Project;
 import model.directinput.DirectInputNodeDefinition;
 import model.resourceloading.nodedefinitionslibrary.BuildInNodeDefinitionsLibrary;
 import model.resourceloading.nodedefinitionslibrary.UniqueNameVersionGenerator;
-import model.runproject.debugger.Breakpoints;
+import projectrunner.debugger.Breakpoints;
 import reflection.nodedefinitions.specialnodes.firstvalues.AValueNodeDefinition;
 import reflection.nodedefinitions.specialnodes.firstvalues.FirstValueNodeDefinition;
 import reflection.nodedefinitions.specialnodes.fors.ForEachNodeDefinition;

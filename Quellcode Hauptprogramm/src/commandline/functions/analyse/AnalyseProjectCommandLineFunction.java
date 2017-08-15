@@ -1,7 +1,7 @@
 package commandline.functions.analyse;
 
+import main.componenthub.ComponentHub;
 import commandline.*;
-import componenthub.*;
 import java.util.*;
 ;
 import model.Inlet;

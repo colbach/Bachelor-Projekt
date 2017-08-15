@@ -2,7 +2,7 @@ package view.console;
 
 import commandline.CommandLinePrompt;
 import commandline.CommandLineThread;
-import componenthub.ComponentHub;
+import main.componenthub.ComponentHub;
 import java.awt.event.*;
 import java.io.*;
 import java.util.logging.Level;

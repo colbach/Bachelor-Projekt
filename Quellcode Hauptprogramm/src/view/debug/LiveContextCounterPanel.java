@@ -7,7 +7,7 @@ import java.awt.Graphics2D;
 import java.util.HashMap;
 import javax.swing.JPanel;
 import logging.AdditionalErr;
-import model.runproject.debugger.DebuggerRemote;
+import projectrunner.debugger.DebuggerRemote;
 import utils.Drawing;
 import utils.measurements.Area;
 import utils.measurements.NonArea;

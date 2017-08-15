@@ -14,7 +14,7 @@ import logging.*;
 import model.Node;
 import model.resourceloading.*;
 import reflection.*;
-import startuptasks.ProgressIndicator;
+import main.startuptasks.ProgressIndicator;
 import utils.ArrayHelper;
 import static utils.files.ClassGrabber.*;
 import utils.structures.*;

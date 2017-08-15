@@ -6,7 +6,7 @@
 package view.settings;
 
 import commandline.CommandLineThread;
-import componenthub.ComponentHub;
+import main.componenthub.ComponentHub;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import settings.GeneralSettings;

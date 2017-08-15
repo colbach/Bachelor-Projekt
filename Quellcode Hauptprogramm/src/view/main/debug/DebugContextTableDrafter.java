@@ -2,8 +2,8 @@ package view.main.debug;
 
 import java.awt.Graphics2D;
 import model.Node;
-import model.runproject.debugger.ContextTable;
-import model.runproject.debugger.DebuggerRemote;
+import projectrunner.debugger.ContextTable;
+import projectrunner.debugger.DebuggerRemote;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -19,7 +19,6 @@ import logging.AdditionalLogger;
 import model.InOutlet;
 import model.Inlet;
 import model.Node;
-import model.runproject.debugger.*;
 import reflection.NodeDefinition;
 import utils.structures.tuples.Pair;
 import view.Constants;

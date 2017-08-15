@@ -1,6 +1,6 @@
 package logging;
 
-import model.runproject.debugger.Debugger;
+import projectrunner.debugger.Debugger;
 
 public class AdditionalLogger {
 

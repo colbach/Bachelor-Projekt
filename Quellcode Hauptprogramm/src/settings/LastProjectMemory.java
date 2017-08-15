@@ -9,7 +9,7 @@ import logging.AdditionalOut;
 import model.Project;
 import model.resourceloading.projectserialization.CorruptedProjectException;
 import settings.GeneralSettings;
-import startuptasks.ProgressIndicator;
+import main.startuptasks.ProgressIndicator;
 
 public class LastProjectMemory {
 

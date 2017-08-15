@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
-import model.runproject.debugger.DebuggerRemote;
+import projectrunner.debugger.DebuggerRemote;
 import settings.*;
 import utils.Drawing;
 import utils.measurements.*;

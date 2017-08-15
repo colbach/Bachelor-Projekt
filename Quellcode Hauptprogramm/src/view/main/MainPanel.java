@@ -1,5 +1,6 @@
 package view.main;
 
+import projectrunner.debugger.Breakpoints;
 import view.main.contextmenu.ContextMenu;
 import java.awt.Color;
 import java.awt.Font;
@@ -11,11 +12,8 @@ import javax.swing.JPanel;
 import main.MainClass;
 
 import model.*;
-import model.runproject.*;
-import model.runproject.debugger.*;
-import model.runproject.executioncontrol.*;
 import settings.GeneralSettings;
-import startuptasks.StartupTaskBatchRunner;
+import main.startuptasks.StartupTaskBatchRunner;
 import view.main.*;
 import view.main.debug.*;
 import view.main.showstate.*;

@@ -6,7 +6,7 @@
 package commandline.functions.getterandsetter;
 
 import commandline.CommandLine;
-import componenthub.ComponentHub;
+import main.componenthub.ComponentHub;
 import java.io.File;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;

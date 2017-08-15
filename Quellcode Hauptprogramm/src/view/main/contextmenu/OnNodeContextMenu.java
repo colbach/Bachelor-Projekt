@@ -15,7 +15,7 @@ import model.directinput.DirectInputNodeDefinition;
 import model.directinput.DirectInputSupport;
 import model.resourceloading.NodeDefinitionDescription;
 import model.resourceloading.nodedefinitionslibrary.BuildInNodeDefinitionsLibrary;
-import model.runproject.debugger.Breakpoints;
+import projectrunner.debugger.Breakpoints;
 import reflection.additionalnodedefinitioninterfaces.VariableVisibleInletCount;
 import reflection.nodedefinitions.specialnodes.firstvalues.AValueNodeDefinition;
 import utils.text.TextHandler;

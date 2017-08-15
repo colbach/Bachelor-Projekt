@@ -1,7 +1,7 @@
 package commandline.functions;
 
+import main.componenthub.ComponentHub;
 import commandline.*;
-import componenthub.*;
 import java.util.Map;
 import static utils.text.CharacterRepeateHelper.*;
 

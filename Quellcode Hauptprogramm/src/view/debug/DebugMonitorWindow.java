@@ -15,7 +15,7 @@ import logging.AdditionalErr;
 import logging.AdditionalLogger;
 import logging.AdditionalOut;
 import logging.AdvancedLogger;
-import model.runproject.debugger.DebuggerRemote;
+import projectrunner.debugger.DebuggerRemote;
 //import model.runproject.old.OLD_Debugger;
 import view.listener.InputManager;
 import view.main.MainWindow;

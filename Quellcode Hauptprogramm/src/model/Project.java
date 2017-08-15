@@ -1,6 +1,6 @@
 package model;
 
-import componenthub.ComponentHub;
+import main.componenthub.ComponentHub;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;

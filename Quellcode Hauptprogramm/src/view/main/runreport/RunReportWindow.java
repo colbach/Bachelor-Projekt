@@ -1,12 +1,10 @@
 package view.main.runreport;
 
+import projectrunner.report.Report;
 import logging.AdditionalOut;
 import java.awt.event.MouseEvent;
 import logging.AdditionalLogger;
 import model.*;
-import model.runproject.*;
-import model.runproject.debugger.*;
-import model.runproject.report.*;
 import view.listener.*;
 
 public class RunReportWindow extends javax.swing.JFrame {

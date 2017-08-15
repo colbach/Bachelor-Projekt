@@ -1,8 +1,10 @@
 package view.main.toolbar;
 
+import projectrunner.debugger.DebuggerRules;
+import projectrunner.debugger.DebuggerRemote;
 import commandline.CommandLinePrompt;
 import commandline.CommandLineThread;
-import componenthub.ComponentHub;
+import main.componenthub.ComponentHub;
 import generalexceptions.IllegalUserActionException;
 import java.awt.Point;
 import java.io.File;
@@ -19,8 +21,7 @@ import model.Project;
 import model.check.CheckResult;
 import model.check.Checker;
 import model.resourceloading.projectserialization.ProjectStructureBuilder;
-import model.runproject.debugger.*;
-import model.runproject.report.Report;
+import projectrunner.report.Report;
 import utils.measurements.*;
 import view.assets.*;
 import static view.Constants.*;

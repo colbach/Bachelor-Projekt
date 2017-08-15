@@ -1,5 +1,6 @@
 package view.main.debug;
 
+import projectrunner.debugger.DebuggerRemote;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -14,7 +15,6 @@ import logging.AdditionalLogger;
 import model.InOutlet;
 import model.Inlet;
 import model.Node;
-import model.runproject.debugger.*;
 import utils.structures.tuples.Pair;
 import static view.Constants.*;
 import view.assets.ImageAsset;

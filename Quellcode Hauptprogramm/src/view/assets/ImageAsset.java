@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import static main.MainClass.PATH_FOR_ASSETS;
 import settings.GeneralSettings;
-import startuptasks.ProgressIndicator;
+import main.startuptasks.ProgressIndicator;
 import utils.files.FileGrabber;
 import utils.files.FileRule;
 

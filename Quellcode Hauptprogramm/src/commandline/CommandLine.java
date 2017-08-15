@@ -9,7 +9,7 @@ import commandline.functions.getterandsetter.*;
 import commandline.functions.tests.*;
 import java.util.*;
 import logging.AdditionalLogger;
-import model.runproject.ProjectExecutionRemote;
+import projectrunner.ProjectExecutionRemote;
 
 public class CommandLine {
     

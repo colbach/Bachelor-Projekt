@@ -2,7 +2,7 @@ package view.main.debug;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
-import model.runproject.debugger.DebuggerRemote;
+import projectrunner.debugger.DebuggerRemote;
 import static view.Constants.*;
 
 public class DebugBlockedReasonDrafter {

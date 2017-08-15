@@ -23,7 +23,7 @@ import model.resourceloading.projectserialization.structureddata.StructuredInlet
 import model.resourceloading.projectserialization.structureddata.StructuredNodeData;
 import model.resourceloading.projectserialization.structureddata.StructuredOutletData;
 import model.resourceloading.projectserialization.structureddata.StructuredProjectData;
-import model.runproject.debugger.Breakpoints;
+import projectrunner.debugger.Breakpoints;
 import reflection.NodeDefinition;
 import reflection.customdatatypes.SmartIdentifier;
 import model.SmartIdentifierContextImplementation;

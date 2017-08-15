@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import model.Node;
 import model.resourceloading.NodeDefinitionDescription;
-import model.runproject.debugger.ExecutorState;
+import projectrunner.debugger.ExecutorState;
 import reflection.nodedefinitions.specialnodes.SpecialNodeDefinition;
 import reflection.nodedefinitions.specialnodes.firstvalues.AValueNodeDefinition;
 import reflection.nodedefinitions.specialnodes.firstvalues.FastestValueNodeDefinition;
