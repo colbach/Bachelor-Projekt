@@ -69,6 +69,7 @@ public class VectorInputDialog extends javax.swing.JDialog {
         matrixInputPanel = new view.dialogs.vectorinput.VectorInputPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Eingabe (Vektor)");
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 formKeyTyped(evt);
