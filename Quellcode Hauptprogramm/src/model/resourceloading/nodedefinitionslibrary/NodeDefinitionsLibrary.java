@@ -71,7 +71,13 @@ public class NodeDefinitionsLibrary {
             ClassLoader classLoader = InstanceLoader.createClassLoader(path);
             HashSet<String> uniqueNames = new HashSet<>();
             AdditionalLogger.out.println("Suche in " + path + " nach Klassen.");
-            String[] classnames = getListOfClassnamesInDirectory(path);
+            String[] classnames;
+            try {
+                classnames = getListOfClassnamesInDirectory(path);
+            } catch (IllegalArgumentException e) {
+                AdditionalLogger.out.println("Klassenpfad existiert nicht (/noch nicht).");
+                classnames = new String[0];
+            }
             AdditionalLogger.out.println(classnames.length + " Klassen gefunden.");
             
             for (String classname : classnames) { // fuer jede Klasse in Verzeichniss

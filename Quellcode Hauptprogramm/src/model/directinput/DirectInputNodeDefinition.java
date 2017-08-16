@@ -7,8 +7,9 @@ import model.type.Type;
 import reflection.API;
 import reflection.InOut;
 import reflection.NodeDefinition;
+import reflection.additionalnodedefinitioninterfaces.NoTriggerInlet;
 
-public abstract class DirectInputNodeDefinition extends DefinitionWithUserSettableContent {
+public abstract class DirectInputNodeDefinition extends DefinitionWithUserSettableContent implements NoTriggerInlet {
 
     public static final String UNIQUE_NAME_PREFIX = "special.directinput";
 
