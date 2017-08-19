@@ -45,7 +45,7 @@ public class AdvancedSettingsWindow extends javax.swing.JFrame {
         this.additionalChecksCheckBox.setSelected(this.settings.getBoolean(DEVELOPER_ADDITIONAL_CHECKS_KEY, DEVELOPER_ADDITIONAL_CHECKS_DEFAULT));
         this.executionRingStackSizeTextField.setText(String.valueOf(this.settings.getInt(DEVELOPER_RING_STACK_SIZE_FOR_EXECUTION_LOGGER, 2000)));
         this.generalRingStackSizeTextField.setText(String.valueOf(this.settings.getInt(DEVELOPER_RING_STACK_SIZE_FOR_GENERAL_LOGGER, 200)));
-        this.autoRedrawEverySecondCheckBox.setText(String.valueOf(this.settings.getBoolean(DEVELOPER_AUTO_REDRAW_EVERY_SECOND_KEY, DEVELOPER_AUTO_REDRAW_EVERY_SECOND_VALUE)));
+        this.autoRedrawEverySecondCheckBox.setSelected(this.settings.getBoolean(DEVELOPER_AUTO_REDRAW_EVERY_SECOND_KEY, DEVELOPER_AUTO_REDRAW_EVERY_SECOND_VALUE));
         this.main = main;
 
         // Fenster mittig plazieren...

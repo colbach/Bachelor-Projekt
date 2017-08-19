@@ -52,13 +52,12 @@ public class CommandLine {
         addFunction(new AnalyseProjectCommandLineFunction());
         addFunction(new DisposeOnRunWindowsCommandLineFunction());
         addFunction(new CountOnRunWindowsCommandLineFunction());
-
-        
-                System.out.println("");
-            for(CommandLineFunction f :functions.values()) {
-                System.out.print("`"+f.getClass().getName()+"`");
-            }
-                System.out.println("");
+   
+//        System.out.println("");
+//        for (CommandLineFunction f : functions.values()) {
+//            System.out.print("`" + f.getClass().getName() + "`");
+//        }
+//        System.out.println("");
     }
 
     private void addFunction(CommandLineFunction commandLineFunction) {
