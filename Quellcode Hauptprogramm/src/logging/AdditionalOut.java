@@ -1,5 +1,6 @@
 package logging;
 
+import java.util.logging.Logger;
 import static logging.AdvancedLogger.settings;
 import settings.FastAccessibleSettings;
 import settings.GeneralSettings;
