@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.util.HashMap;
 import utils.ArrayHelper;
 
-public class Settings {
+public abstract class Settings {
 
     public static final String DEFAULT_VALUE = "default";
     public static final String TRUE = "true", FALSE = "false";
