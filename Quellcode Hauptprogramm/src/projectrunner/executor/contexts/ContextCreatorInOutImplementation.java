@@ -1,5 +1,6 @@
 package projectrunner.executor.contexts;
 
+import reflection.common.ContextCreatorInOut;
 import projectrunner.outputdata.OutletOutputData;
 import projectrunner.inputdata.InletInputData;
 import projectrunner.executor.InOutImplementation;
@@ -7,7 +8,6 @@ import projectrunner.executioncontrol.ExecutionControl;
 import projectrunner.executioncontext.ExecutionCreatorContext;
 import java.util.HashMap;
 import model.*;
-import reflection.*;
 
 public class ContextCreatorInOutImplementation extends InOutImplementation implements ContextCreatorInOut {
 

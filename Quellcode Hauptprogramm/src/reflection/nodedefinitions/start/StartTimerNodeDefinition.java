@@ -1,10 +1,10 @@
 package reflection.nodedefinitions.start;
 
-import reflection.API;
-import reflection.ContextCreator;
-import reflection.ContextCreatorInOut;
-import reflection.InOut;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.ContextCreator;
+import reflection.common.ContextCreatorInOut;
+import reflection.common.InOut;
+import reflection.common.NodeDefinition;
 
 public class StartTimerNodeDefinition implements NodeDefinition, ContextCreator {
 

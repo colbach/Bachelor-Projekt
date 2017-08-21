@@ -14,7 +14,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import view.listener.InputManager;
 import view.listener.MouseAndKeyboardListener;
 import view.main.MainWindow;

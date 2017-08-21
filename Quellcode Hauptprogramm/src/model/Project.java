@@ -20,7 +20,7 @@ import model.resourceloading.projectserialization.ProjectStructureBuilder;
 import model.projectversioning.ProjectVersioner;
 import model.resourceloading.projectserialization.CorruptedProjectException;
 import org.apache.commons.io.FileUtils;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import settings.ProjectSettings;
 import utils.measurements.Area;
 

@@ -1,5 +1,7 @@
 package projectrunner.executor;
 
+import reflection.common.InOut;
+import reflection.common.TerminatedException;
 import java.awt.Component;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -12,8 +14,7 @@ import projectrunner.executioncontext.ExecutionContext;
 import projectrunner.executioncontrol.ExecutionControl;
 import projectrunner.inputdata.InletInputData;
 import projectrunner.outputdata.OutletOutputData;
-import reflection.*;
-import reflection.NodeDefinition.*;
+import reflection.common.NodeDefinition.*;
 import reflection.customdatatypes.math.MathObject;
 import reflection.customdatatypes.math.NumberMathObject;
 import utils.images.ImageLoading;

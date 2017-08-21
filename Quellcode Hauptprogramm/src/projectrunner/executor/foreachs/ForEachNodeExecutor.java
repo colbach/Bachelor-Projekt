@@ -22,8 +22,8 @@ import projectrunner.executor.Executor;
 import projectrunner.executor.foreachs.ForEachAndReduceRelations;
 import projectrunner.executor.foreachs.ForEachCollectPoint;
 import projectrunner.stats.Stats;
-import reflection.API;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import utils.structures.tuples.Pair;
 import view.onrun.OnRunWindowManager;
 

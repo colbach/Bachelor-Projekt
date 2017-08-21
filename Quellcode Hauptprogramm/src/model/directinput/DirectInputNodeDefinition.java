@@ -4,9 +4,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.settablecontent.DefinitionWithUserSettableContent;
 import model.type.Type;
-import reflection.API;
-import reflection.InOut;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.InOut;
+import reflection.common.NodeDefinition;
 import reflection.additionalnodedefinitioninterfaces.NoTriggerInlet;
 
 public abstract class DirectInputNodeDefinition extends DefinitionWithUserSettableContent implements NoTriggerInlet {

@@ -3,9 +3,9 @@ package reflection.nodedefinitions.show;
 import java.awt.image.BufferedImage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import reflection.API;
-import reflection.InOut;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.InOut;
+import reflection.common.NodeDefinition;
 import reflection.customdatatypes.SmartIdentifier;
 
 public class ShowHistogramWindowNodeDefinition implements NodeDefinition {

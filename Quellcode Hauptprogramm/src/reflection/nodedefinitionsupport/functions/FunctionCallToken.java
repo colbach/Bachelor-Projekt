@@ -2,7 +2,7 @@ package reflection.nodedefinitionsupport.functions;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import reflection.TerminatedTestable;
+import reflection.common.TerminatedTestable;
 
 public class FunctionCallToken {
 

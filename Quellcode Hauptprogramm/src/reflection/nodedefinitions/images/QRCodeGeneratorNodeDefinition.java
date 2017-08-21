@@ -1,5 +1,8 @@
 package reflection.nodedefinitions.images;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -8,7 +11,6 @@ import java.io.InputStream;
 import javax.imageio.ImageIO;
 import net.glxn.qrgen.core.image.ImageType;
 import net.glxn.qrgen.javase.QRCode;
-import reflection.*;
 
 public class QRCodeGeneratorNodeDefinition implements NodeDefinition {
 

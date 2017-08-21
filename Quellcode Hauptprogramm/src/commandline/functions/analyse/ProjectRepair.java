@@ -5,8 +5,8 @@ import model.Inlet;
 import model.Node;
 import model.Outlet;
 import model.Project;
-import reflection.ContextCreator;
-import reflection.NodeDefinition;
+import reflection.common.ContextCreator;
+import reflection.common.NodeDefinition;
 
 public class ProjectRepair {
 

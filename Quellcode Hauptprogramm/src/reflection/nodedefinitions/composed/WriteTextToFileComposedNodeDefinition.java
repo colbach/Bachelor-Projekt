@@ -1,6 +1,6 @@
 package reflection.nodedefinitions.composed;
 
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import reflection.composednodedefinition.BidirectionalLink;
 import reflection.composednodedefinition.ComposedNodeDefinition;
 import reflection.composednodedefinition.InletLink;

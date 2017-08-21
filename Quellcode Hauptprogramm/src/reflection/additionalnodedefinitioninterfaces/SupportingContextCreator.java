@@ -1,6 +1,6 @@
 package reflection.additionalnodedefinitioninterfaces;
 
-import reflection.ContextCreator;
+import reflection.common.ContextCreator;
 
 /**
  * Leeres Interface, markiert SupportingContextCreator-NodeDefinitionen. Diese

@@ -16,9 +16,9 @@ import projectrunner.executionlogging.ExecutionLogger;
 import projectrunner.executor.Executor;
 import projectrunner.executor.InOutImplementation;
 import projectrunner.stats.Stats;
-import reflection.API;
-import reflection.NodeDefinition;
-import reflection.TerminatedException;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
+import reflection.common.TerminatedException;
 import utils.structures.tuples.Pair;
 
 public class ContextCreatingNodeExecutor extends Executor {

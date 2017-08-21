@@ -1,11 +1,11 @@
 package reflection.nodedefinitions.specialnodes.firstvalues;
 
 import reflection.nodedefinitions.specialnodes.SpecialNodeDefinition;
-import reflection.API;
-import reflection.InOut;
+import reflection.common.API;
+import reflection.common.InOut;
 import reflection.additionalnodedefinitioninterfaces.NoTriggerInlet;
-import reflection.NodeDefinition;
-import static reflection.NodeDefinition.TAG_PREAMBLE;
+import reflection.common.NodeDefinition;
+import static reflection.common.NodeDefinition.TAG_PREAMBLE;
 import reflection.additionalnodedefinitioninterfaces.VariableVisibleInletCount;
 import view.assets.ImageAsset;
 

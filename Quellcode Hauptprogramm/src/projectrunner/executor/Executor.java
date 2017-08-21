@@ -10,8 +10,8 @@ import java.util.concurrent.atomic.AtomicLong;
 import model.Node;
 import projectrunner.executionlogging.ExecutionLogger;
 import projectrunner.stats.Stats;
-import reflection.API;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import view.onrun.OnRunWindowManager;
 
 public abstract class Executor {

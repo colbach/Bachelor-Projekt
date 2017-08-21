@@ -1,6 +1,8 @@
 package reflection.nodedefinitions.functions;
 
-import reflection.*;
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import reflection.nodedefinitionsupport.functions.FunctionCallToken;
 
 public class FunctionReturnNodeDefinition implements NodeDefinition {

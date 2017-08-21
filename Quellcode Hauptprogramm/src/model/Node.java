@@ -13,10 +13,10 @@ import model.resourceloading.nodedefinitionslibrary.UniqueNameVersionGenerator;
 import model.settablecontent.DefinitionWithUserSettableContent;
 import reflection.nodedefinitions.specialnodes.firstvalues.FirstValueNodeDefinition;
 import reflection.nodedefinitions.specialnodes.fors.ReduceNodeDefinition;
-import reflection.ContextCreator;
+import reflection.common.ContextCreator;
 import reflection.additionalnodedefinitioninterfaces.NoTriggerInlet;
 import reflection.additionalnodedefinitioninterfaces.NoTriggerOutlet;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import reflection.additionalnodedefinitioninterfaces.VariableVisibleInletCount;
 import utils.structures.tuples.Pair;
 

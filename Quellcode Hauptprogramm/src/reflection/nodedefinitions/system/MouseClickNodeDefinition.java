@@ -1,12 +1,14 @@
 package reflection.nodedefinitions.system;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.AWTException;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import reflection.*;
 
 public class MouseClickNodeDefinition implements NodeDefinition {
 

@@ -1,8 +1,10 @@
 package reflection.nodedefinitions.camera;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.image.BufferedImage;
 import logging.AdditionalLogger;
-import reflection.*;
 import reflection.additionalnodedefinitioninterfaces.CompatibilityTestable;
 import reflection.customdatatypes.camera.Camera;
 import reflection.customdatatypes.camera.Webcam;

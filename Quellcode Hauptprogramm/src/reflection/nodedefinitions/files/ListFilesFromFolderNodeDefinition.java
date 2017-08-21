@@ -1,9 +1,11 @@
 package reflection.nodedefinitions.files;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Set;
-import reflection.*;
 import utils.files.FileGrabber;
 import utils.files.FileRule;
 import utils.structures.tuples.Pair;

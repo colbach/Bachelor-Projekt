@@ -1,6 +1,6 @@
 package model.resourceloading.nodedefinitionslibrary;
 
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 
 /**
  * Diese Klasse dient zum Generieren von UniqueNameVersion-Strings.

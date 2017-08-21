@@ -9,7 +9,7 @@ import javax.swing.SwingUtilities;
 import logging.AdditionalErr;
 import logging.AdditionalLogger;
 import logging.AdditionalOut;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import utils.structures.ReferentedValue;
 import utils.structures.tuples.Single;
 

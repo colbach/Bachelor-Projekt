@@ -2,7 +2,7 @@ package model.resourceloading.nodedefinitionslibrary;
 
 import static main.MainClass.BUILDIN_NODE_CLASSES_CLASSNAME_PREFIX;
 import model.directinput.DirectInputNodeDefinition;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import static main.MainClass.PATH_FOR_BUILDIN_NODE_CLASSES;
 import reflection.nodedefinitions.specialnodes.firstvalues.AValueNodeDefinition;
 import reflection.nodedefinitions.specialnodes.firstvalues.FastestValueNodeDefinition;

@@ -15,7 +15,7 @@ import logging.AdvancedLogger;
 import model.resourceloading.nodedefinitionslibrary.BuildInNodeDefinitionsLibrary;
 import model.resourceloading.NodeDefinitionDescription;
 import model.resourceloading.nodedefinitionslibrary.NodeDefinitionsLibrary;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import reflection.additionalnodedefinitioninterfaces.Experimental;
 import reflection.composednodedefinition.ComposedNodeDefinition;
 import settings.GeneralSettings;

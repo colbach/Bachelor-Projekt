@@ -1,6 +1,6 @@
 package reflection.composednodedefinition;
 
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 
 public class BidirectionalLink {
 

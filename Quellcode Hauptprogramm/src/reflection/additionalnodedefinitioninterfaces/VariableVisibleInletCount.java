@@ -1,6 +1,6 @@
 package reflection.additionalnodedefinitioninterfaces;
 
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 
 public interface VariableVisibleInletCount extends NodeDefinition {
     

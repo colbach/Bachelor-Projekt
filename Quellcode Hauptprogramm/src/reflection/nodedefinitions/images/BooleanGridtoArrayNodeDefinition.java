@@ -1,6 +1,8 @@
 package reflection.nodedefinitions.images;
 
-import reflection.*;
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import reflection.customdatatypes.BooleanGrid;
 
 public class BooleanGridtoArrayNodeDefinition implements NodeDefinition {

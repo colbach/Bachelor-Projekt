@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 import reflection.customdatatypes.SmartIdentifier;
-import reflection.SmartIdentifierContext;
+import reflection.common.SmartIdentifierContext;
 
 public class SmartIdentifierContextImplementation implements SmartIdentifierContext {
 

@@ -1,6 +1,6 @@
 package reflection.nodedefinitions.specialnodes;
 
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 
 /**
  * Leeres Interface. Dient der Identifikation von Spezialen Nodes

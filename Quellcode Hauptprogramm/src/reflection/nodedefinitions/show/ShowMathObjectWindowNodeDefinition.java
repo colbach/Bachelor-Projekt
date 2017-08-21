@@ -1,9 +1,11 @@
 package reflection.nodedefinitions.show;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.image.BufferedImage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import reflection.*;
 import reflection.customdatatypes.SmartIdentifier;
 import reflection.customdatatypes.math.MathObject;
 import reflection.customdatatypes.math.NumberMathObject;

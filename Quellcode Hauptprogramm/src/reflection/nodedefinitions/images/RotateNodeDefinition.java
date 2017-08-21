@@ -1,12 +1,14 @@
 package reflection.nodedefinitions.images;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import reflection.nodedefinitions.camera.*;
-import reflection.*;
 import reflection.customdatatypes.camera.Camera;
 import reflection.customdatatypes.camera.Webcam;
 

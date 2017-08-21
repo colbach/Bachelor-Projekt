@@ -1,4 +1,4 @@
-package reflection;
+package reflection.common;
 
 import reflection.customdatatypes.SmartIdentifier;
 import java.util.Set;

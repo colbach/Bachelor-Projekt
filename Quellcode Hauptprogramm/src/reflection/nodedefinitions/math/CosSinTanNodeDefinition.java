@@ -1,8 +1,8 @@
 package reflection.nodedefinitions.math;
 
-import reflection.API;
-import reflection.InOut;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.InOut;
+import reflection.common.NodeDefinition;
 
 public class CosSinTanNodeDefinition implements NodeDefinition {
 

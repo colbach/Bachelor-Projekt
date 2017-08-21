@@ -3,9 +3,9 @@ package reflection.nodedefinitions.arrays;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import reflection.API;
-import reflection.InOut;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.InOut;
+import reflection.common.NodeDefinition;
 
 public class InsertArrayNodeDefinition implements NodeDefinition {
 

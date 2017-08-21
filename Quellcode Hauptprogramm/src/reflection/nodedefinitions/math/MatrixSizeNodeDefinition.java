@@ -1,9 +1,11 @@
 package reflection.nodedefinitions.math;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import reflection.nodedefinitions.images.*;
 import java.awt.image.BufferedImage;
 import reflection.nodedefinitions.camera.*;
-import reflection.*;
 import reflection.customdatatypes.math.Matrix;
 import reflection.customdatatypes.camera.Camera;
 import reflection.customdatatypes.camera.Webcam;

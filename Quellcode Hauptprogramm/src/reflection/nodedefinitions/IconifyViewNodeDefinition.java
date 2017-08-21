@@ -1,9 +1,11 @@
 package reflection.nodedefinitions;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.Component;
 import java.awt.Frame;
 import javax.swing.JFrame;
-import reflection.*;
 
 public class IconifyViewNodeDefinition implements NodeDefinition {
 

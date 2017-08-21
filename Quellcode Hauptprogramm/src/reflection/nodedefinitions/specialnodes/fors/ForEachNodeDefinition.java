@@ -1,8 +1,8 @@
 package reflection.nodedefinitions.specialnodes.fors;
 
-import reflection.API;
-import reflection.InOut;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.InOut;
+import reflection.common.NodeDefinition;
 import view.assets.ImageAsset;
 
 public class ForEachNodeDefinition implements ForNodeDefinition {

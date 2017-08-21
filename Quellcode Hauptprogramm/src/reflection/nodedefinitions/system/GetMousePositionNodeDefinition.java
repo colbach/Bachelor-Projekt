@@ -1,8 +1,10 @@
 package reflection.nodedefinitions.system;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.MouseInfo;
 import java.awt.Point;
-import reflection.*;
 
 public class GetMousePositionNodeDefinition implements NodeDefinition {
 

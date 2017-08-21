@@ -19,7 +19,7 @@ import logging.AdditionalLogger;
 import model.InOutlet;
 import model.Inlet;
 import model.Node;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import utils.structures.tuples.Pair;
 import view.Constants;
 import static view.Constants.*;

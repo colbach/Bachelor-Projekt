@@ -1,7 +1,7 @@
 package reflection.nodedefinitions.specialnodes.firstvalues;
 
-import reflection.API;
-import reflection.InOut;
+import reflection.common.API;
+import reflection.common.InOut;
 
 public class FastestValueNodeDefinition extends FirstValueNodeDefinition {
 

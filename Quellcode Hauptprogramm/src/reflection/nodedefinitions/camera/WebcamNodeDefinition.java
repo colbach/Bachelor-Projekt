@@ -1,10 +1,12 @@
 package reflection.nodedefinitions.camera;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import logging.AdditionalErr;
 import logging.AdditionalLogger;
 import org.bytedeco.javacv.OpenCVFrameGrabber;
 import reflection.additionalnodedefinitioninterfaces.CompatibilityTestable;
-import reflection.*;
 import reflection.customdatatypes.camera.Camera;
 import reflection.customdatatypes.camera.Webcam;
 

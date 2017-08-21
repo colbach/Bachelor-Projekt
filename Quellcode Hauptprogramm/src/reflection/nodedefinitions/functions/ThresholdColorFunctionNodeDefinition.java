@@ -1,8 +1,11 @@
 package reflection.nodedefinitions.functions;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
+import reflection.nodedefinitionsupport.functions.FunctionNotAdoptableException;
 import reflection.customdatatypes.Function;
 import java.awt.Color;
-import reflection.*;
 import utils.images.BrightnessCalculator;
 
 public class ThresholdColorFunctionNodeDefinition implements NodeDefinition {

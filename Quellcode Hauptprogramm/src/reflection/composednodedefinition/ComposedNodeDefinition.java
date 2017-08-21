@@ -2,10 +2,10 @@ package reflection.composednodedefinition;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import reflection.API;
-import reflection.InOut;
-import reflection.NodeDefinition;
-import reflection.TerminatedException;
+import reflection.common.API;
+import reflection.common.InOut;
+import reflection.common.NodeDefinition;
+import reflection.common.TerminatedException;
 import reflection.customdatatypes.math.MathObject;
 import reflection.customdatatypes.math.NumberMathObject;
 import utils.structures.tuples.Pair;

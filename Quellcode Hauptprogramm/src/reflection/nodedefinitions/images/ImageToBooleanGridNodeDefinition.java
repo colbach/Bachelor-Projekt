@@ -1,10 +1,13 @@
 package reflection.nodedefinitions.images;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
+import reflection.nodedefinitionsupport.functions.FunctionNotAdoptableException;
 import reflection.customdatatypes.Function;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import reflection.*;
 import reflection.customdatatypes.*;
 import utils.images.BrightnessCalculator;
 

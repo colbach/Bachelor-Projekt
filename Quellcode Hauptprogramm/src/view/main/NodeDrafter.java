@@ -1,5 +1,6 @@
 package view.main;
 
+import reflection.common.NodeDefinition;
 import reflection.nodedefinitions.specialnodes.SpecialNodeDefinition;
 import reflection.nodedefinitions.specialnodes.firstvalues.FirstValueNodeDefinition;
 import reflection.nodedefinitions.specialnodes.ifs.IfForwardNodeDefinition;
@@ -27,7 +28,6 @@ import projectrunner.debugger.DebuggerRemote;
 import projectrunner.debugger.ExecutorState;
 import reflection.nodedefinitions.specialnodes.firstvalues.AValueNodeDefinition;
 import reflection.nodedefinitions.specialnodes.firstvalues.FastestValueNodeDefinition;
-import reflection.*;
 import reflection.additionalnodedefinitioninterfaces.Experimental;
 import utils.Drawing;
 import static view.Constants.*;

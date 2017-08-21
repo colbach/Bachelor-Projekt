@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.*;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import utils.Drawing;
 import static view.Constants.*;
 import static utils.Drawing.*;

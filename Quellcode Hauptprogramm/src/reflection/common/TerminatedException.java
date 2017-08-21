@@ -1,4 +1,4 @@
-package reflection;
+package reflection.common;
 
 public class TerminatedException extends RuntimeException {
 

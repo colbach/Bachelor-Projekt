@@ -3,9 +3,9 @@ package reflection.nodedefinitions.time;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import reflection.API;
-import reflection.InOut;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.InOut;
+import reflection.common.NodeDefinition;
 
 public class TimeStampNodeDefinition implements NodeDefinition {
 

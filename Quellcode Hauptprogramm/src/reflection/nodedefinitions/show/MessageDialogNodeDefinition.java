@@ -1,7 +1,9 @@
 package reflection.nodedefinitions.show;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import javax.swing.JOptionPane;
-import reflection.*;
 
 public class MessageDialogNodeDefinition implements NodeDefinition {
 

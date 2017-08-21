@@ -1,4 +1,4 @@
-package reflection;
+package reflection.common;
 
 /**
  * Leeres Interface, markiert ContextCreator-NodeDefinitionen.

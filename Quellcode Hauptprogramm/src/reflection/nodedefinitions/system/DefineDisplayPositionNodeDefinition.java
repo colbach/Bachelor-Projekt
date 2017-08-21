@@ -1,9 +1,11 @@
 package reflection.nodedefinitions.system;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import javax.swing.JOptionPane;
-import reflection.*;
 import utils.view.ThreeSecondsDisplayCounterFrame;
 
 public class DefineDisplayPositionNodeDefinition implements NodeDefinition {

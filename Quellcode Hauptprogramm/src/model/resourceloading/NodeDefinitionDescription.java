@@ -2,7 +2,7 @@ package model.resourceloading;
 
 import logging.AdditionalErr;
 import logging.AdditionalLogger;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import reflection.additionalnodedefinitioninterfaces.Experimental;
 
 public class NodeDefinitionDescription {

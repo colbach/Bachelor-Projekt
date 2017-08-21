@@ -24,11 +24,11 @@ import model.resourceloading.projectserialization.structureddata.StructuredNodeD
 import model.resourceloading.projectserialization.structureddata.StructuredOutletData;
 import model.resourceloading.projectserialization.structureddata.StructuredProjectData;
 import projectrunner.debugger.Breakpoints;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import reflection.customdatatypes.SmartIdentifier;
 import model.SmartIdentifierContextImplementation;
-import reflection.API;
-import reflection.InOut;
+import reflection.common.API;
+import reflection.common.InOut;
 import utils.ObjectSerializer;
 
 public class ProjectStructureBuilder {

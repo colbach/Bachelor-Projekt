@@ -1,12 +1,14 @@
 package reflection.nodedefinitions.images;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.AWTException;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
-import reflection.*;
 
 public class TakeScreenshotNodeDefinition implements NodeDefinition {
 

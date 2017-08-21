@@ -1,8 +1,11 @@
 package reflection.nodedefinitions.functions;
 
+import reflection.common.InOut;
+import reflection.common.ContextCreatorInOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import reflection.additionalnodedefinitioninterfaces.SupportingContextCreator;
 import reflection.customdatatypes.SmartIdentifier;
-import reflection.*;
 import reflection.nodedefinitionsupport.functions.CustomFunction;
 import reflection.nodedefinitionsupport.functions.CustomFunctionManager;
 import reflection.nodedefinitionsupport.functions.FunctionCallToken;

@@ -1,8 +1,10 @@
 package reflection.nodedefinitions.images;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import reflection.*;
 
 public class CropNodeDefinition implements NodeDefinition {
 

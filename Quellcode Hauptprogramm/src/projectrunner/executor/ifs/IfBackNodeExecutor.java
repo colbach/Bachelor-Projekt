@@ -15,8 +15,8 @@ import projectrunner.debugger.ExecutorState;
 import projectrunner.executionlogging.ExecutionLogger;
 import projectrunner.executor.Executor;
 import projectrunner.stats.Stats;
-import reflection.API;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import view.onrun.OnRunWindowManager;
 
 public class IfBackNodeExecutor extends Executor {

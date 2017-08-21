@@ -1,5 +1,8 @@
 package reflection.nodedefinitions.network;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -20,7 +23,6 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.util.ByteArrayDataSource;
 import logging.AdditionalLogger;
-import reflection.*;
 import reflection.customdatatypes.rawdata.RawData;
 import reflection.customdatatypes.rawdata.RawDataFromFile;
 

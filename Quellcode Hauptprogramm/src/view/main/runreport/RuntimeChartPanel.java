@@ -19,7 +19,7 @@ import logging.AdditionalLogger;
 import model.*;
 import projectrunner.report.Report;
 import projectrunner.stats.Stats;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import utils.*;
 import utils.structures.*;
 import view.*;

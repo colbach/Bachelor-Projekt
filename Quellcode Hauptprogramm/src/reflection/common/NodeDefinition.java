@@ -1,4 +1,4 @@
-package reflection;
+package reflection.common;
 
 import java.awt.Component;
 import java.awt.image.BufferedImage;

@@ -1,8 +1,8 @@
 package reflection.nodedefinitions.show;
 
-import reflection.API;
-import reflection.InOut;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.InOut;
+import reflection.common.NodeDefinition;
 import reflection.customdatatypes.SmartIdentifier;
 
 public class DisposeAllWindowsNodeDefinition implements NodeDefinition {

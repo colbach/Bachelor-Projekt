@@ -1,5 +1,8 @@
 package reflection.nodedefinitions.images;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.Color;
 import java.awt.color.ColorSpace;
 import java.awt.color.ICC_ColorSpace;
@@ -8,7 +11,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import static main.MainClass.PATH_FOR_ASSETS;
-import reflection.*;
 
 public class ColorFromCMYKNodeDefinition implements NodeDefinition {
 

@@ -1,8 +1,8 @@
 package reflection.nodedefinitions.basic;
 
-import reflection.API;
-import reflection.InOut;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.InOut;
+import reflection.common.NodeDefinition;
 
 public class CopyNodeDefinition implements NodeDefinition {
 

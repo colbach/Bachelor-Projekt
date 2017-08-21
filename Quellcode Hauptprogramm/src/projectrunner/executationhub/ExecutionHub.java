@@ -14,9 +14,9 @@ import projectrunner.executionlogging.ExecutionLogger;
 import projectrunner.executor.foreachs.ForEachAndReduceRelations;
 import projectrunner.executor.foreachs.ForEachCollectPoint;
 import projectrunner.stats.Stats;
-import reflection.API;
-import reflection.ContextCreator;
-import reflection.NodeDefinition;
+import reflection.common.API;
+import reflection.common.ContextCreator;
+import reflection.common.NodeDefinition;
 import reflection.additionalnodedefinitioninterfaces.SupportingContextCreator;
 
 public class ExecutionHub implements OnFinishCallback<ExecutionContext> {

@@ -1,8 +1,10 @@
 package reflection.nodedefinitions.system;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import reflection.*;
 import reflection.additionalnodedefinitioninterfaces.Experimental;
 
 public class SimulateKeyboardNodeDefinition implements NodeDefinition, Experimental {

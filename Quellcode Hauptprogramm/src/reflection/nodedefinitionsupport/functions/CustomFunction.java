@@ -6,9 +6,8 @@ import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import reflection.customdatatypes.Function;
-import reflection.FunctionNotAdoptableException;
 import reflection.customdatatypes.SmartIdentifier;
-import reflection.TerminatedTestable;
+import reflection.common.TerminatedTestable;
 import utils.structures.tuples.Pair;
 
 public class CustomFunction extends Function {

@@ -1,5 +1,6 @@
 package model.resourceloading.nodedefinitionslibrary;
 
+import reflection.common.NodeDefinition;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
@@ -13,7 +14,6 @@ import java.util.TreeSet;
 import logging.*;
 import model.Node;
 import model.resourceloading.*;
-import reflection.*;
 import main.startuptasks.ProgressIndicator;
 import utils.ArrayHelper;
 import static utils.files.ClassGrabber.*;

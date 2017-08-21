@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.HashSet;
 import reflection.customdatatypes.SmartIdentifier;
-import reflection.SmartIdentifierContext;
+import reflection.common.SmartIdentifierContext;
 import reflection.customdatatypes.math.MathObject;
 import reflection.customdatatypes.math.NumberMathObject;
 import view.onrun.showmathobject.ShowMathObjectWindow;

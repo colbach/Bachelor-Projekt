@@ -1,7 +1,9 @@
 package reflection.nodedefinitions.code;
 
+import reflection.common.InOut;
+import reflection.common.API;
+import reflection.common.NodeDefinition;
 import javax.tools.ToolProvider;
-import reflection.*;
 import reflection.additionalnodedefinitioninterfaces.CompatibilityTestable;
 import reflection.customdatatypes.SourceCode;
 

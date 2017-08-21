@@ -1,7 +1,6 @@
 package reflection.customdatatypes.camera;
 
 import java.awt.image.BufferedImage;
-import reflection.*;
 import view.onrun.showimage.*;
 import org.bytedeco.javacpp.*;
 import org.bytedeco.javacv.*;

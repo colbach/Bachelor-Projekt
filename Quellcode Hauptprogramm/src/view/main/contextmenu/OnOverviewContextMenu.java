@@ -19,7 +19,7 @@ import reflection.nodedefinitions.specialnodes.ifs.IfBackNodeDefinition;
 import reflection.nodedefinitions.specialnodes.ifs.IfForwardNodeDefinition;
 import reflection.nodedefinitions.specialnodes.fors.ReduceNodeDefinition;
 import model.type.Type;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import settings.GeneralSettings;
 import view.main.MainWindow;
 import view.main.runreport.RunReportWindow;

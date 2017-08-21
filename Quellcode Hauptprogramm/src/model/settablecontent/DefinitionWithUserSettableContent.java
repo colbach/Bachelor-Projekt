@@ -2,7 +2,7 @@ package model.settablecontent;
 
 import java.awt.Color;
 import model.type.Type;
-import reflection.NodeDefinition;
+import reflection.common.NodeDefinition;
 import utils.format.ObjectArrayFormat;
 
 public abstract class DefinitionWithUserSettableContent implements NodeDefinition {

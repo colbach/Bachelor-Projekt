@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import reflection.customdatatypes.SmartIdentifier;
-import reflection.TerminatedTestable;
+import reflection.common.TerminatedTestable;
 
 public class CustomFunctionManager {
     
