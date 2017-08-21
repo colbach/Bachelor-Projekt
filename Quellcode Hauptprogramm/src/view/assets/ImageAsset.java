@@ -34,7 +34,7 @@ public class ImageAsset {
     public static final String SWAP_SIDES_TO_WHITE = "ui" + File.separator + "Swap_Sides_To_White_24px.png";
     public static final String SWAP_SIDES_BACK_WHITE = "ui" + File.separator + "Swap_Sides_Back_White_24px.png";
     public static final String CLEAR = "ui" + File.separator + "Clear.png";
-    
+
     public static final String START_ICON = "Start_30px.png";
     public static final String REPORT_ICON = "Receipt_30px.png";
     public static final String DEBUG_ICON = "Debug_30px.png";
@@ -67,7 +67,7 @@ public class ImageAsset {
      * @throws IOException
      */
     private ImageAsset(String assetName) throws IOException {
-        
+
         assetName = assetName.replaceAll("/", File.separator);
 
         this.assetName = assetName;
@@ -127,7 +127,7 @@ public class ImageAsset {
      * Gibt ImageAsset fuer Dateiname zurueck. Diese werden nur ein mal von der
      * Festplatte geladen und dann im Speicher gehalten.
      */
-    public static ImageAsset getImageAssetForName(String assetName) throws IOException {
+    public synchronized static ImageAsset getImageAssetForName(String assetName) throws IOException {
 
         // Nach bereits geladenem ImageAsset mit diesem Namen suchen... 
         ImageAsset asset = IMAGE_ASSETS.get(assetName);

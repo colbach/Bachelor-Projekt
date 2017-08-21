@@ -26,20 +26,20 @@ public class InstanceLoader {
             throws MalformedURLException, ClassNotFoundException, NoSuchMethodException,
             InstantiationException, IllegalAccessException, IllegalArgumentException,
             InvocationTargetException {
-        
+
         ClassLoader classloader = createClassLoader(classDirectory);
 
         return loadNodeDefinition(classloader, className);
 
     }
-    
+
     public static ClassLoader createClassLoader(String classDirectory) throws MalformedURLException {
-        
+
         File file = new File(classDirectory);
         URL url = file.toURI().toURL();
         URL[] urls = new URL[]{url};
         ClassLoader classloader = new URLClassLoader(urls);
-        
+
         return classloader;
     }
 
@@ -51,8 +51,11 @@ public class InstanceLoader {
         Class cls = classloader.loadClass(className);
         Constructor<?> ctor = cls.getConstructor(new Class[0]);
         Object object = ctor.newInstance(new Object[0]);
-        return (NodeDefinition) object;
-
+        if (object instanceof NodeDefinition) {
+            return (NodeDefinition) object;
+        } else {
+            throw new IllegalArgumentException("Klasse ist keine Instanz von NodeDefinition");
+        }
     }
 
 }

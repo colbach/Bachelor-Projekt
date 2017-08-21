@@ -273,4 +273,11 @@ public class NodeCollectionOverviewPanel extends JPanel {
         searchDefinitions(searchString);
     }
 
+    public int getCount() {
+        if (actualShownDefinitions == null) {
+            return 0;
+        } else {
+            return actualShownDefinitions.size();
+        }
+    }
 }

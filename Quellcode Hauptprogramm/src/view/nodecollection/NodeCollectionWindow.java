@@ -28,12 +28,24 @@ public class NodeCollectionWindow extends javax.swing.JFrame {
     private final InputManager inputmanager = new InputManager();
     private final MainWindow associatedMainWindow;
 
+    public void updateTitle() {
+        int count = 0;
+        if (nodeCollectionOverviewPanel != null) {
+            count = nodeCollectionOverviewPanel.getCount();
+        }
+        if (count == 0) {
+            setTitle("Element-Auswahl");
+        } else {
+            setTitle("Element-Auswahl (" + count + " Elemente)");
+        }
+    }
+
     /**
      * Creates new form NodeCollectionWindow
      */
     public NodeCollectionWindow(MainWindow associatedMainWindow) {
         initComponents();
-        setTitle("Elemente");
+        updateTitle();
         nodeCollectionOverviewPanel.setWindow(this);
         setBackground(Color.WHITE);
         this.associatedMainWindow = associatedMainWindow;
@@ -49,13 +61,14 @@ public class NodeCollectionWindow extends javax.swing.JFrame {
         });
         nodeCollectionOverviewPanel.updateScrollbarArea();
         String[] categorys = nodeCollectionOverviewPanel.getCategorysAssArray();
-        if(categorys != null) {
+        if (categorys != null) {
             categoryPanel.setCategorys(categorys);
         }
         searchStringInputField.getDocument().addDocumentListener(new DocumentListener() {
             public void update(DocumentEvent e) {
                 try {
                     nodeCollectionOverviewPanel.searchDefinitions(e.getDocument().getText(0, e.getDocument().getLength()));
+                    updateTitle();
                 } catch (BadLocationException ex) {
                     Logger.getLogger(NodeCollectionWindow.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -78,9 +91,9 @@ public class NodeCollectionWindow extends javax.swing.JFrame {
             }
         });
     }
-    
+
     public void addNodeToProject(NodeDefinition node) {
-        if(node != null) {
+        if (node != null) {
             associatedMainWindow.getProject().addNode(node, associatedMainWindow.getTargetX(), associatedMainWindow.getTargetY());
             associatedMainWindow.repaint();
             associatedMainWindow.targetPlusPlus();
