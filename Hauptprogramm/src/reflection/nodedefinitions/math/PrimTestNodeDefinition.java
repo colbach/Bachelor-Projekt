@@ -111,15 +111,15 @@ public class PrimTestNodeDefinition implements NodeDefinition {
 
         Long n = io.inN(0, 1).longValue();
 
-        io.out(0, isPrim(n, io));
+        io.out(0, isPrim(n, io, api));
     }
 
-    public static boolean isPrim(long n, InOut io) {
+    public static boolean isPrim(long n, InOut io, API api) {
         if (n == 1) {
             return false;
         }
         if (n < 0) {
-            System.err.println("Primzahlen sind immer positiv");
+            api.additionalPrintErr("Primzahlen sind immer positiv");
             return false;
         }
         if (n <= 2) {
