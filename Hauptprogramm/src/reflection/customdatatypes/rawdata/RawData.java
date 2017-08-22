@@ -1,9 +1,6 @@
 package reflection.customdatatypes.rawdata;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.apache.commons.io.FileUtils;
 
 public class RawData {

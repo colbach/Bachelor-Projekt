@@ -1,10 +1,5 @@
 package reflection.common;
 
-import java.awt.Component;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
 public interface NodeDefinition {
 
     public int getInletCount();
