@@ -93,8 +93,6 @@ public class IfForwardNodeExecutor extends Executor {
         Outlet triggerOutlet = node.getOutlet(Node.TRIGGER_LABEL);
         if (triggerOutlet != null) {
             output.put(triggerOutlet, new Object[0]);
-        } else {
-            System.err.println(toString() + ": Ausloeser-Outlet nicht gefunden!");
         }
         getOutputDestination().deliver(node, output);
         if (debugger != null) {

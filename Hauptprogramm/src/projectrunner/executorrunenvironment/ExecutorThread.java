@@ -1,5 +1,6 @@
 package projectrunner.executorrunenvironment;
 
+import java.lang.reflect.InvocationTargetException;
 import projectrunner.callbacks.OnFinishCallback;
 import projectrunner.executor.Executor;
 import projectrunner.executioncontrol.StopException;
@@ -18,7 +19,10 @@ public class ExecutorThread extends Thread {
     public void run() {
         try {
             executor.run();
-        } catch (StopException e) {
+        } catch (Exception e) {
+            if(!e.getClass().getName().equals("StopException")) {
+                throw e;
+            }
         }
         onFinishCallback.onFinish(this);
     }

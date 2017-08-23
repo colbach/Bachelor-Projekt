@@ -101,7 +101,7 @@ public class SaveImageToFileNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Speichert Bilder in Datei" + TAG_PREAMBLE + " [Grafik] [Dateien] Image BufferedImage Speichern Schreiben Sichern Festplatte Persistent Sichern";
+        return "Speichert Bilder in Datei" + TAG_PREAMBLE + " [Grafik] [Umwandeln] [Dateien] Image BufferedImage Speichern Schreiben Sichern Festplatte Persistent Sichern";
     }
 
     @Override

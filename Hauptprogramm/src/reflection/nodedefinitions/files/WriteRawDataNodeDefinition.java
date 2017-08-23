@@ -104,7 +104,7 @@ public class WriteRawDataNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Schreibt Rohdaten in Datei" + TAG_PREAMBLE + " [Dateien] raw file Datei write schreiben save speichern festplatte disk";
+        return "Schreibt Rohdaten in Datei." + TAG_PREAMBLE + " [Dateien] raw file Datei write schreiben save speichern festplatte disk";
     }
 
     @Override

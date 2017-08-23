@@ -59,7 +59,7 @@ public class AppendTextNodeDefinition implements NodeDefinition, VariableVisible
 
     @Override
     public String getDescription() {
-        return "Dieses Element dient dazu Texte aneinander zu hängen. " + TAG_PREAMBLE + " [Text] apend append zusammenhängen add append aneinander";
+        return "Dieses Element dient dazu Texte aneinander zu hängen." + TAG_PREAMBLE + " [Text] apend append zusammenhängen add append aneinander";
     }
 
     @Override

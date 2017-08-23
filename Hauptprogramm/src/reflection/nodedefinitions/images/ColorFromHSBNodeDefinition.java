@@ -88,7 +88,7 @@ public class ColorFromHSBNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Erzeugt Farbe anhand von HSB-Werten. Werte müssen zwischen 0 und 1 liegen." + TAG_PREAMBLE + "";
+        return "Erzeugt Farbe anhand von HSB-Werten. Werte müssen zwischen 0 und 1 liegen." + TAG_PREAMBLE + "[Grafik]";
     }
 
     @Override

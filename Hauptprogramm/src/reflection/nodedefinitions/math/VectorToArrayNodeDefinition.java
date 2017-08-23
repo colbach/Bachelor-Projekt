@@ -97,7 +97,7 @@ public class VectorToArrayNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Math] Array to convert erzeugen Vector";
+        return "" + TAG_PREAMBLE + " [Math] [Umwandeln] Array to convert erzeugen Vector";
     }
 
     @Override

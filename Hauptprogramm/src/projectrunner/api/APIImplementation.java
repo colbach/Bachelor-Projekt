@@ -200,7 +200,7 @@ public class APIImplementation implements API {
 
     @Override
     public Object getSharedObjectBlocking(String key) {
-        return sharedObjectSpace.getObject(key);
+        return sharedObjectSpace.getObjectBlocking(key);
     }
 
     @Override

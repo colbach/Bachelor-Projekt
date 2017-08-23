@@ -113,7 +113,7 @@ public class SetMousePositionNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Setzt Mausposition." + TAG_PREAMBLE + " [UI] ";
     }
 
     @Override

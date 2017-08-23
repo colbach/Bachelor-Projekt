@@ -100,7 +100,7 @@ public class TuneColorNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Passt Farbwerte an. Werte müssen zwischen -1 und 1 liegen." + TAG_PREAMBLE + "";
+        return "Passt Farbwerte an. Werte müssen zwischen -1 und 1 liegen." + TAG_PREAMBLE + "[Grafik]";
     }
 
     @Override

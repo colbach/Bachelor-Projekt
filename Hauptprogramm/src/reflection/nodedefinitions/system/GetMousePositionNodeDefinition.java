@@ -91,7 +91,7 @@ public class GetMousePositionNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Gibt die x- und y-Koordinaten der Maus weiter." + TAG_PREAMBLE + " [UI] Maus Mouse get";
     }
 
     @Override

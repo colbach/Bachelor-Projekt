@@ -1,0 +1,4 @@
+savedate=24.08.2017 01:08:38
+saveprogramversion=1.0+
+projectversion=51
+creationprogramversion=1.0+

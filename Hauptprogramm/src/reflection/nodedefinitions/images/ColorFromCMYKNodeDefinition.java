@@ -103,7 +103,7 @@ public class ColorFromCMYKNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Erzeugt Farbe anhand von CMYK-Werten. Werte müssen zwischen 0 und 1 liegen. ACHTUNG: Es handelt sich hierbei nur um eine sehr grobe Annäherung. Es werden in der aktuellen Implementierung KEINE Farbprofile verwendet." + TAG_PREAMBLE + "";
+        return "Erzeugt Farbe anhand von CMYK-Werten. Werte müssen zwischen 0 und 1 liegen. ACHTUNG: Es handelt sich hierbei nur um eine sehr grobe Annäherung. Es werden in der aktuellen Implementierung KEINE Farbprofile verwendet." + TAG_PREAMBLE + "[Grafik]";
     }
 
     @Override

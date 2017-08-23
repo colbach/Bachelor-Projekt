@@ -106,7 +106,7 @@ public class QRCodeGeneratorNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Erzeugt QR-Code" + TAG_PREAMBLE + "";
+        return "Erzeugt QR-Code" + TAG_PREAMBLE + "[Grafik]";
     }
 
     @Override

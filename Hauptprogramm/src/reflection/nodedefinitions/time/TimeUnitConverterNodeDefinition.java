@@ -162,7 +162,7 @@ public class TimeUnitConverterNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Wandelt zwischen verschiedenen Zeiteinheiten um." + TAG_PREAMBLE + " [Zeit] [Umwandeln]";
     }
 
     @Override

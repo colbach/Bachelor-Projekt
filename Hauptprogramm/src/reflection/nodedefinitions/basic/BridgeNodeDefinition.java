@@ -88,7 +88,7 @@ public class BridgeNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Leeres Element. Gibt Eingang weiter ohne diesen zu verarbeiten." + TAG_PREAMBLE + " [Basics]";
+        return "Leeres Element. Gibt Eingang weiter ohne diesen zu verarbeiten." + TAG_PREAMBLE + " [Basics] bridge";
     }
 
     @Override

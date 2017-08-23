@@ -92,7 +92,7 @@ public class SimulateKeyboardNodeDefinition implements NodeDefinition, Experimen
 
     @Override
     public String getDescription() {
-        return "Simuliert Eingabe über Tastatur. Um das Drücken der Entertaste zu simulieren muss \"Spezielle Ausdrücke\" aktiviert sein und die Eingabe \\n enthalten." + TAG_PREAMBLE + "";
+        return "Simuliert Eingabe über Tastatur. Um das Drücken der Entertaste zu simulieren muss \"Spezielle Ausdrücke\" aktiviert sein und die Eingabe \\n enthalten." + TAG_PREAMBLE + "[UI] keyboard";
     }
 
     @Override

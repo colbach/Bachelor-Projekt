@@ -105,7 +105,7 @@ public class DefineDisplayPositionNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Lässt Benutzer Bildschirmposition bestimmen und gibt diese als x- und y-Koordinaten weiter." + TAG_PREAMBLE + " [UI] Maus Mouse define definieren";
     }
 
     @Override

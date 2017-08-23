@@ -113,7 +113,7 @@ public class BooleanGridToImageNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Wandelt Raster besetehend aus Wahrheitswerten in Bild um" + TAG_PREAMBLE + " [Grafik] True False umwandeln convert to Image raster gatter gitter Color";
+        return "Wandelt Raster besetehend aus Wahrheitswerten in Bild um" + TAG_PREAMBLE + " [Grafik] [Umwandeln] True False umwandeln convert to Image raster gatter gitter Color";
     }
 
     @Override

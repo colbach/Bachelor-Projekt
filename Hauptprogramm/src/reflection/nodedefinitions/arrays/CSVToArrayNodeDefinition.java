@@ -99,7 +99,7 @@ public class CSVToArrayNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Teilt Strings aus CSV in Array auf." + TAG_PREAMBLE + " [Arrays] Text Werte Array CSV";
+        return "Teilt Strings aus CSV in Array auf und gibt diese weiter." + TAG_PREAMBLE + " [Arrays] Text Werte Array CSV";
     }
 
     @Override

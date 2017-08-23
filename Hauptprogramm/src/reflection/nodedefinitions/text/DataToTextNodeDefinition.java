@@ -100,7 +100,7 @@ public class DataToTextNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Text] Text von Rohdaten from RawData";
+        return "Wandelt Rohdaten in Text um. Ist kein Charset angegeben so wird als Standartwert \"UTF-8\" verwendet." + TAG_PREAMBLE + " [Text] [Umwandeln] Text von Rohdaten from RawData";
     }
 
     @Override

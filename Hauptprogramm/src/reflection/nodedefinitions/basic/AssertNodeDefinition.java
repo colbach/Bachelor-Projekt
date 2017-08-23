@@ -8,7 +8,7 @@ public class AssertNodeDefinition implements NodeDefinition {
 
     @Override
     public int getInletCount() {
-        return 3;
+        return 4;
     }
 
     @Override
@@ -19,6 +19,8 @@ public class AssertNodeDefinition implements NodeDefinition {
             case 1:
                 return Number.class;
             case 2:
+                return String.class;
+            case 3:
                 return String.class;
             default:
                 return null;
@@ -34,6 +36,8 @@ public class AssertNodeDefinition implements NodeDefinition {
                 return "Referenz-Werte";
             case 2:
                 return "Test-Typ";
+            case 3:
+                return "Meldung";
             default:
                 return null;
         }
@@ -47,6 +51,8 @@ public class AssertNodeDefinition implements NodeDefinition {
             case 1:
                 return true;
             case 2:
+                return false;
+            case 3:
                 return false;
             default:
                 return false;
@@ -126,8 +132,9 @@ public class AssertNodeDefinition implements NodeDefinition {
 
         Object[] werte = io.in(0, new Object[0]);
         Object[] testwerte = io.in(1, new Object[0]);
+        Object meldung = io.in(3);
         String testtyp = (String) io.in0(2, "==");
-        if (!testtyp.equals(">") || !testtyp.equals("<") || !testtyp.equals(">=") || !testtyp.equals("<=") || !testtyp.equals("!=") || !testtyp.equals("==")) {
+        if (!testtyp.equals(">") && !testtyp.equals("<") && !testtyp.equals(">=") && !testtyp.equals("<=") && !testtyp.equals("!=") && !testtyp.equals("==")) {
             throw new IllegalArgumentException(testtyp + " ist kein erlaubter Test-Typ für Assert");
         }
 
@@ -138,27 +145,51 @@ public class AssertNodeDefinition implements NodeDefinition {
             Number t = (Number) testwerte[i % testwerte.length];
             if (testtyp.equals(">")) {
                 if (w.doubleValue() < t.doubleValue()) {
-                    throw new RuntimeException("Assert: " + w + " > " + t + " nicht erfüllt");
+                    if (meldung != null) {
+                        throw new RuntimeException(meldung.toString());
+                    } else {
+                        throw new RuntimeException("Assert: " + w + " > " + t + " nicht erfüllt");
+                    }
                 }
             } else if (testtyp.equals("<")) {
                 if (w.doubleValue() < t.doubleValue()) {
-                    throw new RuntimeException("Assert: " + w + " < " + t + " nicht erfüllt");
+                    if (meldung != null) {
+                        throw new RuntimeException(meldung.toString());
+                    } else {
+                        throw new RuntimeException("Assert: " + w + " < " + t + " nicht erfüllt");
+                    }
                 }
             } else if (testtyp.equals(">=")) {
                 if (w.doubleValue() <= t.doubleValue()) {
-                    throw new RuntimeException("Assert: " + w + " >= " + t + " nicht erfüllt");
+                    if (meldung != null) {
+                        throw new RuntimeException(meldung.toString());
+                    } else {
+                        throw new RuntimeException("Assert: " + w + " >= " + t + " nicht erfüllt");
+                    }
                 }
             } else if (testtyp.equals("<=")) {
                 if (w.doubleValue() >= t.doubleValue()) {
-                    throw new RuntimeException("Assert: " + w + " <= " + t + " nicht erfüllt");
+                    if (meldung != null) {
+                        throw new RuntimeException(meldung.toString());
+                    } else {
+                        throw new RuntimeException("Assert: " + w + " <= " + t + " nicht erfüllt");
+                    }
                 }
             } else if (testtyp.equals("!=")) {
                 if (w.doubleValue() == t.doubleValue()) {
-                    throw new RuntimeException("Assert: " + w + " != " + t + " nicht erfüllt");
+                    if (meldung != null) {
+                        throw new RuntimeException(meldung.toString());
+                    } else {
+                        throw new RuntimeException("Assert: " + w + " != " + t + " nicht erfüllt");
+                    }
                 }
             } else if (testtyp.equals("==")) {
                 if (w.doubleValue() != t.doubleValue()) {
-                    throw new RuntimeException("Assert: " + w + " == " + t + " nicht erfüllt");
+                    if (meldung != null) {
+                        throw new RuntimeException(meldung.toString());
+                    } else {
+                        throw new RuntimeException("Assert: " + w + " == " + t + " nicht erfüllt");
+                    }
                 }
             }
             io.terminatedTest();

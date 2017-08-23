@@ -125,7 +125,7 @@ public class SplitTextNodeDefinition implements NodeDefinition {
     public void run(InOut io, API api) {
 
         String text = (String) io.in0(0, "");
-        String regex = (String) io.in0(1, "");
+        String regex = (String) io.in0(1, ":");
 
         String[] splitted = text.split(regex);
 

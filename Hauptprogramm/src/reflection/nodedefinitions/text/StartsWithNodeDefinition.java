@@ -1,22 +1,23 @@
-package reflection.nodedefinitions.images;
+package reflection.nodedefinitions.text;
 
-import reflection.common.InOut;
 import reflection.common.API;
+import reflection.common.InOut;
 import reflection.common.NodeDefinition;
-import reflection.customdatatypes.BooleanGrid;
 
-public class BooleanGridtoArrayNodeDefinition implements NodeDefinition {
+public class StartsWithNodeDefinition implements NodeDefinition {
 
     @Override
     public int getInletCount() {
-        return 1;
+        return 2;
     }
 
     @Override
     public Class getClassForInlet(int index) {
         switch (index) {
             case 0:
-                return BooleanGrid.class;
+                return String.class;
+            case 1:
+                return String.class;
             default:
                 return null;
         }
@@ -26,7 +27,9 @@ public class BooleanGridtoArrayNodeDefinition implements NodeDefinition {
     public String getNameForInlet(int index) {
         switch (index) {
             case 0:
-                return "Raster";
+                return "Text";
+            case 1:
+                return "Prefix";
             default:
                 return null;
         }
@@ -34,16 +37,11 @@ public class BooleanGridtoArrayNodeDefinition implements NodeDefinition {
 
     @Override
     public boolean isInletForArray(int index) {
-        switch (index) {
-            case 0:
-                return false;
-            default:
-                return false;
-        }
+        return false;
     }
 
     @Override
-    public boolean isInletEngaged(int index) {
+    public boolean isInletEngaged(int i) {
         return true;
     }
 
@@ -66,7 +64,7 @@ public class BooleanGridtoArrayNodeDefinition implements NodeDefinition {
     public String getNameForOutlet(int index) {
         switch (index) {
             case 0:
-                return "Wahrheitswerte";
+                return "Ist Prefix";
             default:
                 return null;
         }
@@ -74,32 +72,27 @@ public class BooleanGridtoArrayNodeDefinition implements NodeDefinition {
 
     @Override
     public boolean isOutletForArray(int index) {
-        switch (index) {
-            case 0:
-                return true;
-            default:
-                return false;
-        }
+        return false;
     }
 
     @Override
     public String getName() {
-        return "Raster zu Array";
+        return "Beginnt mit";
     }
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Arrays] ";
+        return "Gibt weiter ob Text mit Prefix beginnt." + TAG_PREAMBLE + " [Text] startswith";
     }
 
     @Override
     public String getUniqueName() {
-        return "buildin.BooleanGridtoArray";
+        return "buildin.StartsWith";
     }
 
     @Override
     public String getIconName() {
-        return "Boolean-Grid-To-Array_30px.png";
+        return "Starts-With_30px.png";
     }
 
     @Override
@@ -110,26 +103,10 @@ public class BooleanGridtoArrayNodeDefinition implements NodeDefinition {
     @Override
     public void run(InOut io, API api) {
 
-        BooleanGrid raster = (BooleanGrid) io.in0(0, null);
+        String text = io.in0(0, "").toString();
+        String prefix = io.in0(1, "").toString();
 
-        if (raster == null) {
-
-            io.out(0, new Boolean[0]);
-
-        } else {
-
-            Boolean[] bs = new Boolean[raster.getWidth() * raster.getHeight()];
-            int height = raster.getHeight();
-            int width = raster.getWidth();
-            for (int y = 0; y < height; y++) {
-                io.terminatedTest();
-                for (int x = 0; x < width; x++) {
-                    bs[y * width + x] = raster.getBoolean(x, y);
-                }
-            }
-            io.out(0, bs);
-        }
-
+        io.out(0, text.startsWith(prefix));
     }
 
 }

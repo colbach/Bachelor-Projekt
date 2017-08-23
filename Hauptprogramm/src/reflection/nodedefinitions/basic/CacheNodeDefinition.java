@@ -123,22 +123,19 @@ public class CacheNodeDefinition implements NodeDefinition {
         return 1;
     }
 
-    private static HashMap<SmartIdentifier, Object[]> cache = new HashMap<>();
-    private static Object[] undefinedCache;
-
     @Override
-    public void run(InOut io, API api) {
-
+    public void run(InOut io, API api) throws Exception {
+        
         Object[] init = (Object[]) io.in(0);
         Object[] data = (Object[]) io.in(1);
         SmartIdentifier key = (SmartIdentifier) io.in0(2, null);
-
+        
         if (data == null || data.length == 0) {
             Object[] cacheData;
             if (key == null) {
-                cacheData = undefinedCache;
+                cacheData = (Object[]) api.getSharedObject("cache:undefined");
             } else {
-                cacheData = cache.get(key);
+                cacheData = (Object[]) api.getSharedObject("cache:" + key.getIdentifierName());
             }
             if (cacheData == null) {
                 if (init == null) {
@@ -150,10 +147,11 @@ public class CacheNodeDefinition implements NodeDefinition {
                 data = cacheData;
             }
         }
+        
         if (key == null) {
-            undefinedCache = data;
+            api.putSharedObject("cache:undefined", data);
         } else {
-            cache.put(key, data);
+            api.putSharedObject("cache:" + key.getIdentifierName(), data);
         }
 
         io.out(0, data);

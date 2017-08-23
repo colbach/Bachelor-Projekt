@@ -112,7 +112,7 @@ public class MouseClickNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Simumliert Mausklick an Position (x, y)." + TAG_PREAMBLE + " [UI] ";
     }
 
     @Override

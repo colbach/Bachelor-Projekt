@@ -101,8 +101,6 @@ public class ForEachNodeExecutor extends Executor {
             Outlet triggerOutlet = forEachNode.getOutlet(Node.TRIGGER_LABEL);
             if (triggerOutlet != null) {
                 singleElementOutputData.put(triggerOutlet, new Object[0]);
-            } else {
-                System.err.println(toString() + ": Ausloeser-Outlet nicht gefunden!");
             }
             Long childContextIdentifier = startNewContext(singleElementOutputData);
             childElementContextIdentifiers.add(childContextIdentifier);

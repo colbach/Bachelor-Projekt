@@ -96,7 +96,7 @@ public class TextToNumberNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Text] Text zu Number Zahl Wert";
+        return "Wandelt Text in Zahl um." + TAG_PREAMBLE + " [Text] [Umwandeln] Text zu Number Zahl Wert";
     }
 
     @Override

@@ -104,7 +104,7 @@ public class ImageToDataNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Grafik] Bild Raw Data Daten umwandeln convert";
+        return "" + TAG_PREAMBLE + " [Grafik] [Umwandeln] Bild Raw Data Daten umwandeln convert";
     }
 
     @Override

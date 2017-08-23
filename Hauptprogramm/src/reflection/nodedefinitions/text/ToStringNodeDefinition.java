@@ -89,7 +89,7 @@ public class ToStringNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Text] toString() zu String Text als";
+        return "Wandelt Objekt in Text um." + TAG_PREAMBLE + " [Text] [Umwandeln] toString() zu String Text als";
     }
 
     @Override

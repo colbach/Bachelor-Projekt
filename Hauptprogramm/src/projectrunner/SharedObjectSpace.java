@@ -13,7 +13,7 @@ public class SharedObjectSpace {
         this.executionControl = executionControl;
     }
 
-    public synchronized Object getObject(String key) {
+    public synchronized Object getObjectBlocking(String key) {
         while (!sharedObjects.containsKey(key)) {
             executionControl.stopTest();
             try {
@@ -24,7 +24,7 @@ public class SharedObjectSpace {
         return sharedObjects.get(key);
     }
 
-    public synchronized Object getObjectBlocking(String key) {
+    public synchronized Object getObject(String key) {
         return sharedObjects.get(key);
     }
 

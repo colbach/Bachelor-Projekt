@@ -99,7 +99,7 @@ public class RemoveElementsOfArrayNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Entfernt ein oder mehrere Objeckte aus Array." + TAG_PREAMBLE + " [Arrays] ";
+        return "Entfernt ein oder mehrere Objeckte aus Array." + TAG_PREAMBLE + " [Arrays] remove";
     }
 
     @Override

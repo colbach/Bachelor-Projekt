@@ -94,7 +94,7 @@ public class ImageToBooleanGridNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Wandelt Bild in Raster um. Function wird auf jeden Pixel ausgeführt um zu entscheiden welcher Wert in Raster übernommen wird." + TAG_PREAMBLE + " True False umwandeln convert to Image raster gatter gitter";
+        return "Wandelt Bild in Raster um. Function wird auf jeden Pixel ausgeführt um zu entscheiden welcher Wert in Raster übernommen wird." + TAG_PREAMBLE + " [Umwandeln] True False umwandeln convert to Image raster gatter gitter";
     }
 
     @Override

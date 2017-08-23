@@ -100,7 +100,7 @@ public class ArrayToMatrixNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Math] Array to convert erzeugen Matrix";
+        return "" + TAG_PREAMBLE + " [Math] [Umwandeln] Array to convert erzeugen Matrix";
     }
 
     @Override

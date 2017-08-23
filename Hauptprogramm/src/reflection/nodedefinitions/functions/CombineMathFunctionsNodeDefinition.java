@@ -101,7 +101,7 @@ public class CombineMathFunctionsNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Funktionen] function Funktion verbinden erstellen neu neue Mathe * / - + ^";
+        return "Kombiniert Math-Funktionen miteinander." + TAG_PREAMBLE + " [Funktionen] function Funktion verbinden erstellen neu neue Mathe * / - + ^";
     }
 
     @Override

@@ -120,7 +120,7 @@ public class ColorComponentsNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "" + TAG_PREAMBLE + "[Grafik]";
     }
 
     @Override
