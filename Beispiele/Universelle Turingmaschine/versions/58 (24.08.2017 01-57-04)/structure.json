@@ -144,6 +144,22 @@
     "uiCenterY" : -2147483648,
     "settabledata" : [ "rO0ABXQAATo=" ]
   }, {
+    "id" : 64,
+    "inlets" : [ 235, 236, 237 ],
+    "outlets" : [ ],
+    "definitionUniqueNameVersion" : "buildin.Stop[1]",
+    "uiCenterX" : 1052,
+    "uiCenterY" : 194,
+    "settabledata" : null
+  }, {
+    "id" : 61,
+    "inlets" : [ 228, 229, 230 ],
+    "outlets" : [ ],
+    "definitionUniqueNameVersion" : "buildin.Stop[1]",
+    "uiCenterX" : 877,
+    "uiCenterY" : 99,
+    "settabledata" : null
+  }, {
     "id" : 118,
     "inlets" : [ ],
     "outlets" : [ 516, 517 ],
@@ -687,22 +703,6 @@
     "uiCenterX" : 2161,
     "uiCenterY" : 146,
     "settabledata" : null
-  }, {
-    "id" : 61,
-    "inlets" : [ 228, 229, 230 ],
-    "outlets" : [ ],
-    "definitionUniqueNameVersion" : "buildin.Stop[1]",
-    "uiCenterX" : 1007,
-    "uiCenterY" : 200,
-    "settabledata" : null
-  }, {
-    "id" : 64,
-    "inlets" : [ 235, 236, 237 ],
-    "outlets" : [ ],
-    "definitionUniqueNameVersion" : "buildin.Stop[1]",
-    "uiCenterX" : 1053,
-    "uiCenterY" : 315,
-    "settabledata" : null
   } ],
   "inlets" : [ {
     "id" : 201,
@@ -727,6 +727,30 @@
   }, {
     "id" : 226,
     "connectedOutlets" : [ ],
+    "letIndex" : 0
+  }, {
+    "id" : 235,
+    "connectedOutlets" : [ 238 ],
+    "letIndex" : 0
+  }, {
+    "id" : 236,
+    "connectedOutlets" : [ 240 ],
+    "letIndex" : 0
+  }, {
+    "id" : 237,
+    "connectedOutlets" : [ 224 ],
+    "letIndex" : 0
+  }, {
+    "id" : 228,
+    "connectedOutlets" : [ 233 ],
+    "letIndex" : 0
+  }, {
+    "id" : 229,
+    "connectedOutlets" : [ 231 ],
+    "letIndex" : 0
+  }, {
+    "id" : 230,
+    "connectedOutlets" : [ 203 ],
     "letIndex" : 0
   }, {
     "id" : 78,
@@ -1695,30 +1719,6 @@
   }, {
     "id" : 738,
     "connectedOutlets" : [ 751 ],
-    "letIndex" : 0
-  }, {
-    "id" : 228,
-    "connectedOutlets" : [ 233 ],
-    "letIndex" : 0
-  }, {
-    "id" : 229,
-    "connectedOutlets" : [ 231 ],
-    "letIndex" : 0
-  }, {
-    "id" : 230,
-    "connectedOutlets" : [ 203 ],
-    "letIndex" : 0
-  }, {
-    "id" : 235,
-    "connectedOutlets" : [ 238 ],
-    "letIndex" : 0
-  }, {
-    "id" : 236,
-    "connectedOutlets" : [ 240 ],
-    "letIndex" : 0
-  }, {
-    "id" : 237,
-    "connectedOutlets" : [ 224 ],
     "letIndex" : 0
   } ],
   "outlets" : [ {

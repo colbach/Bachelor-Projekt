@@ -78,7 +78,7 @@
     "definitionUniqueNameVersion" : "special.directinput(java.lang.String)[0]",
     "uiCenterX" : -2147483648,
     "uiCenterY" : -2147483648,
-    "settabledata" : [ "rO0ABXQAGTAxMDEwMDExMDEwMCMwMTAxMDAxMTAxMDA=" ]
+    "settabledata" : [ "rO0ABXQAGTAxMDEwMDExMDEwMCMwMTAxMTAxMTAxMDA=" ]
   }, {
     "id" : 70,
     "inlets" : [ ],
@@ -143,6 +143,22 @@
     "uiCenterX" : -2147483648,
     "uiCenterY" : -2147483648,
     "settabledata" : [ "rO0ABXQAATo=" ]
+  }, {
+    "id" : 64,
+    "inlets" : [ 235, 236, 237 ],
+    "outlets" : [ ],
+    "definitionUniqueNameVersion" : "buildin.Stop[1]",
+    "uiCenterX" : 1052,
+    "uiCenterY" : 194,
+    "settabledata" : null
+  }, {
+    "id" : 61,
+    "inlets" : [ 228, 229, 230 ],
+    "outlets" : [ ],
+    "definitionUniqueNameVersion" : "buildin.Stop[1]",
+    "uiCenterX" : 877,
+    "uiCenterY" : 99,
+    "settabledata" : null
   }, {
     "id" : 118,
     "inlets" : [ ],
@@ -504,6 +520,14 @@
     "uiCenterY" : 153,
     "settabledata" : null
   }, {
+    "id" : 161,
+    "inlets" : [ 736, 737, 738 ],
+    "outlets" : [ ],
+    "definitionUniqueNameVersion" : "buildin.Stop[1]",
+    "uiCenterX" : 2163,
+    "uiCenterY" : 153,
+    "settabledata" : null
+  }, {
     "id" : 119,
     "inlets" : [ 518, 519, 522 ],
     "outlets" : [ 520, 521, 523 ],
@@ -671,38 +695,6 @@
     "uiCenterX" : 3851,
     "uiCenterY" : 193,
     "settabledata" : null
-  }, {
-    "id" : 166,
-    "inlets" : [ ],
-    "outlets" : [ 754, 755 ],
-    "definitionUniqueNameVersion" : "special.directinput(java.lang.Boolean)[0]",
-    "uiCenterX" : -2147483648,
-    "uiCenterY" : -2147483648,
-    "settabledata" : [ "rO0ABXNyABFqYXZhLmxhbmcuQm9vbGVhbs0gcoDVnPruAgABWgAFdmFsdWV4cAE=" ]
-  }, {
-    "id" : 161,
-    "inlets" : [ 736, 737, 738 ],
-    "outlets" : [ ],
-    "definitionUniqueNameVersion" : "buildin.Stop[1]",
-    "uiCenterX" : 2161,
-    "uiCenterY" : 146,
-    "settabledata" : null
-  }, {
-    "id" : 61,
-    "inlets" : [ 228, 229, 230 ],
-    "outlets" : [ ],
-    "definitionUniqueNameVersion" : "buildin.Stop[1]",
-    "uiCenterX" : 1007,
-    "uiCenterY" : 200,
-    "settabledata" : null
-  }, {
-    "id" : 64,
-    "inlets" : [ 235, 236, 237 ],
-    "outlets" : [ ],
-    "definitionUniqueNameVersion" : "buildin.Stop[1]",
-    "uiCenterX" : 1053,
-    "uiCenterY" : 315,
-    "settabledata" : null
   } ],
   "inlets" : [ {
     "id" : 201,
@@ -727,6 +719,30 @@
   }, {
     "id" : 226,
     "connectedOutlets" : [ ],
+    "letIndex" : 0
+  }, {
+    "id" : 235,
+    "connectedOutlets" : [ 238 ],
+    "letIndex" : 0
+  }, {
+    "id" : 236,
+    "connectedOutlets" : [ 240 ],
+    "letIndex" : 0
+  }, {
+    "id" : 237,
+    "connectedOutlets" : [ 224 ],
+    "letIndex" : 0
+  }, {
+    "id" : 228,
+    "connectedOutlets" : [ 233 ],
+    "letIndex" : 0
+  }, {
+    "id" : 229,
+    "connectedOutlets" : [ 231 ],
+    "letIndex" : 0
+  }, {
+    "id" : 230,
+    "connectedOutlets" : [ 203 ],
     "letIndex" : 0
   }, {
     "id" : 78,
@@ -1170,15 +1186,27 @@
     "letIndex" : 0
   }, {
     "id" : 748,
-    "connectedOutlets" : [ ],
+    "connectedOutlets" : [ 743 ],
     "letIndex" : 0
   }, {
     "id" : 749,
-    "connectedOutlets" : [ 743 ],
+    "connectedOutlets" : [ ],
     "letIndex" : 0
   }, {
     "id" : 752,
     "connectedOutlets" : [ ],
+    "letIndex" : 0
+  }, {
+    "id" : 736,
+    "connectedOutlets" : [ 739 ],
+    "letIndex" : 0
+  }, {
+    "id" : 737,
+    "connectedOutlets" : [ ],
+    "letIndex" : 0
+  }, {
+    "id" : 738,
+    "connectedOutlets" : [ 751 ],
     "letIndex" : 0
   }, {
     "id" : 518,
@@ -1684,42 +1712,6 @@
     "id" : 723,
     "connectedOutlets" : [ ],
     "letIndex" : 0
-  }, {
-    "id" : 736,
-    "connectedOutlets" : [ 739 ],
-    "letIndex" : 0
-  }, {
-    "id" : 737,
-    "connectedOutlets" : [ 754 ],
-    "letIndex" : 0
-  }, {
-    "id" : 738,
-    "connectedOutlets" : [ 751 ],
-    "letIndex" : 0
-  }, {
-    "id" : 228,
-    "connectedOutlets" : [ 233 ],
-    "letIndex" : 0
-  }, {
-    "id" : 229,
-    "connectedOutlets" : [ 231 ],
-    "letIndex" : 0
-  }, {
-    "id" : 230,
-    "connectedOutlets" : [ 203 ],
-    "letIndex" : 0
-  }, {
-    "id" : 235,
-    "connectedOutlets" : [ 238 ],
-    "letIndex" : 0
-  }, {
-    "id" : 236,
-    "connectedOutlets" : [ 240 ],
-    "letIndex" : 0
-  }, {
-    "id" : 237,
-    "connectedOutlets" : [ 224 ],
-    "letIndex" : 0
   } ],
   "outlets" : [ {
     "id" : 93,
@@ -2095,7 +2087,7 @@
     "connectedInlets" : [ ]
   }, {
     "id" : 743,
-    "connectedInlets" : [ 749 ]
+    "connectedInlets" : [ 748 ]
   }, {
     "id" : 745,
     "connectedInlets" : [ ]
@@ -2245,12 +2237,6 @@
     "connectedInlets" : [ ]
   }, {
     "id" : 724,
-    "connectedInlets" : [ ]
-  }, {
-    "id" : 754,
-    "connectedInlets" : [ 737 ]
-  }, {
-    "id" : 755,
     "connectedInlets" : [ ]
   } ]
 }
