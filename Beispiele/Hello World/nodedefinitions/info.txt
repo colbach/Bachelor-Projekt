@@ -1,0 +1,2 @@
+In diesem Ordner können kompilierte class-Dateien abgelegt werden.
+Klassen welche das Interface NodeDefinition implementieren können als Elemente verwendet werden.

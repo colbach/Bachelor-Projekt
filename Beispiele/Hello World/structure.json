@@ -1,0 +1,109 @@
+{
+  "nodes" : [ {
+    "id" : 210,
+    "inlets" : [ ],
+    "outlets" : [ 1156, 1157 ],
+    "definitionUniqueNameVersion" : "special.directinput(java.lang.String)[0]",
+    "uiCenterX" : -2147483648,
+    "uiCenterY" : -2147483648,
+    "settabledata" : [ "rO0ABXQACkhhbGxvIFdlbHQ=" ]
+  }, {
+    "id" : 207,
+    "inlets" : [ ],
+    "outlets" : [ 1146 ],
+    "definitionUniqueNameVersion" : "buildin.Start1x[1]",
+    "uiCenterX" : 101,
+    "uiCenterY" : 137,
+    "settabledata" : null
+  }, {
+    "id" : 211,
+    "inlets" : [ ],
+    "outlets" : [ 1158 ],
+    "definitionUniqueNameVersion" : "buildin.Start1x[1]",
+    "uiCenterX" : 101,
+    "uiCenterY" : 304,
+    "settabledata" : null
+  }, {
+    "id" : 213,
+    "inlets" : [ ],
+    "outlets" : [ 1163, 1164 ],
+    "definitionUniqueNameVersion" : "special.directinput(java.lang.String)[0]",
+    "uiCenterX" : -2147483648,
+    "uiCenterY" : -2147483648,
+    "settabledata" : [ "rO0ABXQAC0hlbGxvIFdvcmxk" ]
+  }, {
+    "id" : 212,
+    "inlets" : [ 1159, 1160, 1161 ],
+    "outlets" : [ 1162 ],
+    "definitionUniqueNameVersion" : "buildin.MessageDialog[1]",
+    "uiCenterX" : 430,
+    "uiCenterY" : 296,
+    "settabledata" : null
+  }, {
+    "id" : 208,
+    "inlets" : [ 1147, 1148, 1149, 1150, 1151 ],
+    "outlets" : [ 1152 ],
+    "definitionUniqueNameVersion" : "buildin.PrintLog[1]",
+    "uiCenterX" : 405,
+    "uiCenterY" : 129,
+    "settabledata" : null
+  } ],
+  "inlets" : [ {
+    "id" : 1159,
+    "connectedOutlets" : [ ],
+    "letIndex" : 0
+  }, {
+    "id" : 1160,
+    "connectedOutlets" : [ 1163 ],
+    "letIndex" : 0
+  }, {
+    "id" : 1161,
+    "connectedOutlets" : [ 1158 ],
+    "letIndex" : 0
+  }, {
+    "id" : 1147,
+    "connectedOutlets" : [ 1156 ],
+    "letIndex" : 0
+  }, {
+    "id" : 1148,
+    "connectedOutlets" : [ ],
+    "letIndex" : 0
+  }, {
+    "id" : 1149,
+    "connectedOutlets" : [ ],
+    "letIndex" : 0
+  }, {
+    "id" : 1150,
+    "connectedOutlets" : [ ],
+    "letIndex" : 0
+  }, {
+    "id" : 1151,
+    "connectedOutlets" : [ 1146 ],
+    "letIndex" : 0
+  } ],
+  "outlets" : [ {
+    "id" : 1156,
+    "connectedInlets" : [ 1147 ]
+  }, {
+    "id" : 1157,
+    "connectedInlets" : [ ]
+  }, {
+    "id" : 1146,
+    "connectedInlets" : [ 1151 ]
+  }, {
+    "id" : 1158,
+    "connectedInlets" : [ 1161 ]
+  }, {
+    "id" : 1163,
+    "connectedInlets" : [ 1160 ]
+  }, {
+    "id" : 1164,
+    "connectedInlets" : [ ]
+  }, {
+    "id" : 1162,
+    "connectedInlets" : [ ]
+  }, {
+    "id" : 1152,
+    "connectedInlets" : [ ]
+  } ]
+}
