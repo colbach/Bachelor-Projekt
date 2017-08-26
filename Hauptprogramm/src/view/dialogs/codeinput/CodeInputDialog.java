@@ -30,6 +30,7 @@ public class CodeInputDialog extends javax.swing.JDialog {
      */
     public CodeInputDialog(CodeInputInstructions codeInputInstructions, java.awt.Frame parent) {
         super(parent, true);
+        setTitle("Eingabe (Quellcode)");
         initComponents();
 
         this.codeInputInstructions = codeInputInstructions;
