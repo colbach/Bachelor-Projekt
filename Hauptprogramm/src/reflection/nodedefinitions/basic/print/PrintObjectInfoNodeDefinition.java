@@ -68,7 +68,7 @@ public class PrintObjectInfoNodeDefinition implements NodeDefinition {
 
     @Override
     public String getIconName() {
-        return "Print-Object-Info_30px 2.png";
+        return "Print-Object-Info_30px.png";
     }
 
     @Override
