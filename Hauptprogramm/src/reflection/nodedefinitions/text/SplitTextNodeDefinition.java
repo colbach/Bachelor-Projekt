@@ -103,7 +103,7 @@ public class SplitTextNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Trennt Text anhand von Regex in Array." + TAG_PREAMBLE + " [Text] [Arrays]";
+        return "Trennt Text anhand von Regex in Liste." + TAG_PREAMBLE + " [Text] [Arrays]";
     }
 
     @Override

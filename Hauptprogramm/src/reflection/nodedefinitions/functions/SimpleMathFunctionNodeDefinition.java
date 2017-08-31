@@ -92,7 +92,7 @@ public class SimpleMathFunctionNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Funktionen] function Funktion verbinden erstellen neu neue Mathe * / - + ^ Rechner calculator addieren subtrahieren dividieren Math rechnen Taschenrechner mal plus minus geteilt divide times";
+        return "Erstellt einfache Math-Funktion." + TAG_PREAMBLE + " [Funktionen] function Funktion verbinden erstellen neu neue Mathe * / - + ^ Rechner calculator addieren subtrahieren dividieren Math rechnen Taschenrechner mal plus minus geteilt divide times";
     }
 
     @Override

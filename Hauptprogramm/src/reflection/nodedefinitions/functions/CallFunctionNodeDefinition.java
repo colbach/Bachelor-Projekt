@@ -100,7 +100,7 @@ public class CallFunctionNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Funktionen] function Funktion aufrufen call evaluate";
+        return "Ruft Funktion auf." + TAG_PREAMBLE + " [Funktionen] function Funktion aufrufen call evaluate";
     }
 
     @Override

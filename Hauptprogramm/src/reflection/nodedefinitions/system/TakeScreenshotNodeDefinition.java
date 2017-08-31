@@ -1,4 +1,4 @@
-package reflection.nodedefinitions.images;
+package reflection.nodedefinitions.system;
 
 import reflection.common.InOut;
 import reflection.common.API;
@@ -112,7 +112,7 @@ public class TakeScreenshotNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "[Grafik]";
+        return "Nimmt Bildschirmabdruck auf." + TAG_PREAMBLE + "[Grafik]";
     }
 
     @Override

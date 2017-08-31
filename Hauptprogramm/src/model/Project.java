@@ -1,18 +1,13 @@
 package model;
 
-import main.componenthub.ComponentHub;
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import logging.AdditionalLogger;
-import model.Node;
 import model.resourceloading.nodedefinitionslibrary.BuildInNodeDefinitionsLibrary;
 import model.resourceloading.nodedefinitionslibrary.NodeDefinitionsLibrary;
 import model.resourceloading.nodedefinitionslibrary.UniqueNameVersionGenerator;

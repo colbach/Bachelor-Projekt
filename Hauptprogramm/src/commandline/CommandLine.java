@@ -52,6 +52,8 @@ public class CommandLine {
         addFunction(new AnalyseProjectCommandLineFunction());
         addFunction(new DisposeOnRunWindowsCommandLineFunction());
         addFunction(new CountOnRunWindowsCommandLineFunction());
+        addFunction(new GenerateNodeDefinitionLibraryMarkdownTableCommandLineFunction());
+        addFunction(new GenerateNodeDefinitionLibraryLatexTableCommandLineFunction());
    
 //        System.out.println("");
 //        for (CommandLineFunction f : functions.values()) {

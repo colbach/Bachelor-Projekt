@@ -325,7 +325,9 @@ public class ExecutionContext implements InletInputDataSource, OutletOutputDataD
      * Anweisung Speicher frei zu geben.
      */
     public void destory() {
-        inputDataStock.clear();
+        synchronized (inputDataStock) {
+            inputDataStock.clear();
+        }
         executorRunEnvironment.destroy();
     }
 }

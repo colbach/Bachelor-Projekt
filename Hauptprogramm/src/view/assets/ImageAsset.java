@@ -141,6 +141,10 @@ public class ImageAsset {
         }
     }
 
+    public static HashMap<String, ImageAsset> getImageAssets() {
+        return IMAGE_ASSETS;
+    }
+
     /**
      * Zeichnet Bild.
      */

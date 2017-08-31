@@ -67,16 +67,16 @@ public final class Toolbar extends MouseAndKeyboardListener {
      * Zugehoeriges Hauptfenster.
      */
     private final MainWindow mainWindow;
-    
+
     private boolean debuggingTools = false;
     private boolean breakpointRules = false;
-    
+
     private boolean isDebuggingOn() {
         return mainWindow.getDebuggerRemote() != null && mainWindow.getDebuggerRemote().isDebugging();
     }
-    
+
     private void startProject(boolean debug) {
-        
+
         try {
             mainWindow.startProjectExecution(debug);
         } catch (IllegalUserActionException ex) {
@@ -87,14 +87,14 @@ public final class Toolbar extends MouseAndKeyboardListener {
             ErrorDialog.showErrorDialog(ex, mainWindow);
         }
     }
-    
+
     public Toolbar(MainWindow mainWindow) throws IOException {
 
         // Genutzte Flaeche bei Superklasse MouseAndKeyboardListener registirieren...
         super(new Area(0, 0, Integer.MAX_VALUE, TOOLBAR_HEIGHT));
-        
+
         this.mainWindow = mainWindow;
-        
+
         DebuggerRules debuggerRules = DebuggerRules.getInstance();
 
         // Toolbarelemente erzeugen...
@@ -103,7 +103,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
             public void clicked() {
                 debuggingTools = false;
             }
-            
+
             @Override
             public boolean isHidden() {
                 return !debuggingTools || isProjectRunning() || breakpointRules;
@@ -115,7 +115,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                 debuggingTools = true;
                 breakpointRules = false;
             }
-            
+
             @Override
             public boolean isHidden() {
                 return !breakpointRules;
@@ -137,12 +137,12 @@ public final class Toolbar extends MouseAndKeyboardListener {
                         }
                     } else {
                         System.err.println("showState ist null");
-                    }                    
+                    }
                 } else {
                     System.err.println("mainPanel ist null");
                 }
             }
-            
+
             @Override
             public boolean isHidden() {
                 return !isProjectFinished() || breakpointRules;
@@ -153,7 +153,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
             public void clicked() {
                 startProject(false);
             }
-            
+
             @Override
             public boolean isHidden() {
                 return debuggingTools || isProjectRunning() || isProjectFinished() || breakpointRules;
@@ -176,9 +176,9 @@ public final class Toolbar extends MouseAndKeyboardListener {
             public void clicked() {
                 java.awt.EventQueue.invokeLater(new Runnable() {
                     public void run() {
-                        
+
                         Report report = mainWindow.getFinalReport();
-                        
+
                         if (report != null) {
 
                             // Fenster erzeugen...
@@ -197,14 +197,14 @@ public final class Toolbar extends MouseAndKeyboardListener {
 
                             // Fenster anzeigen...
                             nodeInfoWindow.setVisible(true);
-                            
+
                         } else {
                             System.err.println("debugger ist null.");
                         }
                     }
                 });
             }
-            
+
             @Override
             public boolean isHidden() {
                 return isProjectRunning() || !isProjectFinished() || breakpointRules;
@@ -215,76 +215,76 @@ public final class Toolbar extends MouseAndKeyboardListener {
             public void clicked() {
                 startProject(true);
             }
-            
+
             @Override
             public boolean isHidden() {
                 return !debuggingTools || isProjectRunning() || breakpointRules;
             }
         });
         addToolbarItem(new ToolbarItem(true, "Neuer Prozess") {
-            
+
             ImageAsset on = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_New_Executor_On_30px.png");
             ImageAsset off = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_New_Executor_Off_30px.png");
-            
+
             @Override
             public void clicked() {
                 debuggerRules.toogleTriggerBreakpointOnNewExecutor();
             }
-            
+
             @Override
             public boolean isHidden() {
                 return !breakpointRules;
             }
-            
+
             @Override
             public ImageAsset getImage() {
                 return debuggerRules.isTriggerBreakpointOnNewExecutor() ? on : off;
             }
-            
+
         });
         addToolbarItem(new ToolbarItem(true, "Vorbereiten") {
-            
+
             ImageAsset on = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_Preparing_On_30px.png");
             ImageAsset off = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_Preparing_Off_30px.png");
-            
+
             @Override
             public void clicked() {
                 debuggerRules.toogleTriggerBreakpointOnStateChangeToPreparing();
             }
-            
+
             public boolean isHidden() {
                 return !breakpointRules;
             }
-            
+
             @Override
             public ImageAsset getImage() {
                 return debuggerRules.isTriggerBreakpointOnStateChangeToPreparing() ? on : off;
             }
         });
         addToolbarItem(new ToolbarItem(true, "Sammeln") {
-            
+
             ImageAsset on = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_Collecting_On_30px.png");
             ImageAsset off = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_Collecting_Off_30px.png");
-            
+
             @Override
             public void clicked() {
                 debuggerRules.toogleTriggerBreakpointOnStateChangeToCollecting();
             }
-            
+
             public boolean isHidden() {
                 return !breakpointRules;
             }
-            
+
             @Override
             public ImageAsset getImage() {
                 return debuggerRules.isTriggerBreakpointOnStateChangeToCollecting() ? on : off;
             }
         });
         addToolbarItem(new ToolbarItem(true, "Arbeiten") {
-            
+
             ImageAsset on = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_Working_On_30px.png");
             ImageAsset off = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_Working_Off_30px.png");
-            
+
             @Override
             public void clicked() {
                 debuggerRules.toogleTriggerBreakpointOnStateChangeToRunning();
@@ -293,51 +293,51 @@ public final class Toolbar extends MouseAndKeyboardListener {
             public boolean isHidden() {
                 return !breakpointRules;
             }
-            
+
             @Override
             public ImageAsset getImage() {
                 return debuggerRules.isTriggerBreakpointOnStateChangeToRunning() ? on : off;
             }
         });
         addToolbarItem(new ToolbarItem(true, "Ausliefern") {
-            
+
             ImageAsset on = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_Delievering_On_30px.png");
             ImageAsset off = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_Delievering_Off_30px.png");
-            
+
             @Override
             public void clicked() {
                 debuggerRules.toogleTriggerBreakpointOnStateChangeToDelievering();
             }
-            
+
             public boolean isHidden() {
                 return !breakpointRules;
             }
-            
+
             @Override
             public ImageAsset getImage() {
                 return debuggerRules.isTriggerBreakpointOnStateChangeToDelievering() ? on : off;
             }
         });
         addToolbarItem(new ToolbarItem(true, "Beendet") {
-            
+
             ImageAsset on = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_Finished_On_30px.png");
             ImageAsset off = ImageAsset.getImageAssetForName("ui/Trigger_Breakpoint_On_Finished_Off_30px.png");
-            
+
             @Override
             public void clicked() {
                 debuggerRules.toogleTriggerBreakpointOnStateChangeToFinished();
             }
-            
+
             public boolean isHidden() {
                 return !breakpointRules;
             }
-            
+
             @Override
             public ImageAsset getImage() {
                 return debuggerRules.isTriggerBreakpointOnStateChangeToFinished() ? on : off;
             }
         });
-        
+
         addToolbarItem(new ToolbarItem(true, "Stop", ImageAsset.getImageAssetForName(STOP_ICON)) {
             @Override
             public void clicked() {
@@ -357,7 +357,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                             JOptionPane.ERROR_MESSAGE);
                 }
             }
-            
+
             public boolean isHidden() {
                 return !isProjectRunning() || breakpointRules;
             }
@@ -370,7 +370,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                     debugger.step();
                 }
             }
-            
+
             public boolean isHidden() {
                 return !debuggingTools || !isProjectRunning() || !isDebuggingOn() || breakpointRules;
             }
@@ -383,7 +383,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                     debugger.continueWithDebugger();
                 }
             }
-            
+
             public boolean isHidden() {
                 return !debuggingTools || !isProjectRunning() || !isDebuggingOn() || breakpointRules;
             }
@@ -396,7 +396,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                     debugger.continueWithoutDebugger();
                 }
             }
-            
+
             public boolean isHidden() {
                 return !debuggingTools || !isProjectRunning() || !isDebuggingOn() || breakpointRules;
             }
@@ -409,31 +409,31 @@ public final class Toolbar extends MouseAndKeyboardListener {
                     debugger.continueWithDebugger();
                 }
             }
-            
+
             public boolean isHidden() {
                 return !debuggingTools || !isProjectRunning() || isDebuggingOn() || breakpointRules;
             }
         });
         addToolbarItem(new ToolbarItem(true, "Br. Auslöser", ImageAsset.getImageAssetForName("Breakpoint_Rules_30px.png")) {
-            
+
             @Override
             public void clicked() {
                 breakpointRules = true;
                 debuggingTools = false;
             }
-            
+
             @Override
             public boolean isHidden() {
                 return !debuggingTools || breakpointRules;
             }
-            
+
         });
         addToolbarItem(new ToolbarItem(true, "Debugger", ImageAsset.getImageAssetForName(BUG_ICON)) {
             @Override
             public void clicked() {
                 debuggingTools = true;
             }
-            
+
             @Override
             public boolean isHidden() {
                 return debuggingTools || isProjectRunning() || isProjectFinished() || breakpointRules;
@@ -444,7 +444,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
             public void clicked() {
                 mainWindow.openDebugMonitorWindow();
             }
-            
+
             @Override
             public boolean isHidden() {
                 return !debuggingTools || breakpointRules;
@@ -478,7 +478,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                     mainWindow.openNodeCollectionOverviewWindow();
                 }
             }
-            
+
             @Override
             public boolean isHidden() {
                 return debuggingTools || isProjectRunning() || isProjectFinished() || breakpointRules;
@@ -491,7 +491,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                     mainWindow.openProjectWindow();
                 }
             }
-            
+
             @Override
             public boolean isHidden() {
                 return debuggingTools || isProjectRunning() || isProjectFinished() || breakpointRules;
@@ -517,7 +517,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
             public void clicked() {
                 ProjectSaver.save(mainWindow, getMainWindow().getProject());
             }
-            
+
             @Override
             public boolean isHidden() {
                 return debuggingTools || isProjectRunning() || isProjectFinished() || !getMainWindow().getProject().isProjectLocationSet() || !getMainWindow().getProject().didSomethingChanged() || breakpointRules;
@@ -530,7 +530,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                 String title = getMainWindow().getProject().getTitle();
                 getMainWindow().setTitle(title);
             }
-            
+
             @Override
             public boolean isHidden() {
                 return debuggingTools || isProjectRunning() || isProjectFinished() || breakpointRules;
@@ -545,7 +545,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                     getMainWindow().setTitle(project.getTitle());
                 }
             }
-            
+
             @Override
             public boolean isHidden() {
                 return debuggingTools || isProjectRunning() || isProjectFinished() || breakpointRules;
@@ -562,7 +562,7 @@ public final class Toolbar extends MouseAndKeyboardListener {
                 getMainWindow().setProject(newProject);
                 getMainWindow().setTitle(newProject.getTitle());
             }
-            
+
             @Override
             public boolean isHidden() {
                 return debuggingTools || isProjectRunning() || isProjectFinished() || breakpointRules;
@@ -575,22 +575,22 @@ public final class Toolbar extends MouseAndKeyboardListener {
                     mainWindow.openSettingsWindow();
                 }
             }
-            
+
             @Override
             public boolean isHidden() {
                 return debuggingTools || isProjectRunning() || breakpointRules;
             }
         });
     }
-    
+
     public MainWindow getMainWindow() {
         return mainWindow;
     }
-    
+
     public boolean addToolbarItem(ToolbarItem e) {
         return toolbarItems.add(e);
     }
-    
+
     public ArrayList<ToolbarItem> getToolbarItems() {
         return toolbarItems;
     }
@@ -618,22 +618,22 @@ public final class Toolbar extends MouseAndKeyboardListener {
                 }
             }
         }
-        
+
         return null; // kein Element getroffen
     }
-    
+
     @Override
     public boolean mouseClicked(int x, int y) {
-        
+
         return true; // immer True weil Toolbar das einzige in diesem Clip-Bereich ist.
     }
-    
+
     @Override
     public boolean mousePressed(int x, int y) {
 
         // Passendes Item ermitteln...
         ToolbarItem item = identifyMatchedItemByMouseX(x);
-        
+
         if (item != null) { // Wenn Item getroffen
             if (item.isEnabled() && item.isClickable()) {
                 item.setPressedDown(true); // Item "druecken"
@@ -641,16 +641,16 @@ public final class Toolbar extends MouseAndKeyboardListener {
         } else { // Kein Element getroffen
             infoButtonIsPressed = true;
         }
-        
+
         return true; // immer True weil Toolbar das einzige in diesem Clip-Bereich ist.
     }
-    
+
     @Override
     public boolean mouseReleased(int x, int y, int pressedX, int pressedY) {
 
         // Passendes Item ermitteln...
         ToolbarItem matched = identifyMatchedItemByMouseX(x);
-        
+
         if (matched != null) { // Wenn Item getroffen
             if (matched.isEnabled() && matched.isClickable() && matched.isPressedDown()) {
                 matched.clicked(); // Item klicken
@@ -667,27 +667,27 @@ public final class Toolbar extends MouseAndKeyboardListener {
 
         return true;
     }
-    
+
     public boolean isInfoButtonIsPressed() {
         return infoButtonIsPressed;
     }
-    
+
     @Override
     public boolean mouseDragged(int lastX, int lastY, int actualX, int actualY, int startX, int startY) {
         return true;
     }
-    
+
     private static String email;
-    
+
     {
         email = "@";
         char cee = (char) ((((int) ('a')) + 1) + 1);
         char eff = (char) 102;
         email = eff + "raq" + email + cee + "olba." + cee + 'h';
     }
-    
+
     private void infoButtonClicked() {
         JOptionPane.showMessageDialog(mainWindow, "Christian Colbach 2016-2017\nBei technischen Fragen: " + email, "Informationen", JOptionPane.PLAIN_MESSAGE);
     }
-    
+
 }

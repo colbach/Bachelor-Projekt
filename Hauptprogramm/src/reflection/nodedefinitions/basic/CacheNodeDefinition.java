@@ -105,7 +105,7 @@ public class CacheNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Speichert Werte zwischen zur weiteren Verwendung ausgehend von einem zweiten Element mit der gleichen Kennung. " + TAG_PREAMBLE + " [Basics] brain Gehirn merken Speicher Daten Variable Zurzeitig RAM Attribut ID";
+        return "Speichert Werte zwischen zur weiteren Verwendung ausgehend von einem zweiten Element mit der gleichen Kennung." + TAG_PREAMBLE + " [Basics] brain Gehirn merken Speicher Daten Variable Zurzeitig RAM Attribut ID";
     }
 
     @Override

@@ -94,7 +94,7 @@ public class StartTimerNodeDefinition implements NodeDefinition, ContextCreator 
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Events] [Zeit] Ausführen Timer Wiederholen Repeate Repeating Kontext Context Start Run Execute";
+        return "Startet Kontext zeitverzögert." + TAG_PREAMBLE + " [Events] [Zeit] Ausführen Timer Wiederholen Repeate Repeating Kontext Context Start Run Execute";
     }
 
     @Override

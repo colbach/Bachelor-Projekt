@@ -1,22 +1,25 @@
-package documentationgenerator;
+package commandline.functions;
 
+import commandline.Aliases;
+import commandline.CommandLine;
+import commandline.CommandLineFooterHeaderFormat;
+import commandline.CommandLineFunction;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.TreeSet;
-import model.Inlet;
 import model.resourceloading.NodeDefinitionDescription;
 import model.resourceloading.nodedefinitionslibrary.BuildInNodeDefinitionsLibrary;
 import model.type.Type;
+import reflection.additionalnodedefinitioninterfaces.VariableVisibleInletCount;
 import reflection.common.ContextCreator;
 import reflection.common.NodeDefinition;
-import reflection.additionalnodedefinitioninterfaces.VariableVisibleInletCount;
 import reflection.nodedefinitions.specialnodes.SpecialNodeDefinition;
-import utils.text.TextHandler;
+import static utils.text.CharacterRepeateHelper.*;
 
-public class DocumentationGenerator {
+public class GenerateNodeDefinitionLibraryMarkdownTableCommandLineFunction implements CommandLineFunction {
 
-    public static void main(String[] args) {
-
+    @Override
+    public void execute(String[] param, CommandLine commandLine) {
+        
         BuildInNodeDefinitionsLibrary nodeDefinitionsLibrary = BuildInNodeDefinitionsLibrary.getInstance();
 
         TreeMap<String, NodeDefinition> specialNodes = new TreeMap<>();
@@ -65,7 +68,7 @@ public class DocumentationGenerator {
         System.out.println("");
 
     }
-
+    
     public static void generate(Map<String, NodeDefinition> nodes) {
         System.out.println("");
         System.out.println("Icon | Name | Beschreibung");
@@ -126,11 +129,35 @@ public class DocumentationGenerator {
             }
             beschreibung += "\n" + outString;
 
-            s = "![](../Quellcode Hauptprogramm/assets/" + node.getIconName() + ") | " + node.getName() + " | " + beschreibung.replaceAll("\n", "<br />");
+            s = "![](../Hauptprogramm/assets/" + node.getIconName() + ") | " + node.getName() + " | " + beschreibung.replaceAll("\n", "<br />");
 
             System.out.println(s);
         }
         System.out.println("");
     }
 
+    @Override
+    public String getDescription() {
+        return "Gibt Dokumentation von NodeDefinitonLibrary im Markdownformat aus.";
+    }
+
+    @Override
+    public String getLongDescription() {
+        return getDescription();
+    }
+
+    @Override
+    public String getUsage() {
+        return getName();
+    }
+
+    @Override
+    public String getName() {
+        return "nodesdocmarkdown";
+    }
+
+    @Override
+    public String getAliases() {
+        return "nodesdocumentmarkdown ndm";
+    }
 }

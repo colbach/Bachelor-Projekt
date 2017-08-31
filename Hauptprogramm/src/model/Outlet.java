@@ -3,7 +3,6 @@ package model;
 import model.type.Type;
 import model.type.WrongTypException;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicLong;
 import model.type.CompatibilityTest;
 
 public class Outlet extends InOutlet {

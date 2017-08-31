@@ -77,7 +77,7 @@ public class EndsWithNodeDefinition implements NodeDefinition {
 
     @Override
     public String getName() {
-        return "Beginnt mit";
+        return "Endet mit";
     }
 
     @Override

@@ -133,7 +133,7 @@ public class TimeStampNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Gibt das aktuelle Datum weiter." + TAG_PREAMBLE + " [Zeit]";
+        return "Gibt das aktuelle Zeit und Datum weiter." + TAG_PREAMBLE + " [Zeit] second minute stunde minute hour jahr year nano sekunde tag day";
     }
 
     @Override

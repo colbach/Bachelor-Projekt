@@ -100,7 +100,7 @@ public class ShowMathObjectWindowNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Zeigt mathematisches Objekt in Fenster an." + TAG_PREAMBLE + "[UI] [Math] show";
     }
 
     @Override

@@ -114,11 +114,11 @@ public class ExecutionCreatorContext extends ExecutionContext {
     @Override
     public void destory() {
         super.destory();
-        synchronized (childContexts) {
+        //synchronized (childContexts) { // Fuehrt zu Deadlock
             for (ExecutionContext childContext : childContexts) {
                 childContext.destory();
             }
-        }
+        //}
     }
 
     public NodeDefinition getContextCreatingNodeDefinition() {

@@ -94,7 +94,7 @@ public class NANDNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Logisches NAND. A und B muss die gleiche Länge haben." + TAG_PREAMBLE + " [Logik]";
+        return "Logisches NAND. A und B müssen die gleiche Länge haben." + TAG_PREAMBLE + " [Logik]";
     }
 
     @Override

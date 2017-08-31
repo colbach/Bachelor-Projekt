@@ -91,7 +91,7 @@ public class CreateGaussKernelNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Erzeugt Gauss Kernel." + TAG_PREAMBLE + " [Grafik]";
     }
 
     @Override

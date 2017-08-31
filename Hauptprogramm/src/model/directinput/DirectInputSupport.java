@@ -2,10 +2,8 @@ package model.directinput;
 
 import java.awt.Color;
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashSet;
 import model.type.Type;
-import model.settablecontent.DefinitionWithUserSettableContent;
 import model.type.CompatibilityTest;
 import reflection.customdatatypes.SourceCode;
 import reflection.customdatatypes.SmartIdentifier;

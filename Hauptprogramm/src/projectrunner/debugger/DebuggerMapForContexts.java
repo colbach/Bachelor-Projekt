@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import logging.AdditionalLogger;
 import model.Node;
 import projectrunner.executionlogging.ExecutionLogger;
 
@@ -54,10 +55,10 @@ public class DebuggerMapForContexts {
                     count++;
                     contextCreatorIdentifiersToChildContextCount.put(parentIdentifier, count);
                 } else {
-                    System.err.println("parentIdentifier nicht in contextCreatorIdentifiersToChildContextCount gefunden");
+                    AdditionalLogger.err.println("parentIdentifier nicht in contextCreatorIdentifiersToChildContextCount gefunden");
                 }
             } else {
-                System.err.println("parentIdentifier nicht gefunden");
+                AdditionalLogger.err.println("parentIdentifier nicht gefunden");
             }
         }
         contextTable = null;
@@ -133,7 +134,7 @@ public class DebuggerMapForContexts {
                     count++;
                     contextCreatorIdentifiersToTerminatedChildContextCount.put(parentIdentifier, count);
                 } else {
-                    System.err.println("parentIdentifier nicht in contextCreatorIdentifiersToTerminatedChildContextCount gefunden");
+                    AdditionalLogger.err.println("parentIdentifier nicht in contextCreatorIdentifiersToTerminatedChildContextCount gefunden");
                 }
             }
         } else {

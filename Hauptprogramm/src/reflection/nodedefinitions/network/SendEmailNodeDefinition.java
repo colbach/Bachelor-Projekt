@@ -131,7 +131,7 @@ public class SendEmailNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Sendet Email über SMTP-Server." + TAG_PREAMBLE + "";
     }
 
     @Override

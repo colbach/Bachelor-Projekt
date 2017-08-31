@@ -92,7 +92,7 @@ public class PickAvgColorFromImageNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Grafik] Farbe auswählen pick picker";
+        return "Extrahiert alle Farbwerte aus Bild und gibt diese weiter." + TAG_PREAMBLE + " [Grafik] Farbe auswählen pick picker";
     }
 
     @Override

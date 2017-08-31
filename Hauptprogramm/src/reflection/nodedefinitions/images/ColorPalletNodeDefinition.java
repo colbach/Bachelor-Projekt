@@ -95,7 +95,7 @@ public class ColorPalletNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "[Grafik]";
+        return "Stellt Standardfarben zur Verfügung." + TAG_PREAMBLE + "[Grafik]";
     }
 
     @Override

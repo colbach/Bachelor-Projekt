@@ -100,7 +100,7 @@ public class GridSizeNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " Raster Grid Rastergrösse Rastergröße Grid Grösse Größe Photo Maße Masse Size Dimension";
+        return "Ermittelt Maße von Raster und gibt diese weiter." + TAG_PREAMBLE + " Raster Grid Rastergrösse Rastergröße Grid Grösse Größe Photo Maße Masse Size Dimension";
     }
 
     @Override

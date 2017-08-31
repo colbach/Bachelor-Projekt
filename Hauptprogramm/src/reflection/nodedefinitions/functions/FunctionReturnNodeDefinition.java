@@ -92,7 +92,7 @@ public class FunctionReturnNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Funktionen] [Events] funktions aufruf neu definieren id identifier call return rückgabe rueckgabe ende";
+        return "Gibt Daten als Rückgabe von Funktion zurück." + TAG_PREAMBLE + " [Funktionen] [Events] funktions aufruf neu definieren id identifier call return rückgabe rueckgabe ende";
     }
 
     @Override

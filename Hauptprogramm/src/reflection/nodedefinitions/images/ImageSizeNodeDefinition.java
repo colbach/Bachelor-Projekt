@@ -99,7 +99,7 @@ public class ImageSizeNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Grafik] Image Bildgrösse Bildgröße Bild Grösse Größe Photo Maße Masse Size Dimension";
+        return "Ermittelt Maße von Bild und gibt diese weiter." + TAG_PREAMBLE + " [Grafik] Image Bildgrösse Bildgröße Bild Grösse Größe Photo Maße Masse Size Dimension";
     }
 
     @Override

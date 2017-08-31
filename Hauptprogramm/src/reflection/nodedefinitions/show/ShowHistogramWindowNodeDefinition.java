@@ -96,7 +96,7 @@ public class ShowHistogramWindowNodeDefinition implements NodeDefinition {
     
     @Override
     public String getDescription() {
-        return "Zeigt Werte-Array als Histogram in Fenster an. Die Angabe eines Kontextes gibt an ob jedes mal ein neues Fenster geöffnet werden soll oder ob die neuen Werte die alten ersetzen soll. Der Kontext \"test\" öffnet ein neues Fenster falls noch keines mit dieser Bezeichnung angelegt ist oder ersetzt dieses falls dieser Kontext bereits geöffnet ist." + TAG_PREAMBLE + " [UI] [Arrays] show zeigen Histogram Zahlen anzeigen Fenster";
+        return "Zeigt Werte-Array als Histogram in Fenster an." + TAG_PREAMBLE + " [UI] [Arrays] show zeigen Histogram Zahlen anzeigen Fenster";
     }
     
     @Override

@@ -93,7 +93,7 @@ public class SubTextNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Gibt Teil von Text weiter" + TAG_PREAMBLE + " [Text] substring";
+        return "Gibt Teil von Text weiter." + TAG_PREAMBLE + " [Text] substring";
     }
 
     @Override

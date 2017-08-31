@@ -78,7 +78,7 @@ public class Start1xNodeDefinition implements ContextCreator {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Events] [Basics] 1x Kontext Context Start Run Execute";
+        return "Startet genau einen Kontext." + TAG_PREAMBLE + " [Events] [Basics] 1x Kontext Context Start Run Execute";
     }
 
     @Override

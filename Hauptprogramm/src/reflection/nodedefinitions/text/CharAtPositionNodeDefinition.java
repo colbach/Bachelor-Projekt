@@ -85,7 +85,7 @@ public class CharAtPositionNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Gibt Zeichen an Position weiter" + TAG_PREAMBLE + " [Text] charat";
+        return "Gibt Zeichen an bestimmter Position weiter." + TAG_PREAMBLE + " [Text] charat";
     }
 
     @Override

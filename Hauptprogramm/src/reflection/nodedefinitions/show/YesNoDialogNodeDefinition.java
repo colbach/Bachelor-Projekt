@@ -97,7 +97,7 @@ public class YesNoDialogNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Öffnet Ja/Nein-Dialog." + TAG_PREAMBLE + " [UI] input dialog";
     }
 
     @Override

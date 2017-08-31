@@ -91,7 +91,7 @@ public class FunctionByIDNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Funktionen] [Events] funktions aufruf definieren";
+        return "Sucht nach in Projekt definierter Funktion und gibt diese weiter." + TAG_PREAMBLE + " [Funktionen] [Events] funktions aufruf definieren";
     }
 
     @Override

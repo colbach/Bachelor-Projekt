@@ -69,7 +69,7 @@ public class CombineTextNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Dieses Element dient dazu mehrere Texte zu kombinieren " + TAG_PREAMBLE + " [Text] [Arrays] combine kombinieren add append";
+        return "Dient dazu mehrere Texte zu kombinieren." + TAG_PREAMBLE + " [Text] [Arrays] combine kombinieren add append";
     }
 
     @Override

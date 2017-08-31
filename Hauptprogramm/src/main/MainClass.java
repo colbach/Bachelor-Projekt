@@ -1,27 +1,18 @@
 package main;
 
-import commandline.CommandLinePrompt;
-import commandline.CommandLineThread;
 import main.componenthub.ComponentHub;
 import view.main.MainWindow;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
-import logging.AdditionalLogger;
-import logging.AdditionalOut;
 import logging.AdvancedLogger;
 import model.Project;
 import model.VoidType;
-import model.resourceloading.InstanceLoader;
 import model.resourceloading.nodedefinitionslibrary.BuildInNodeDefinitionsLibrary;
 import projectrunner.ProjectRunner;
 import projectrunner.debugger.Breakpoints;
@@ -36,7 +27,6 @@ import utils.ArrayHelper;
 import utils.measurements.InfiniteArea;
 import utils.measurements.NonArea;
 import view.assets.ImageAsset;
-import view.onrun.OnRunWindowManager;
 
 public class MainClass {
 
@@ -60,7 +50,7 @@ public class MainClass {
     /**
      * Programm-Version.
      */
-    public static final String VERSION_NAME = "1.1";
+    public static final String VERSION_NAME = "1.1+";
 
     /**
      * Startzeit.

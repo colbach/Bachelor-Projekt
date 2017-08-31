@@ -101,7 +101,7 @@ public class ShowTextWindowNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Zeigt Text in Fenster an. Die Angabe eines Kontextes gibt an ob jedes mal ein neues Fenster geöffnet werden soll oder ob die neue Bitmap eine alte ersetzen soll. Der Kontext \"test\" öffnet ein neues Fenster falls noch keines mit dieser Bezeichnung angelegt ist oder ersetzt dieses falls dieser Kontext bereits geöffnet ist." + TAG_PREAMBLE + " [UI] show zeigen Text String Fenster";
+        return "Zeigt Text in Fenster an." + TAG_PREAMBLE + " [UI] [Text] show zeigen Text String Fenster";
     }
 
     @Override

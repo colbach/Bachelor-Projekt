@@ -97,7 +97,7 @@ public class TextInputDialogNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Öffnet Dialog für Texteingabe." + TAG_PREAMBLE + " [UI] input dialog";
     }
 
     @Override

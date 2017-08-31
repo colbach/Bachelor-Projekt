@@ -85,7 +85,7 @@ public class StopNodeDefinition implements NodeDefinition, NoTriggerOutlet {
 
     @Override
     public String getDescription() {
-        return "Stoppt Ausführung" + TAG_PREAMBLE + " [Basics] return finish end beenden abbrechen exit";
+        return "Stoppt Ausführung." + TAG_PREAMBLE + " [Basics] return finish end beenden abbrechen exit";
     }
 
     @Override

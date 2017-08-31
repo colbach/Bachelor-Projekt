@@ -2,12 +2,8 @@ package main.componenthub;
 
 import commandline.CommandLinePrompt;
 import commandline.CommandLineThread;
-import java.util.HashSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.Project;
 import view.main.MainWindow;
-import view.onrun.OnRunWindowManager;
 
 public class ComponentHub {
 

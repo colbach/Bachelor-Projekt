@@ -93,7 +93,7 @@ public class MessageDialogNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "";
+        return "Zeigt Dialog an." + TAG_PREAMBLE + "";
     }
 
     @Override

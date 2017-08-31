@@ -196,9 +196,11 @@ public class ProjectExecution implements OnFinishCallback<ExecutionControl> {
     public void destroy() throws NotTerminatedYetException {
         if (isTerminated()) {
             AdditionalLogger.out.println(toString() + ": Alle onDeletionCallbacks anweisen sich zu zerstoeren und Speicher frei zu geben");
+            
             for (OnDestroyCallback<ProjectExecution> onDeletionCallback : onDeletionCallbacks) {
                 onDeletionCallback.onDestroy(this);
             }
+            
             if (debugger != null) {
                 debugger.destroy();
             }

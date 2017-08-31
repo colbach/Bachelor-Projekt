@@ -100,7 +100,7 @@ public class ConvolveImageNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "Convolve";
+        return "Führt Faltung auf Bild durch." + TAG_PREAMBLE + " [Grafik] Convolve";
     }
 
     @Override

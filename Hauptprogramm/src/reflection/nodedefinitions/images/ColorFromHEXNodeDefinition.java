@@ -14,7 +14,7 @@ public class ColorFromHEXNodeDefinition implements NodeDefinition {
 
     @Override
     public Class getClassForInlet(int index) {
-        return Float.class;
+        return String.class;
     }
 
     @Override
@@ -85,7 +85,7 @@ public class ColorFromHEXNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + "[Grafik]";
+        return "Erzeugt Farbe anhand von HEX-Wert." + TAG_PREAMBLE + "[Grafik]";
     }
 
     @Override

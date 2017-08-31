@@ -13,7 +13,7 @@ import projectrunner.executionlogging.ExecutionLogger;
 import utils.structures.tuples.Pair;
 
 public class Debugger {
-    
+
     private boolean debug;
 
     private final DebuggerRemote debuggerRemote;
@@ -31,15 +31,13 @@ public class Debugger {
     private boolean blocked;
     private String blockedReason;
     private Long blockedContextIdentifier;
-    
+
     /*public long nextTicketNumber;
     public long latestTicketNumber;
     public boolean breakpointTriggered = false;*/
-    
-    
     private final AdvancedLogger debuggerExecutionLogger;
     public static final int DEBUGGER_STATE_LOGGER_SIZE = 300;
-    
+
     private final ExecutionLogger executionLogger;
 
     /**
@@ -96,7 +94,7 @@ public class Debugger {
             }
         }
     }
-    
+
     public synchronized void releaseBlock() {
         blocked = false;
         blockedReason = null;
@@ -148,7 +146,9 @@ public class Debugger {
     public void registerExecutorIdentifier(Long identifier, Node node, String description, Long parentContextIdentifier) {
         debuggerMapForExecutors.registerExecutorIdentifier(identifier, node, description, parentContextIdentifier);
         changeCounter.incrementAndGet();
-        blockAndTriggerBreakpoint(identifier, "Executor registered");
+        if (DebuggerRules.getInstance().isTriggerBreakpointOnNewExecutor()) {
+            blockAndTriggerBreakpoint(identifier, "Executor registered");
+        }
         changeCounter.incrementAndGet();
     }
 
@@ -163,11 +163,25 @@ public class Debugger {
     public synchronized ContextState getContextState(Long identifier) {
         return debuggerMapForContexts.getContextState(identifier);
     }
-    
+
     public void setExecutorState(Long identifier, ExecutorState executorState) {
         debuggerMapForExecutors.setExecutorState(identifier, executorState);
         changeCounter.incrementAndGet();
-        blockAndTriggerBreakpoint(identifier, "State changed ("+executorState.toString()+")");
+        if (DebuggerRules.getInstance().isTriggerBreakpointOnStateChangeToCollecting() && executorState == ExecutorState.COLLECTING) {
+            blockAndTriggerBreakpoint(identifier, "State changed (" + executorState.toString() + ")");
+        }
+        if (DebuggerRules.getInstance().isTriggerBreakpointOnStateChangeToDelievering() && executorState == ExecutorState.DELIEVERING) {
+            blockAndTriggerBreakpoint(identifier, "State changed (" + executorState.toString() + ")");
+        }
+        if (DebuggerRules.getInstance().isTriggerBreakpointOnStateChangeToFinished() && executorState == ExecutorState.FINISHED) {
+            blockAndTriggerBreakpoint(identifier, "State changed (" + executorState.toString() + ")");
+        }
+        if (DebuggerRules.getInstance().isTriggerBreakpointOnStateChangeToPreparing() && executorState == ExecutorState.PREPARING) {
+            blockAndTriggerBreakpoint(identifier, "State changed (" + executorState.toString() + ")");
+        }
+        if (DebuggerRules.getInstance().isTriggerBreakpointOnStateChangeToRunning() && executorState == ExecutorState.RUNNING) {
+            blockAndTriggerBreakpoint(identifier, "State changed (" + executorState.toString() + ")");
+        }
         changeCounter.incrementAndGet();
     }
 
@@ -287,8 +301,5 @@ public class Debugger {
     public synchronized String getDescriptionForContextIdentifier(Long identifier) {
         return debuggerMapForContexts.getDescription(identifier);
     }
-    
-    
-    
-    
+
 }

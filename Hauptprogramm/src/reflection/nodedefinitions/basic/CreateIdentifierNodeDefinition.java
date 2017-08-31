@@ -102,7 +102,7 @@ public class CreateIdentifierNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "Erstellt SmartIdentifier. Wenn kein Name angegeben wird, wird ein neuer erstellt" + TAG_PREAMBLE + " [Basics] ID ";
+        return "Erstellt SmartIdentifier. Wenn kein Name angegeben wird, wird ein neuer erstellt." + TAG_PREAMBLE + " [Basics] ID ";
     }
 
     @Override

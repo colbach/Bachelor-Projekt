@@ -89,7 +89,7 @@ public class BooleanGridToArrayNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Arrays] [Umwandeln]";
+        return "Extrahiert Werte aus Raster und fügt diese Zeilenweise in Array ein." + TAG_PREAMBLE + " [Arrays] [Umwandeln]";
     }
 
     @Override

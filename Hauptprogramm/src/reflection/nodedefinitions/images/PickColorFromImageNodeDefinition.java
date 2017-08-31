@@ -100,7 +100,7 @@ public class PickColorFromImageNodeDefinition implements NodeDefinition {
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Grafik] Farbe auswählen pick picker";
+        return "Extrahiert Farbwert von Positon (x, y) und gibt diesen weiter." + TAG_PREAMBLE + " [Grafik] Farbe auswählen pick picker";
     }
 
     @Override

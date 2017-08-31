@@ -101,7 +101,7 @@ public class FunctionStartNodeDefinition implements NodeDefinition, SupportingCo
 
     @Override
     public String getDescription() {
-        return "" + TAG_PREAMBLE + " [Funktionen] [Events] funktions aufruf neu definieren id identifier call start";
+        return "Definiert Funktion in Projekt." + TAG_PREAMBLE + " [Funktionen] [Events] funktions aufruf neu definieren id identifier call start";
     }
 
     @Override
