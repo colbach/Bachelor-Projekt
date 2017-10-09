@@ -1,0 +1,10 @@
+lastprojectpath=/Users/christiancolbach/Hello World
+startpromptonstartup=false
+view.background=default
+view.additionalhelp=true
+checkprojectsbeforrun=true
+warnifprojectnotsaved=true
+invisibleprompt=false
+experimentalnodedefinitions=true
+composednodedefinitions=true
+checkforunreachablenodes=true
