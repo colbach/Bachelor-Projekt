@@ -1,0 +1,31 @@
+{
+  "nodes" : [ {
+    "id" : 2,
+    "inlets" : [ 2, 3, 4 ],
+    "outlets" : [ 5, 6 ],
+    "definitionUniqueNameVersion" : "buildin.StartLoop[1]",
+    "uiCenterX" : 168,
+    "uiCenterY" : 109,
+    "settabledata" : null
+  } ],
+  "inlets" : [ {
+    "id" : 2,
+    "connectedOutlets" : [ ],
+    "letIndex" : 0
+  }, {
+    "id" : 3,
+    "connectedOutlets" : [ ],
+    "letIndex" : 0
+  }, {
+    "id" : 4,
+    "connectedOutlets" : [ ],
+    "letIndex" : 0
+  } ],
+  "outlets" : [ {
+    "id" : 5,
+    "connectedInlets" : [ ]
+  }, {
+    "id" : 6,
+    "connectedInlets" : [ ]
+  } ]
+}
