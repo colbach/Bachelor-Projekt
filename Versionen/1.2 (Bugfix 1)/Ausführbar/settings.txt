@@ -1,0 +1,10 @@
+lastprojectpath=/Users/christiancolbach/Documents/GitHub/Bachelor-Projekt/Beispiele/Script Document Downloader
+startpromptonstartup=false
+view.background=default
+view.additionalhelp=true
+checkprojectsbeforrun=true
+warnifprojectnotsaved=true
+invisibleprompt=false
+experimentalnodedefinitions=true
+composednodedefinitions=true
+checkforunreachablenodes=true
